@@ -1,0 +1,12 @@
+{
+  "segments": [
+    {"start": 0.0, "end": 6.2, "text": "Nous nous rendons sur les lieux le quatorze mars deux mille vingt-six à quatorze heures.", "confidence": 0.96, "language": "fr"},
+    {"start": 6.2, "end": 13.8, "text": "L'immeuble est situé au numéro douze de la rue Victor Hugo.", "confidence": 0.95, "language": "fr"},
+    {"start": 13.8, "end": 21.0, "text": "Nous constatons que la façade présente des lézardes importantes.", "confidence": 0.94, "language": "fr"},
+    {"start": 21.0, "end": 28.5, "text": "Les fissures sont visibles du premier au troisième étage.", "confidence": 0.93, "language": "fr"},
+    {"start": 28.5, "end": 36.0, "text": "La toiture semble en bon état général.", "confidence": 0.95, "language": "fr"},
+    {"start": 36.0, "end": 44.2, "text": "Nous procédons maintenant à l'inspection de l'intérieur.", "confidence": 0.94, "language": "fr"}
+  ],
+  "flags": [],
+  "metadata": {"audio_duration_sec": 44.2, "language": "fr"}
+}

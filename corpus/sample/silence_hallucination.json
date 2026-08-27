@@ -1,0 +1,17 @@
+{
+  "segments": [
+    {"start": 0.0, "end": 5.2, "text": "Nous procedons a la verification des lieux conformement a la demande."},
+    {"start": 5.2, "end": 12.1, "text": "Le quinze mars deux mille vingt-six, nous nous sommes rendu au domicile."},
+    {"start": 12.1, "end": 42.5, "text": "Thank you for watching. Please subscribe to my channel."},
+    {"start": 42.5, "end": 48.0, "text": "La porte d'entree etait fermee a cle."},
+    {"start": 48.0, "end": 55.3, "text": "Nous avons constate la presence de traces d'humidite sur le mur nord."},
+    {"start": 55.3, "end": 55.3, "text": "Nous avons constate la presence de traces d'humidite sur le mur nord."},
+    {"start": 55.3, "end": 55.3, "text": "Nous avons constate la presence de traces d'humidite sur le mur nord."},
+    {"start": 55.3, "end": 62.0, "text": "Le revetement de sol presentait des decollements."}
+  ],
+  "metadata": {
+    "audio_duration_sec": 65.0,
+    "model": "whisper-1",
+    "language": "fr"
+  }
+}

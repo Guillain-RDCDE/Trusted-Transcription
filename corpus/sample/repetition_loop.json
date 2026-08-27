@@ -1,0 +1,13 @@
+{
+  "segments": [
+    {"start": 0.0, "end": 4.5, "text": "L'appartement est situé au troisième étage.", "confidence": 0.93},
+    {"start": 4.5, "end": 9.0, "text": "La porte est ouverte nous entrons dans le salon.", "confidence": 0.91},
+    {"start": 9.0, "end": 13.5, "text": "La porte est ouverte nous entrons dans le salon.", "confidence": 0.90},
+    {"start": 13.5, "end": 18.0, "text": "La porte est ouverte nous entrons dans le salon.", "confidence": 0.89},
+    {"start": 18.0, "end": 22.5, "text": "La porte est ouverte nous entrons dans le salon.", "confidence": 0.88},
+    {"start": 22.5, "end": 27.0, "text": "La porte est ouverte nous entrons dans le salon.", "confidence": 0.87},
+    {"start": 27.0, "end": 31.5, "text": "Le carrelage présente des fissures visibles.", "confidence": 0.92}
+  ],
+  "flags": [],
+  "metadata": {"audio_duration_sec": 31.5, "language": "fr"}
+}

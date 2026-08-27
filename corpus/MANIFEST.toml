@@ -1,0 +1,23 @@
+# Public corpora — no client data, ever.
+# fetch.py downloads and verifies checksums for reproducibility.
+
+[[source]]
+name = "assemblee-nationale"
+description = "French National Assembly sessions — formal register, multi-speaker, official reference transcript"
+url = "https://www.assemblee-nationale.fr/dyn/opendata"
+license = "Licence Ouverte / Open Licence 2.0"
+use = "Primary benchmark — closest analogue to formal dictation"
+
+[[source]]
+name = "common-voice-fr"
+description = "Mozilla Common Voice French — diverse speakers, accents, variable mic quality"
+url = "https://commonvoice.mozilla.org/fr/datasets"
+license = "CC-0"
+use = "Robustness testing — accent and noise diversity"
+
+[[source]]
+name = "librivox-fr"
+description = "LibriVox French audiobooks — long-form, public domain"
+url = "https://librivox.org/search?primary_key=7&search_category=language&search_page=1&search_form=get_results"
+license = "Public Domain"
+use = "Long-duration hallucination testing — loops appear on duration"

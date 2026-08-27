@@ -1,0 +1,14 @@
+[
+  {
+    "file": "clean_transcript.json",
+    "sha256": "5e716c0bde92aa50599d682c8cbf6799d87b3625a323122756d5fb4997fb00c1"
+  },
+  {
+    "file": "repetition_loop.json",
+    "sha256": "16b4fe1550dee3d7847d9615b1c855b8ccefd3ef055e1cf12096c3fc9caf19b7"
+  },
+  {
+    "file": "silence_hallucination.json",
+    "sha256": "69b357afbf0dec48fdc9a253abef93da2b872e068ca73b0c17b53eeca9208c38"
+  }
+]

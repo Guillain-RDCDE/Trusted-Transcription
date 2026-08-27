@@ -2,95 +2,118 @@
 
 **Catch confident lies in automatic transcription.**
 
-Whisper is good. It is also confidently wrong 2-5% of the time. In regulated workflows where one wrong word is a liability, that is a blocker. This is the guardrail layer between an ASR model and a document you can bill on.
+Whisper produces this on 30 seconds of silence:
 
-## What it does
+> *"Thank you for watching. Please subscribe to my channel."*
+
+Confidence: 0.88. No error, no warning. Your downstream system ingests it as fact.
+
+This project catches that — and six other ways ASR pipelines silently produce garbage.
+
+## Try it in 30 seconds (no API key needed)
+
+```bash
+git clone https://github.com/Guillain-RDCDE/Trusted-Transcription.git
+cd Trusted-Transcription
+pip install pydantic click jiwer
+PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/silence_hallucination.json --format table
+```
+
+Output:
+
+```
+ SEG  SEVERITY    DETECTOR                   REASON
+--------------------------------------------------------------------------------
+   2  critical    silence_hallucination      Known phantom phrase: 'Thank you for watching...'
+   4  critical    repetition_loop            N-gram 'nous avons constate' repeated 3x in 8 segments
+   6  critical    temporal_drift             Timestamp stall: segments 5 and 6 share [55.30-55.30]
+
+Total: 3 flags
+```
+
+Three hallucinations caught. Zero API calls. Zero false positives on the clean sample:
+
+```bash
+PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/clean_transcript.json --format table
+# No hallucinations detected.
+```
+
+## How it works
 
 ```
 Audio -> Whisper -> [7 detectors] -> [LLM repair] -> [scoring] -> Trusted transcript
 ```
 
-1. **Transcribe** via Whisper API or faster-whisper
-2. **Detect** hallucinations with 7 independent deterministic detectors
-3. **Repair** flagged segments with Claude (structured output, anti-aggravation guard)
-4. **Score**: WER, CER, hallucination rate, cost per hour
+**Detection is deterministic.** No LLM in the loop until a flag fires. The 7 detectors are regex, arithmetic, and statistics — they run in 0.06 seconds, cost nothing, and never hallucinate themselves.
 
-## Quick start
+**Repair is constrained.** The LLM (Claude) gets structured output only, a confidence threshold at 0.7, and explicit permission to say "I don't touch this." Unconstrained repair makes things worse 23% of the time ([ADR 0004](docs/adr/0004-anti-aggravation-guard.md) documents the experiment).
 
-```bash
-git clone https://github.com/Guillain-RDCDE/Trusted-Transcription.git
-cd Trusted-Transcription
-make setup
-make smoke
-```
-
-## CLI
-
-```bash
-tt run recording.wav --language fr
-tt detect transcript.json --format table
-tt cost 60  # estimate for 60 min
-```
-
-## MCP server
-
-```bash
-tt-mcp  # stdio server, 5 tools for agent integration
-```
-
-Tools: `transcribe`, `detect_hallucinations`, `repair`, `score`, `estimate_cost`. Any MCP-compatible agent can drive the pipeline.
+**The human stays in the loop** on critical flags the LLM can't resolve. ~70% of transcriptions pass unattended; the rest route to review with the exact segments highlighted.
 
 ## The 7 detectors
 
-| Detector | Catches | Severity |
-|----------|---------|----------|
-| `repetition_loop` | Same phrase repeated 5-50x | Critical |
-| `silence_hallucination` | Text on silent audio | Critical |
-| `prompt_echo` | System prompt leaked into output | Critical |
-| `temporal_drift` | Timestamps overlap, reverse, stall | Warning-Critical |
-| `phantom_subtitle` | Coherent text unrelated to context | Warning |
-| `language_switch` | Unexpected language mid-transcript | Warning |
-| `completeness` | Audio sections silently dropped | Critical |
+| Detector | What it catches | How |
+|----------|----------------|-----|
+| `repetition_loop` | Same phrase 5-50x | N-gram frequency over sliding window |
+| `silence_hallucination` | "Thank you for watching" on silence | Known phantom patterns + word/sec ratio |
+| `prompt_echo` | System prompt leaked into output | Pattern matching on instruction markers |
+| `temporal_drift` | Timestamps overlap, reverse, stall | Pairwise arithmetic on consecutive segments |
+| `phantom_subtitle` | Coherent text unrelated to context | Jaccard distance to neighbor vocabulary |
+| `language_switch` | French transcript turns English | Language tag + function-word markers |
+| `completeness` | Sections silently dropped | Coverage ratio + words-per-minute |
 
-Mode 7 is the most dangerous: it produces nothing, and nothing looks correct.
+Mode 7 is the most dangerous: every other hallucination produces visible garbage. This one produces nothing — and nothing looks correct.
 
-Full catalog: [docs/failure-modes.md](docs/failure-modes.md)
+Full catalog with symptoms and causes: [docs/failure-modes.md](docs/failure-modes.md)
 
-## LLM repair with guardrails
+## MCP server — for AI agents
 
-Not "ask an LLM to fix it." A constrained loop:
-- Structured JSON output only
-- Confidence threshold: below 0.7 = keep untouched
-- Decline is the default (the LLM CAN say no)
-- Cost tracked per call
+```bash
+PYTHONPATH=src python -m trusted_transcription.mcp_server
+```
 
-Unconstrained repair makes things worse 23% of the time. See [ADR 0004](docs/adr/0004-anti-aggravation-guard.md).
+5 tools exposed over stdio: `transcribe`, `detect_hallucinations`, `repair`, `score`, `estimate_cost`. Any MCP-compatible agent can drive the pipeline.
+
+Claude Code config:
+```json
+{"mcpServers": {"trusted-transcription": {"command": "tt-mcp"}}}
+```
+
+## Cost estimation (no API key needed)
+
+```bash
+PYTHONPATH=src python -m trusted_transcription.cli cost 60
+# Whisper API:  $0.3600
+# LLM repair:   $0.0360
+# Total:        $0.3960
+# Per hour:     $0.40
+```
 
 ## Architecture decisions
 
-- [0001: Two models in series, not one fine-tune](docs/adr/0001-two-models-in-series.md)
-- [0002: Where the human stays in the loop](docs/adr/0002-human-in-the-loop.md)
-- [0003: Deterministic before probabilistic](docs/adr/0003-deterministic-before-probabilistic.md)
-- [0004: Repair must not make things worse](docs/adr/0004-anti-aggravation-guard.md)
+Why two models instead of a fine-tune? Where does the human stay? Why deterministic before probabilistic?
 
-## Evaluation
+- [0001 — Two models in series](docs/adr/0001-two-models-in-series.md) (a LoRA fine-tune was tried and abandoned)
+- [0002 — Human in the loop](docs/adr/0002-human-in-the-loop.md)
+- [0003 — Deterministic before probabilistic](docs/adr/0003-deterministic-before-probabilistic.md)
+- [0004 — Repair must not make things worse](docs/adr/0004-anti-aggravation-guard.md)
 
-Public corpus only. No client data.
-
-- Assemblee nationale (formal French, reference transcripts)
-- Mozilla Common Voice FR (diverse speakers, accents)
-- LibriVox FR (long-form, public domain)
+## Tests
 
 ```bash
-make bench  # results in eval/results/summary.csv
+pip install pytest
+PYTHONPATH=src python -m pytest tests/ -v
+# 13 passed in 0.06s
 ```
+
+No API calls, no audio files. Pure logic on synthetic transcripts.
 
 ## Background
 
-Extracted from a production legal-grade transcription platform. The techniques are generic; the client code stays under NDA. Dead ends documented in the ADRs.
+This is the generic quality layer extracted from a production legal-grade transcription platform. The platform processes formal dictations where a wrong word is a legal liability — Whisper + Claude pipeline running ~70% unattended across a nine-server fleet, billing daily.
+
+The platform code is under NDA. The techniques, detectors, and architectural decisions are published here. The dead ends too — they are in the ADRs, and they are the reason the production claims are credible.
 
 ## License
 
-MIT
-
-**Guillain d'Erceville** - [guillain@poulpe.us](mailto:guillain@poulpe.us) - [GitHub](https://github.com/Guillain-RDCDE) - [LinkedIn](https://www.linkedin.com/in/guillain-d-erceville)
+MIT — **Guillain d'Erceville** — [guillain@poulpe.us](mailto:guillain@poulpe.us) — [GitHub](https://github.com/Guillain-RDCDE) — [LinkedIn](https://www.linkedin.com/in/guillain-d-erceville)

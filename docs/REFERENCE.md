@@ -40,7 +40,7 @@ PYTHONPATH=src python -m trusted_transcription.mcp_server
 
 5 tools exposed over stdio: `transcribe`, `detect_hallucinations`, `repair`, `score`, `estimate_cost`. Any MCP-compatible agent can drive the pipeline.
 
-Claude Code config:
+Example MCP client config:
 ```json
 {"mcpServers": {"trusted-transcription": {"command": "tt-mcp"}}}
 ```

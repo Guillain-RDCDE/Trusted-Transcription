@@ -1,7 +1,7 @@
 """MCP server — expose the pipeline as tools for AI agents.
 
-This is the integration layer that lets an agent (Claude Code,
-a custom orchestrator, or any MCP-compatible client) drive the
+This is the integration layer that lets an agent (a custom
+orchestrator or any MCP-compatible client) drive the
 transcription pipeline programmatically:
 
 - transcribe: run Whisper on an audio file

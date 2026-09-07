@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/social-preview.png" width="100%" alt="Trusted Transcription — catch confident lies in Whisper output: 7 detectors, 0.06 s, zero API calls">
+</p>
+
 # Trusted-Transcription
 
 **Catch confident lies in automatic transcription.**

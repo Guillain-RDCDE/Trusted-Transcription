@@ -29,8 +29,15 @@ Audio -> [context window] -> Whisper -> [7 detectors] -> [LLM repair] -> [scorin
 | `phantom_subtitle` | Coherent text unrelated to context | Jaccard distance to neighbor vocabulary |
 | `language_switch` | French transcript turns English | Language tag + function-word markers |
 | `completeness` | Sections silently dropped | Coverage ratio + words-per-minute |
+| `degenerate_output` | One word thousands of times | Dominant-word share + repeated block, refrains allowed |
+| `prompt_echo` (with the prompt) | The vocabulary prompt returned instead of the audio | Share of content words found in the prompt |
+| `reference_deficit` (opt-in) | One chunk far shorter than a second transcript | Words per chunk of audio, tags stripped |
 
-Mode 7 is the most dangerous: every other hallucination produces visible garbage. This one produces nothing — and nothing looks correct.
+Silent loss is the most dangerous family: every other hallucination produces visible garbage, these produce a shorter draft that reads fine. When a chunk is caught, `repair.retranscribe` re-transcribes **that chunk only** — without the prompt first, then with it, then in shorter pieces — and refuses any attempt that is itself broken ([ADR 0006](adr/0006-repair-the-chunk-not-the-file.md)).
+
+```bash
+PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/prompt_echo.json --format table
+```
 
 Full catalog with symptoms and causes: [docs/failure-modes.md](../docs/failure-modes.md)
 
@@ -92,6 +99,7 @@ Why two models instead of a fine-tune? Where does the human stay? Why determinis
 - [0003 — Deterministic before probabilistic](../docs/adr/0003-deterministic-before-probabilistic.md)
 - [0004 — Repair must not make things worse](../docs/adr/0004-anti-aggravation-guard.md)
 - [0005 — Detection is not enough: stop starving the model](../docs/adr/0005-context-window-for-short-segments.md) (no-cut and minimum-spacing variants tried and refused)
+- [0006 — Repair the broken chunk, never fall back on the whole file](../docs/adr/0006-repair-the-chunk-not-the-file.md) (three guards that were all looking downstream of the loss)
 
 Every figure behind those decisions was read against a control run. [Measurement pitfalls](measurement-pitfalls.md) lists the five traps that produced wrong conclusions before they were caught, starting with the fact that Whisper is not deterministic.
 

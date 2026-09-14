@@ -13,19 +13,23 @@ Audio File + cut points
 TranscriptResult (segments + timestamps + confidence)
     |
     v
-[Detectors] ── 7 independent, deterministic, parallel
+[Detectors] ── independent, deterministic, parallel
     |              repetition_loop
     |              silence_hallucination
-    |              prompt_echo
+    |              prompt_echo (markers + vocabulary echo)
     |              temporal_drift
     |              phantom_subtitle
     |              language_switch
     |              completeness
+    |              degenerate_output
+    |              reference_deficit (opt-in, needs a second transcript)
     v
 HallucinationFlags (severity + evidence)
     |
     |── no critical flags ──> PASS (auto-deliver)
     |
+    |── echo / loop / deficit on a chunk ──> [Targeted re-transcription]
+    |                                          that chunk only: no prompt, prompt, split
     v
 [LLM Repair] ── Claude, structured output, anti-aggravation guard
     |
@@ -47,6 +51,7 @@ See `docs/adr/` for the reasoning behind each.
 3. Deterministic detection before probabilistic repair (ADR 0003)
 4. Repair pass must not make things worse (ADR 0004)
 5. Detection is not enough — stop starving the model (ADR 0005)
+6. Repair the broken chunk, never fall back on the whole file (ADR 0006)
 
 ## Integration
 

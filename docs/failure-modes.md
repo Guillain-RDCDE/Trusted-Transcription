@@ -11,6 +11,14 @@ How an ASR pipeline silently produces confident garbage, and the control that ca
 | 5 | Phantom Subtitle | Coherent text unrelated to context | `phantom_subtitle.py` | High |
 | 6 | Language Switch | French transcript switches to English | `language_switch.py` | Medium |
 | 7 | Completeness Failure | Sections silently missing, no error | `completeness.py` | Critical |
+| 8 | Degenerate Output | One word thousands of times, one sentence hundreds | `loop_guard.py` | High |
+| 9 | Vocabulary Echo | The engine returns its vocabulary prompt instead of the audio | `prompt_echo.py` | Critical |
+| 10 | Chunk Deficit | One chunk far shorter than a second transcript of the same minutes | `reference_deficit.py` | Critical |
+
+Modes 9 and 10 are the two faces of the same incident ([ADR 0006](adr/0006-repair-the-chunk-not-the-file.md)):
+mode 9 needs only the prompt, mode 10 needs a second transcript. Mode 8 differs from mode 1 in scale —
+a local stutter versus a text that is a loop as a whole — and in the calibration that keeps
+ritual formulas out of it.
 
 ## Root cause you control: starved segments
 
@@ -32,4 +40,4 @@ See [ADR 0005](adr/0005-context-window-for-short-segments.md) and
 
 ## Key insight
 
-Modes 1-6 produce visible garbage a reviewer can spot. Mode 7 produces nothing. Nothing looks correct. That makes completeness failure the most dangerous mode in production.
+Modes 1-6 and 8 produce visible garbage a reviewer can spot. Modes 7, 9 and 10 produce *less* — a shorter draft that reads fine. Nothing looks correct. That makes silent loss the most dangerous family in production, and the reason two of its detectors work on the raw engine output rather than after repair.

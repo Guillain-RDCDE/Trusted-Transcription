@@ -86,6 +86,42 @@ def detect(transcript_json, fmt):
 
 
 @main.command()
+@click.argument("boundaries_json", type=click.Path(exists=True))
+@click.option("--threshold", default=10.0, show_default=True,
+              help="Segments shorter than this (seconds) get context")
+@click.option("--context", "context_s", default=10.0, show_default=True,
+              help="Seconds of audio added on each side")
+@click.option("--format", "fmt", type=click.Choice(["json", "table"]), default="table")
+def windows(boundaries_json, threshold, context_s, fmt):
+    """Show what the model will hear for each segment (ADR 0005).
+
+    BOUNDARIES_JSON holds {"audio_duration_sec": N, "boundaries": [[start, end], ...]}.
+    """
+    from trusted_transcription.prevention.context_window import ContextWindowPolicy
+
+    raw = json.loads(Path(boundaries_json).read_text(encoding="utf-8"))
+    boundaries = [(float(a), float(b)) for a, b in raw["boundaries"]]
+    duration = raw.get("audio_duration_sec")
+
+    policy = ContextWindowPolicy(short_threshold_s=threshold, context_s=context_s)
+    plan = policy.plan(boundaries, duration)
+
+    if fmt == "json":
+        click.echo(json.dumps([w.__dict__ | {"padded": w.padded} for w in plan], indent=2))
+    else:
+        click.echo(f"{'SEG':>4}  {'SEGMENT':<17}  {'MODEL HEARS':<17}  CONTEXT")
+        click.echo("-" * 60)
+        for w in plan:
+            heard = f"{w.padded_start:6.1f}-{w.padded_end:6.1f}"
+            seg = f"{w.start:6.1f}-{w.end:6.1f}"
+            mark = f"+{w.padded_duration - w.duration:.1f}s" if w.padded else "-"
+            click.echo(f"{w.segment_index:>4}  {seg:<17}  {heard:<17}  {mark}")
+
+    padded = sum(1 for w in plan if w.padded)
+    click.echo(f"\nContext window: {padded} short segment(s) out of {len(plan)}", err=True)
+
+
+@main.command()
 @click.argument("audio_duration_min", type=float)
 @click.option("--hall-rate", default=0.05, help="Expected hallucination rate (0-1)")
 def cost(audio_duration_min, hall_rate):

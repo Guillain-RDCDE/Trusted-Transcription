@@ -1,0 +1,17 @@
+{
+  "description": "Segment boundaries of a dictated inspection report, cut at every photo timestamp. Room names are dictated in bursts of one or two seconds between photos: these are the slices Whisper hallucinates on.",
+  "audio_duration_sec": 96.0,
+  "boundaries": [
+    [0.0, 14.8],
+    [14.8, 26.9],
+    [26.9, 28.4],
+    [28.4, 35.0],
+    [35.0, 36.4],
+    [36.4, 38.2],
+    [38.2, 51.7],
+    [51.7, 53.1],
+    [53.1, 71.0],
+    [71.0, 72.6],
+    [72.6, 96.0]
+  ]
+}

@@ -12,6 +12,18 @@ How an ASR pipeline silently produces confident garbage, and the control that ca
 | 6 | Language Switch | French transcript switches to English | `language_switch.py` | Medium |
 | 7 | Completeness Failure | Sections silently missing, no error | `completeness.py` | Critical |
 
+## Root cause you control: starved segments
+
+Modes 2 and 5 are mostly not a property of the model. They are a
+property of **what you feed it**. A pipeline that cuts audio at its
+own reference points (photo timestamps, speaker turns, chapter marks)
+produces slices of a few seconds with no context, and those slices
+hallucinate at a rate an order of magnitude above the rest. The
+remedy is upstream of every detector: give the model more audio than
+the segment and keep only the words that belong to it.
+See [ADR 0005](adr/0005-context-window-for-short-segments.md) and
+`trusted_transcription.prevention.context_window`.
+
 ## Not yet automated
 
 - **Synonym substitution**: rare correct word replaced by common alternative. Needs domain vocabulary.

@@ -8,6 +8,12 @@ audio with background noise or music.
 Detection: sliding window over segments. If an n-gram (3+ words)
 repeats more than `max_repeats` times within `window_segments`
 consecutive segments, flag the entire run.
+
+Formal dictation repeats ritual formulas on purpose — once per room,
+per occupant, per exhibit ("I state my name, first name and capacity").
+Pass them as ``ignore_phrases`` so that a legitimate refrain is not
+reported as a loop. For output that is degenerate as a whole (one word
+thousands of times), see ``loop_guard.py``.
 """
 
 from __future__ import annotations
@@ -29,10 +35,16 @@ class RepetitionLoopDetector:
         ngram_size: int = 3,
         max_repeats: int = 3,
         window_segments: int = 10,
+        ignore_phrases: list[str] | None = None,
     ):
         self.ngram_size = ngram_size
         self.max_repeats = max_repeats
         self.window_segments = window_segments
+        self.ignore_phrases = [" ".join(p.lower().split()) for p in (ignore_phrases or [])]
+
+    def _ignored(self, gram: tuple[str, ...]) -> bool:
+        joined = " ".join(gram)
+        return any(joined in phrase for phrase in self.ignore_phrases)
 
     def detect(self, transcript: TranscriptResult) -> list[HallucinationFlag]:
         flags: list[HallucinationFlag] = []
@@ -54,7 +66,7 @@ class RepetitionLoopDetector:
                         ngram_first_seg[gram] = win_start + seg_offset
 
             for gram, count in ngram_counts.items():
-                if count >= self.max_repeats:
+                if count >= self.max_repeats and not self._ignored(gram):
                     first_seg_idx = ngram_first_seg[gram]
                     if not any(
                         f.detector == self.name and f.segment_index == first_seg_idx

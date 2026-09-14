@@ -1,0 +1,14 @@
+{
+  "segments": [
+    {"start": 0.0, "end": 9.4, "text": "Nous sommes au deuxieme etage, porte gauche, en presence de la locataire."},
+    {"start": 9.4, "end": 21.0, "text": "L'entree presente un sol en carrelage en bon etat, les murs sont peints en blanc."},
+    {"start": 21.0, "end": 33.8, "text": "Constat huissier. Plinthes plafond cloison murs huisseries chassis vantaux linteau ebrasement carrelage faience robinetterie ballon chauffe-eau tableau electrique disjoncteur."},
+    {"start": 33.8, "end": 47.2, "text": "La cuisine est equipee d'un evier deux bacs, la robinetterie fonctionne normalement."}
+  ],
+  "metadata": {
+    "audio_duration_sec": 50.0,
+    "model": "whisper-1",
+    "language": "fr",
+    "initial_prompt": "Constat huissier. Plinthes plafond cloison murs huisseries chassis vantaux linteau ebrasement carrelage faience robinetterie ballon chauffe-eau tableau electrique disjoncteur radiateur convecteur VMC"
+  }
+}

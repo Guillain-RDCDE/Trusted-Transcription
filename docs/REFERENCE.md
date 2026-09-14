@@ -7,8 +7,10 @@
 ## How it works
 
 ```
-Audio -> Whisper -> [7 detectors] -> [LLM repair] -> [scoring] -> Trusted transcript
+Audio -> [context window] -> Whisper -> [7 detectors] -> [LLM repair] -> [scoring] -> Trusted transcript
 ```
+
+**Prevention comes first.** Most phantom phrases are not the model's fault: they appear on segments the pipeline itself starved — a few seconds cut at a photo timestamp, with no context. The context window gives the model more audio than the segment and keeps only the words that belong to it. Boundaries never move. In production this removed almost all phantom phrases at once ([ADR 0005](adr/0005-context-window-for-short-segments.md)).
 
 **Detection is deterministic.** No LLM in the loop until a flag fires. The 7 detectors are regex, arithmetic, and statistics — they run in 0.06 seconds, cost nothing, and never hallucinate themselves.
 
@@ -31,6 +33,32 @@ Audio -> Whisper -> [7 detectors] -> [LLM repair] -> [scoring] -> Trusted transc
 Mode 7 is the most dangerous: every other hallucination produces visible garbage. This one produces nothing — and nothing looks correct.
 
 Full catalog with symptoms and causes: [docs/failure-modes.md](../docs/failure-modes.md)
+
+## The context window — see what the model will hear
+
+```bash
+PYTHONPATH=src python -m trusted_transcription.cli windows corpus/sample/forced_cuts.json
+```
+
+```
+ SEG  SEGMENT            MODEL HEARS        CONTEXT
+------------------------------------------------------------
+   0     0.0-  14.8         0.0-  14.8      -
+   1    14.8-  26.9        14.8-  26.9      -
+   2    26.9-  28.4        16.9-  38.4      +20.0s
+   3    28.4-  35.0        18.4-  45.0      +20.0s
+```
+
+From Python, hand it your cut points and any engine that returns word timestamps:
+
+```python
+from trusted_transcription.prevention.context_window import transcribe_with_context
+
+segments, report = transcribe_with_context(boundaries, transcribe_fn, audio_duration_s)
+# report.padded_segments, report.fallbacks_empty, report.fallbacks_desync
+```
+
+Decode the padded window **without** anti-repetition penalties — `decoding_overrides(window)` returns what to override, and ADR 0005 explains the trap.
 
 ## MCP server — for AI agents
 
@@ -63,16 +91,18 @@ Why two models instead of a fine-tune? Where does the human stay? Why determinis
 - [0002 — Human in the loop](../docs/adr/0002-human-in-the-loop.md)
 - [0003 — Deterministic before probabilistic](../docs/adr/0003-deterministic-before-probabilistic.md)
 - [0004 — Repair must not make things worse](../docs/adr/0004-anti-aggravation-guard.md)
+- [0005 — Detection is not enough: stop starving the model](../docs/adr/0005-context-window-for-short-segments.md) (no-cut and minimum-spacing variants tried and refused)
+
+Every figure behind those decisions was read against a control run. [Measurement pitfalls](measurement-pitfalls.md) lists the five traps that produced wrong conclusions before they were caught, starting with the fact that Whisper is not deterministic.
 
 ## Tests
 
 ```bash
 pip install pytest
 PYTHONPATH=src python -m pytest tests/ -v
-# 13 passed in 0.06s
 ```
 
-No API calls, no audio files. Pure logic on synthetic transcripts.
+No API calls, no audio files. Pure logic on synthetic transcripts and a ground-truth word timeline.
 
 ## Background
 

@@ -20,6 +20,8 @@ from trusted_transcription.detectors.temporal_drift import TemporalDriftDetector
 from trusted_transcription.detectors.phantom_subtitle import PhantomSubtitleDetector
 from trusted_transcription.detectors.language_switch import LanguageSwitchDetector
 from trusted_transcription.detectors.completeness import CompletenessDetector
+from trusted_transcription.detectors.loop_guard import DegenerateOutputDetector
+from trusted_transcription.detectors.reference_deficit import ReferenceDeficitDetector
 
 ALL_DETECTORS: list[Detector] = [
     RepetitionLoopDetector(),
@@ -29,4 +31,9 @@ ALL_DETECTORS: list[Detector] = [
     PhantomSubtitleDetector(),
     LanguageSwitchDetector(),
     CompletenessDetector(),
+    DegenerateOutputDetector(),
 ]
+
+# ReferenceDeficitDetector needs a second transcript of the same audio
+# and is therefore not in the default list; construct it with one.
+__all__ = ["ALL_DETECTORS", "Detector", "ReferenceDeficitDetector"]

@@ -1,7 +1,10 @@
 # Architecture
 
 ```
-Audio File
+Audio File + cut points
+    |
+    v
+[Context window] ── short segments get audio context, boundaries unchanged
     |
     v
 [Whisper API / faster-whisper]
@@ -43,11 +46,12 @@ See `docs/adr/` for the reasoning behind each.
 2. Human stays in the loop on critical flags and declined repairs (ADR 0002)
 3. Deterministic detection before probabilistic repair (ADR 0003)
 4. Repair pass must not make things worse (ADR 0004)
+5. Detection is not enough — stop starving the model (ADR 0005)
 
 ## Integration
 
 The pipeline is exposed three ways:
 
-- **CLI** (`tt run`, `tt detect`, `tt cost`) for operators
+- **CLI** (`tt run`, `tt detect`, `tt windows`, `tt cost`) for operators
 - **Python API** (`Pipeline().run(audio_path)`) for embedding
 - **MCP server** (`tt-mcp`) for AI agent orchestration

@@ -42,10 +42,26 @@ PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/clean_tr
 # No hallucinations detected.
 ```
 
+## Better: stop the lies before they exist
+
+Most of those phantom phrases are not the model's fault. They appear on segments
+*your pipeline* starved — a few seconds cut at a photo timestamp or a speaker
+turn, with no context. Give the model more audio than the segment and keep only
+the words that belong to it:
+
+```bash
+PYTHONPATH=src python -m trusted_transcription.cli windows corpus/sample/forced_cuts.json
+```
+
+Boundaries never move. In production this removed almost all phantom phrases at
+once. [ADR 0005](docs/adr/0005-context-window-for-short-segments.md) has the
+measurements — and the two variants that looked better and were refused.
+
 ## More
 
-**[Reference](docs/REFERENCE.md)** — how it works, the seven detectors, the MCP
-server, cost estimation, the architecture decisions, and where this came from.
+**[Reference](docs/REFERENCE.md)** — how it works, the context window, the seven
+detectors, the MCP server, cost estimation, the architecture decisions, the
+measurement pitfalls, and where this came from.
 
 ## License
 

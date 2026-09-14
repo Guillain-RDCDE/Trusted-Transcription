@@ -15,4 +15,5 @@ jobs:
       - run: PYTHONPATH=src python -m pytest tests/ -v
       - run: PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/silence_hallucination.json --format table
       - run: PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/clean_transcript.json --format table
+      - run: PYTHONPATH=src python -m trusted_transcription.cli windows corpus/sample/forced_cuts.json --format table
       - run: PYTHONPATH=src python -m trusted_transcription.cli cost 60

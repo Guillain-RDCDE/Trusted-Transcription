@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.3.0 — 2026-09-14
+
+### Added
+- **Vocabulary echo** in `prompt_echo`: give the detector the engine's
+  `initial_prompt` (or put it in `metadata["initial_prompt"]`) and a
+  segment whose content words are mostly prompt words is flagged. No
+  reference needed.
+- **Degenerate output** (`detectors/loop_guard.py`): one word dominating
+  the text or a block of fifteen words repeated a dozen times. Thresholds
+  calibrated so that ritual formulas repeated once per room stay out;
+  `allowed_phrases` lists known refrains. `is_degenerate` is reused by
+  the repair.
+- **Reference deficit** (`detectors/reference_deficit.py`, opt-in): word
+  count per chunk of audio against a second transcript, inline tags
+  stripped from the reference.
+- **Targeted re-transcription** (`repair/retranscribe.py`): re-transcribe
+  the broken chunk only — without the prompt, with it, then split — and
+  refuse any attempt that is itself empty, degenerate, an echo or far
+  too short.
+- `ignore_phrases` on `repetition_loop` for legitimate refrains.
+- ADR 0006 — Repair the broken chunk, never fall back on the whole file.
+- `corpus/sample/prompt_echo.json`, smoke-tested in CI.
+
 ## 0.2.0 — 2026-09-14
 
 ### Added

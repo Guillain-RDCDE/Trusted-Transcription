@@ -14,10 +14,10 @@ Design principles:
 from __future__ import annotations
 
 import json
-import time
-from typing import Optional
+from typing import TYPE_CHECKING
 
-from anthropic import Anthropic
+if TYPE_CHECKING:  # the SDK is only needed when a real client is built
+    from anthropic import Anthropic
 
 from trusted_transcription.models import (
     HallucinationFlag,
@@ -54,11 +54,15 @@ class LLMRepairer:
         self,
         model: str = "claude-sonnet-4-20250514",
         max_retries: int = MAX_RETRIES,
-        client: Optional[Anthropic] = None,
+        client: Anthropic | None = None,
     ):
         self.model = model
         self.max_retries = max_retries
-        self.client = client or Anthropic()
+        if client is None:
+            from anthropic import Anthropic
+
+            client = Anthropic()
+        self.client = client
 
     def repair(
         self,
@@ -76,14 +80,12 @@ class LLMRepairer:
 
         for attempt in range(self.max_retries):
             try:
-                start = time.monotonic()
                 response = self.client.messages.create(
                     model=self.model,
                     max_tokens=4096,
                     system=REPAIR_SYSTEM,
                     messages=[{"role": "user", "content": context}],
                 )
-                elapsed = time.monotonic() - start
 
                 text = response.content[0].text
                 actions = self._parse_response(text, critical_flags)
@@ -113,8 +115,6 @@ class LLMRepairer:
         flags: list[HallucinationFlag],
     ) -> str:
         parts = ["Flagged segments for review:\n"]
-
-        flagged_indices = {f.segment_index for f in flags}
 
         for flag in flags:
             idx = flag.segment_index

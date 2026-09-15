@@ -40,6 +40,13 @@ Three guardrails on the repair pass:
 - **Ensemble voting**: run 3 repair attempts, keep the majority.
   Tripled cost for marginal improvement (concordance was >90%).
 
+## Made measurable later
+[ADR 0007](0007-completeness-of-the-repair.md) turns "must not make
+things worse" into two invariants enforced on every correction: no
+net loss of a passage (word-level, per divergent zone), and never
+more than `1.15 × source + 8` words. The pipeline refuses any
+replacement that breaks the second one.
+
 ## Consequences
 - Some fixable segments are left unfixed (false `keep`). These route
   to human review, which is the correct fallback.

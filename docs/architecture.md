@@ -32,6 +32,8 @@ HallucinationFlags (severity + evidence)
     |                                          that chunk only: no prompt, prompt, split
     v
 [LLM Repair] ── Claude, structured output, anti-aggravation guard
+    |              completeness guard: no net loss, never more than source + margin,
+    |              retry then split in two, bounded at every level
     |
     |── declined ──> route to human review
     |── repaired ──> apply + re-score
@@ -52,6 +54,7 @@ See `docs/adr/` for the reasoning behind each.
 4. Repair pass must not make things worse (ADR 0004)
 5. Detection is not enough — stop starving the model (ADR 0005)
 6. Repair the broken chunk, never fall back on the whole file (ADR 0006)
+7. The repair never returns less than the source, nor much more (ADR 0007)
 
 ## Integration
 

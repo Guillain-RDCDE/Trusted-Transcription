@@ -16,6 +16,8 @@ Audio -> [context window] -> Whisper -> [7 detectors] -> [LLM repair] -> [scorin
 
 **Repair is constrained.** The LLM (Claude) gets structured output only, a confidence threshold at 0.7, and explicit permission to say "I don't touch this." Unconstrained repair makes things worse 23% of the time ([ADR 0004](../docs/adr/0004-anti-aggravation-guard.md) documents the experiment).
 
+**Repair is complete, and bounded.** The correction stage can swallow a whole paragraph — tags still add up, the draft reads fine — or lengthen the text until the end repeats. `repair.completeness_guard` compares what the model was sent with what it returned: net loss per divergent zone, and never more than a small margin over the source. Lost passage: retry, then split in two and correct each half, recursively; at the floor keep the correction and record the loss ([ADR 0007](adr/0007-completeness-of-the-repair.md)).
+
 **The human stays in the loop** on critical flags the LLM can't resolve. ~70% of transcriptions pass unattended; the rest route to review with the exact segments highlighted.
 
 ## The 7 detectors
@@ -100,6 +102,7 @@ Why two models instead of a fine-tune? Where does the human stay? Why determinis
 - [0004 — Repair must not make things worse](../docs/adr/0004-anti-aggravation-guard.md)
 - [0005 — Detection is not enough: stop starving the model](../docs/adr/0005-context-window-for-short-segments.md) (no-cut and minimum-spacing variants tried and refused)
 - [0006 — Repair the broken chunk, never fall back on the whole file](../docs/adr/0006-repair-the-chunk-not-the-file.md) (three guards that were all looking downstream of the loss)
+- [0007 — The repair never returns less than the source, nor much more](../docs/adr/0007-completeness-of-the-repair.md) (two detectors thrown away, and a prompt that deleted the head of every retry)
 
 Every figure behind those decisions was read against a control run. [Measurement pitfalls](measurement-pitfalls.md) lists the five traps that produced wrong conclusions before they were caught, starting with the fact that Whisper is not deterministic.
 

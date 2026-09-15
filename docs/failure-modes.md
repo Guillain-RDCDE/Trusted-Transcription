@@ -14,6 +14,11 @@ How an ASR pipeline silently produces confident garbage, and the control that ca
 | 8 | Degenerate Output | One word thousands of times, one sentence hundreds | `loop_guard.py` | High |
 | 9 | Vocabulary Echo | The engine returns its vocabulary prompt instead of the audio | `prompt_echo.py` | Critical |
 | 10 | Chunk Deficit | One chunk far shorter than a second transcript of the same minutes | `reference_deficit.py` | Critical |
+| 11 | Swallowed Passage | The *repair* drops a whole paragraph; tags still add up | `repair/completeness_guard.py` | Critical |
+| 12 | Over-production | The *repair* lengthens the text; retries stack until the end repeats | `repair/completeness_guard.py` | High |
+
+Modes 11 and 12 are failures of the correction stage, not of the engine ([ADR 0007](adr/0007-completeness-of-the-repair.md)).
+They are caught by comparing what the model was sent with what it returned — the only pair that means anything.
 
 Modes 9 and 10 are the two faces of the same incident ([ADR 0006](adr/0006-repair-the-chunk-not-the-file.md)):
 mode 9 needs only the prompt, mode 10 needs a second transcript. Mode 8 differs from mode 1 in scale —
@@ -40,4 +45,4 @@ See [ADR 0005](adr/0005-context-window-for-short-segments.md) and
 
 ## Key insight
 
-Modes 1-6 and 8 produce visible garbage a reviewer can spot. Modes 7, 9 and 10 produce *less* — a shorter draft that reads fine. Nothing looks correct. That makes silent loss the most dangerous family in production, and the reason two of its detectors work on the raw engine output rather than after repair.
+Modes 1-6, 8 and 12 produce visible garbage a reviewer can spot. Modes 7, 9, 10 and 11 produce *less* — a shorter draft that reads fine. Nothing looks correct. That makes silent loss the most dangerous family in production, and the reason two of its detectors work on the raw engine output rather than after repair.

@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import time
 from pathlib import Path
-from typing import Optional
 
 from trusted_transcription.detectors import ALL_DETECTORS, Detector
 from trusted_transcription.models import (
@@ -17,6 +16,7 @@ from trusted_transcription.models import (
     Segment,
     TranscriptResult,
 )
+from trusted_transcription.repair.completeness_guard import overproduces
 from trusted_transcription.repair.llm_repair import LLMRepairer
 from trusted_transcription.scoring import compute_scores
 
@@ -24,8 +24,8 @@ from trusted_transcription.scoring import compute_scores
 class Pipeline:
     def __init__(
         self,
-        detectors: Optional[list[Detector]] = None,
-        repairer: Optional[LLMRepairer] = None,
+        detectors: list[Detector] | None = None,
+        repairer: LLMRepairer | None = None,
         whisper_model: str = "whisper-1",
         language: str = "fr",
         repair_enabled: bool = True,
@@ -39,7 +39,7 @@ class Pipeline:
     def run(
         self,
         audio_path: str | Path,
-        reference_text: Optional[str] = None,
+        reference_text: str | None = None,
     ) -> PipelineReport:
         start = time.monotonic()
         total_cost = 0.0
@@ -130,6 +130,10 @@ class Pipeline:
             if action.action == "delete":
                 delete_indices.add(idx)
             elif action.action == "replace" and action.confidence >= 0.7:
+                # ADR 0004, made measurable by ADR 0007: a replacement
+                # never has more words than the source can justify.
+                if overproduces(segments[idx].text, action.repaired_text):
+                    continue
                 segments[idx] = segments[idx].model_copy(
                     update={"text": action.repaired_text}
                 )

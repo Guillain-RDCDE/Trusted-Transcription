@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.4.0 — 2026-09-15
+
+### Added
+- **Completeness guard** (`repair/completeness_guard.py`): word-level
+  net loss per divergent zone (`lost_passage`), over-production bound
+  `1.15 × source + 8` (`overproduces`), and `guarded_repair` — retry
+  with a reinforced instruction, then split in two and correct each
+  half, recursively, bounded at every level; at the floor keep the
+  correction and count the loss as irreducible.
+- The pipeline refuses any replacement proposed by the repair stage
+  that breaks the over-production bound.
+- ADR 0007 — The repair never returns less than the source, nor much
+  more. ADR 0004 now points to the two numbers.
+
+### Changed
+- The LLM SDK is imported only when a real client is built: the
+  detectors, the guards and the pipeline logic import without it.
+
 ## 0.3.0 — 2026-09-14
 
 ### Added

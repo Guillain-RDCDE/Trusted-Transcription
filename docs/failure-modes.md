@@ -17,7 +17,10 @@ How an ASR pipeline silently produces confident garbage, and the control that ca
 | 11 | Swallowed Passage | The *repair* drops a whole paragraph; tags still add up | `repair/completeness_guard.py` | Critical |
 | 12 | Over-production | The *repair* lengthens the text; retries stack until the end repeats | `repair/completeness_guard.py` | High |
 
+| 13 | Silent Skip | A file refused for its size before the chunking could apply; no second pass, no error | `prevention/chunking.py` | Critical |
+
 Modes 11 and 12 are failures of the correction stage, not of the engine ([ADR 0007](adr/0007-completeness-of-the-repair.md)).
+Mode 13 is a failure of plumbing ([ADR 0008](adr/0008-cap-the-chunk-not-the-file.md)): the cap belongs on the chunk, and the proof that nothing was lost is the sum of the chunk durations.
 They are caught by comparing what the model was sent with what it returned — the only pair that means anything.
 
 Modes 9 and 10 are the two faces of the same incident ([ADR 0006](adr/0006-repair-the-chunk-not-the-file.md)):
@@ -45,4 +48,4 @@ See [ADR 0005](adr/0005-context-window-for-short-segments.md) and
 
 ## Key insight
 
-Modes 1-6, 8 and 12 produce visible garbage a reviewer can spot. Modes 7, 9, 10 and 11 produce *less* — a shorter draft that reads fine. Nothing looks correct. That makes silent loss the most dangerous family in production, and the reason two of its detectors work on the raw engine output rather than after repair.
+Modes 1-6, 8 and 12 produce visible garbage a reviewer can spot. Modes 7, 9, 10, 11 and 13 produce *less* — a shorter draft that reads fine, or a draft that never got its second pass. Nothing looks correct. That makes silent loss the most dangerous family in production, and the reason two of its detectors work on the raw engine output rather than after repair.

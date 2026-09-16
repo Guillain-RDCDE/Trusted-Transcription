@@ -4,6 +4,9 @@
 Audio File + cut points
     |
     v
+[Chunking] ── nine-minute stream-copied chunks, cap on the chunk not the file,
+    |          durations sum to the source, a failed chunk stays visible
+    v
 [Context window] ── short segments get audio context, boundaries unchanged
     |
     v
@@ -55,11 +58,12 @@ See `docs/adr/` for the reasoning behind each.
 5. Detection is not enough — stop starving the model (ADR 0005)
 6. Repair the broken chunk, never fall back on the whole file (ADR 0006)
 7. The repair never returns less than the source, nor much more (ADR 0007)
+8. Cap the chunk, never the file (ADR 0008)
 
 ## Integration
 
 The pipeline is exposed three ways:
 
-- **CLI** (`tt run`, `tt detect`, `tt windows`, `tt cost`) for operators
+- **CLI** (`tt run`, `tt detect`, `tt windows`, `tt chunks`, `tt cost`) for operators
 - **Python API** (`Pipeline().run(audio_path)`) for embedding
 - **MCP server** (`tt-mcp`) for AI agent orchestration

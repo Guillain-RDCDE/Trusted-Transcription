@@ -69,6 +69,14 @@ segments, report = transcribe_with_context(boundaries, transcribe_fn, audio_dura
 
 Decode the padded window **without** anti-repetition penalties — `decoding_overrides(window)` returns what to override, and ADR 0005 explains the trap.
 
+## Long files — cap the chunk, never the file
+
+```bash
+PYTHONPATH=src python -m trusted_transcription.cli chunks 3468.636 --bitrate 320
+```
+
+Plans nine-minute stream-copied chunks, marks the ones that must be re-cut and re-encoded to fit under the upload limit, refuses (visibly) the ones that cannot, and prints the proof that nothing was lost: the chunk durations sum to the source, to the millisecond. `transcribe_in_chunks` records a failed chunk with its error instead of swallowing it ([ADR 0008](adr/0008-cap-the-chunk-not-the-file.md)).
+
 ## MCP server — for AI agents
 
 ```bash
@@ -103,6 +111,7 @@ Why two models instead of a fine-tune? Where does the human stay? Why determinis
 - [0005 — Detection is not enough: stop starving the model](../docs/adr/0005-context-window-for-short-segments.md) (no-cut and minimum-spacing variants tried and refused)
 - [0006 — Repair the broken chunk, never fall back on the whole file](../docs/adr/0006-repair-the-chunk-not-the-file.md) (three guards that were all looking downstream of the loss)
 - [0007 — The repair never returns less than the source, nor much more](../docs/adr/0007-completeness-of-the-repair.md) (two detectors thrown away, and a prompt that deleted the head of every retry)
+- [0008 — Cap the chunk, never the file](../docs/adr/0008-cap-the-chunk-not-the-file.md) (a guard older than the chunking below it silently dropped the longest dictations for a month)
 
 Every figure behind those decisions was read against a control run. [Measurement pitfalls](measurement-pitfalls.md) lists the five traps that produced wrong conclusions before they were caught, starting with the fact that Whisper is not deterministic.
 

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.5.0 — 2026-09-16
+
+### Added
+- **Chunking for long audio** (`prevention/chunking.py`): nine-minute
+  stream-copied chunks with the cap on the chunk, never the file;
+  `plan_upload` marks chunks to re-cut and re-encode and refuses the
+  ones that cannot fit; `coverage_error` proves the chunk durations
+  sum to the source; `transcribe_in_chunks` records a failed chunk with
+  its error instead of swallowing it; ffmpeg/ffprobe command builders.
+- `tt chunks <duration> --bitrate <kb/s>`: the upload plan and the
+  coverage proof, smoke-tested in CI on the one-hour file from ADR 0008.
+- ADR 0008 — Cap the chunk, never the file.
+
 ## 0.4.0 — 2026-09-15
 
 ### Added

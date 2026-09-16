@@ -10,7 +10,6 @@ import click
 
 from trusted_transcription.detectors import ALL_DETECTORS
 from trusted_transcription.models import TranscriptResult
-from trusted_transcription.scoring import compute_scores
 
 
 @click.group()
@@ -43,7 +42,7 @@ def run(audio_path, language, no_repair, reference, output):
     else:
         click.echo(report_json)
 
-    click.echo(f"\n--- Summary ---", err=True)
+    click.echo("\n--- Summary ---", err=True)
     click.echo(f"Segments: {report.scores.get('total_segments', 0)}", err=True)
     click.echo(f"Critical flags: {report.scores.get('critical_flags', 0)}", err=True)
     click.echo(f"Warning flags: {report.scores.get('warning_flags', 0)}", err=True)
@@ -119,6 +118,44 @@ def windows(boundaries_json, threshold, context_s, fmt):
 
     padded = sum(1 for w in plan if w.padded)
     click.echo(f"\nContext window: {padded} short segment(s) out of {len(plan)}", err=True)
+
+
+@main.command()
+@click.argument("duration_s", type=float)
+@click.option("--bitrate", default=320, show_default=True, help="Source bitrate in kb/s")
+@click.option("--chunk", "chunk_s", default=540.0, show_default=True, help="Chunk length (s)")
+@click.option("--limit-mb", default=24.0, show_default=True, help="Upload limit per chunk")
+def chunks(duration_s, bitrate, chunk_s, limit_mb):
+    """Plan the upload chunks for a long file and prove nothing is lost (ADR 0008)."""
+    from trusted_transcription.prevention.chunking import (
+        ChunkPolicy,
+        coverage_error,
+        estimated_bytes,
+        plan_upload,
+    )
+
+    policy = ChunkPolicy(chunk_s=chunk_s, limit_bytes=int(limit_mb * 1024 * 1024))
+    plan = plan_upload(duration_s, bitrate * 1000, policy)
+
+    click.echo(f"{'CHUNK':>5}  {'SPAN':<19}  {'EST. SIZE':>10}  ACTION")
+    click.echo("-" * 56)
+    for i, (a, b) in enumerate(plan.chunks):
+        size_mb = estimated_bytes(b - a, bitrate * 1000) / (1024 * 1024)
+        if i in plan.refused:
+            action = "refuse"
+        elif i in plan.reencode:
+            action = "re-cut + re-encode"
+        else:
+            action = "copy"
+        click.echo(f"{i:>5}  {a:8.3f}-{b:8.3f}  {size_mb:8.2f} MB  {action}")
+
+    total = sum(b - a for a, b in plan.chunks)
+    problem = coverage_error(plan.chunks, duration_s)
+    click.echo(f"\nSource {duration_s:.3f}s, chunks sum to {total:.3f}s: "
+               f"{'identical' if problem is None else problem}", err=True)
+    if not plan.ok:
+        click.echo("Some chunks cannot fit under the limit — fail visibly, never skip.", err=True)
+        sys.exit(1)
 
 
 @main.command()

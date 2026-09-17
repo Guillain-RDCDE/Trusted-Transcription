@@ -17,5 +17,6 @@ jobs:
       - run: PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/clean_transcript.json --format table
       - run: PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/prompt_echo.json --format table
       - run: PYTHONPATH=src python -m trusted_transcription.cli windows corpus/sample/forced_cuts.json --format table
+      - run: PYTHONPATH=src python -m trusted_transcription.cli spell corpus/sample/spellings.json
       - run: PYTHONPATH=src python -m trusted_transcription.cli chunks 3468.636 --bitrate 320
       - run: PYTHONPATH=src python -m trusted_transcription.cli cost 60

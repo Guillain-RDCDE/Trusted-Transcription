@@ -121,6 +121,30 @@ def windows(boundaries_json, threshold, context_s, fmt):
 
 
 @main.command()
+@click.argument("transcript_json", type=click.Path(exists=True))
+def spell(transcript_json):
+    """Apply the spelled-out pass (ADR 0009) and show what changed."""
+    from trusted_transcription.repair.spellings import apply_spellings
+
+    raw = Path(transcript_json).read_text(encoding="utf-8")
+    transcript = TranscriptResult.model_validate_json(raw)
+
+    changed = 0
+    for i, seg in enumerate(transcript.segments):
+        out, fixes = apply_spellings(seg.text)
+        for fix in fixes:
+            detail = fix.reason
+            if fix.action == "correct":
+                detail = f"{fix.dictated} -> {fix.replacement}"
+            click.echo(f"{i:>4}  {fix.action:<8}  {fix.spelling.word:<14}  {detail}")
+        if out != seg.text:
+            changed += 1
+            click.echo(f"      before: {seg.text}")
+            click.echo(f"      after:  {out}")
+    click.echo(f"\nSegments changed: {changed} of {len(transcript.segments)}", err=True)
+
+
+@main.command()
 @click.argument("duration_s", type=float)
 @click.option("--bitrate", default=320, show_default=True, help="Source bitrate in kb/s")
 @click.option("--chunk", "chunk_s", default=540.0, show_default=True, help="Chunk length (s)")

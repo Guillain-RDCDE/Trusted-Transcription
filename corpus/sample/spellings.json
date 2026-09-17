@@ -1,0 +1,13 @@
+{
+  "segments": [
+    {"start": 0.0, "end": 8.1, "text": "A la requete de la societe BARLET, V.A.R.L.E.T. au capital de dix mille euros."},
+    {"start": 8.1, "end": 15.4, "text": "Domiciliee a ATIES. A-T-H-I-E-S, 62223, representee par son gerant."},
+    {"start": 15.4, "end": 21.0, "text": "NOREVIE, N O R E V I E, en qualite de locataire."},
+    {"start": 21.0, "end": 27.6, "text": "Nous nous sommes rendus rue Jules-Guede, G-U-E-S-D-E, a Lille."}
+  ],
+  "metadata": {
+    "audio_duration_sec": 30.0,
+    "model": "whisper-1",
+    "language": "fr"
+  }
+}

@@ -26,6 +26,7 @@ TranscriptResult (segments + timestamps + confidence)
     |              completeness
     |              degenerate_output
     |              reference_deficit (opt-in, needs a second transcript)
+    |              spelled_out
     v
 HallucinationFlags (severity + evidence)
     |
@@ -33,6 +34,7 @@ HallucinationFlags (severity + evidence)
     |
     |── echo / loop / deficit on a chunk ──> [Targeted re-transcription]
     |                                          that chunk only: no prompt, prompt, split
+    |── spelled-out name ──> [Deterministic pass] the spelling overrides the word
     v
 [LLM Repair] ── Claude, structured output, anti-aggravation guard
     |              completeness guard: no net loss, never more than source + margin,
@@ -59,11 +61,12 @@ See `docs/adr/` for the reasoning behind each.
 6. Repair the broken chunk, never fall back on the whole file (ADR 0006)
 7. The repair never returns less than the source, nor much more (ADR 0007)
 8. Cap the chunk, never the file (ADR 0008)
+9. The spelling is authoritative (ADR 0009)
 
 ## Integration
 
 The pipeline is exposed three ways:
 
-- **CLI** (`tt run`, `tt detect`, `tt windows`, `tt chunks`, `tt cost`) for operators
+- **CLI** (`tt run`, `tt detect`, `tt spell`, `tt windows`, `tt chunks`, `tt cost`) for operators
 - **Python API** (`Pipeline().run(audio_path)`) for embedding
 - **MCP server** (`tt-mcp`) for AI agent orchestration

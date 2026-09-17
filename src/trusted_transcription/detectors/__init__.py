@@ -4,6 +4,16 @@ from __future__ import annotations
 
 from typing import Protocol
 
+from trusted_transcription.detectors.completeness import CompletenessDetector
+from trusted_transcription.detectors.language_switch import LanguageSwitchDetector
+from trusted_transcription.detectors.loop_guard import DegenerateOutputDetector
+from trusted_transcription.detectors.phantom_subtitle import PhantomSubtitleDetector
+from trusted_transcription.detectors.prompt_echo import PromptEchoDetector
+from trusted_transcription.detectors.reference_deficit import ReferenceDeficitDetector
+from trusted_transcription.detectors.repetition_loop import RepetitionLoopDetector
+from trusted_transcription.detectors.silence_hallucination import SilenceHallucinationDetector
+from trusted_transcription.detectors.spelled_out import SpelledOutDetector
+from trusted_transcription.detectors.temporal_drift import TemporalDriftDetector
 from trusted_transcription.models import HallucinationFlag, TranscriptResult
 
 
@@ -12,16 +22,6 @@ class Detector(Protocol):
 
     def detect(self, transcript: TranscriptResult) -> list[HallucinationFlag]: ...
 
-
-from trusted_transcription.detectors.repetition_loop import RepetitionLoopDetector
-from trusted_transcription.detectors.silence_hallucination import SilenceHallucinationDetector
-from trusted_transcription.detectors.prompt_echo import PromptEchoDetector
-from trusted_transcription.detectors.temporal_drift import TemporalDriftDetector
-from trusted_transcription.detectors.phantom_subtitle import PhantomSubtitleDetector
-from trusted_transcription.detectors.language_switch import LanguageSwitchDetector
-from trusted_transcription.detectors.completeness import CompletenessDetector
-from trusted_transcription.detectors.loop_guard import DegenerateOutputDetector
-from trusted_transcription.detectors.reference_deficit import ReferenceDeficitDetector
 
 ALL_DETECTORS: list[Detector] = [
     RepetitionLoopDetector(),
@@ -32,6 +32,7 @@ ALL_DETECTORS: list[Detector] = [
     LanguageSwitchDetector(),
     CompletenessDetector(),
     DegenerateOutputDetector(),
+    SpelledOutDetector(),
 ]
 
 # ReferenceDeficitDetector needs a second transcript of the same audio

@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.6.0 — 2026-09-17
+
+### Added
+- **Spelled-out pass** (`repair/spellings.py`): finds hyphenated,
+  dotted and spaced-capital sequences, rebuilds the word, corrects the
+  dictated word before it when they resemble each other, only erases
+  the letters when the word was already right, abstains otherwise.
+  Nine guardrails from real texts; `unchanged_vocabulary` checks the
+  no-invented-word invariant.
+- `spelled_out` detector in the default list, flagging every sequence
+  with the action the pass would take.
+- `tt spell <transcript.json>`: what changes and why, with a sample
+  transcript smoke-tested in CI.
+- ADR 0009 — The spelling is authoritative.
+
 ## 0.5.0 — 2026-09-16
 
 ### Added

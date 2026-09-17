@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trusted-transcription"
-version = "0.5.0"
+version = "0.6.0"
 description = "Catch confident lies in automatic transcription — hallucination detection, LLM repair, and quality scoring for production ASR pipelines."
 readme = "README.md"
 license = "MIT"

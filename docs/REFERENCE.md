@@ -35,6 +35,10 @@ Audio -> [context window] -> Whisper -> [7 detectors] -> [LLM repair] -> [scorin
 | `prompt_echo` (with the prompt) | The vocabulary prompt returned instead of the audio | Share of content words found in the prompt |
 | `reference_deficit` (opt-in) | One chunk far shorter than a second transcript | Words per chunk of audio, tags stripped |
 | `spelled_out` | A name spelled letter by letter next to the misheard word | Hyphen / dot / capital sequences, resemblance to the words before |
+| `script_drift` | One line mixing writing systems; the rest no longer follows the audio | Letters from another script inside a segment, span to regenerate |
+| `empty_output` | Minutes of audible speech, zero words | Words per minute over the whole file, hollow segments |
+
+`silence_hallucination` checks phantom phrases in English, French, German, Spanish, Italian and Portuguese by default — they follow the decoded language, not the expected one.
 
 Silent loss is the most dangerous family: every other hallucination produces visible garbage, these produce a shorter draft that reads fine. When a chunk is caught, `repair.retranscribe` re-transcribes **that chunk only** — without the prompt first, then with it, then in shorter pieces — and refuses any attempt that is itself broken ([ADR 0006](adr/0006-repair-the-chunk-not-the-file.md)).
 
@@ -122,6 +126,7 @@ Why two models instead of a fine-tune? Where does the human stay? Why determinis
 - [0007 — The repair never returns less than the source, nor much more](../docs/adr/0007-completeness-of-the-repair.md) (two detectors thrown away, and a prompt that deleted the head of every retry)
 - [0008 — Cap the chunk, never the file](../docs/adr/0008-cap-the-chunk-not-the-file.md) (a guard older than the chunking below it silently dropped the longest dictations for a month)
 - [0009 — The spelling is authoritative](../docs/adr/0009-the-spelling-is-authoritative.md) (nine guardrails, each from a text that broke, and the limit accepted on purpose)
+- [0010 — Regenerate from the drift point, keep what the human typed](../docs/adr/0010-regenerate-from-the-drift-point.md) (and two field lessons: re-encode before blaming the audio, phantom phrases follow the decoded language)
 
 Every figure behind those decisions was read against a control run. [Measurement pitfalls](measurement-pitfalls.md) lists the five traps that produced wrong conclusions before they were caught, starting with the fact that Whisper is not deterministic.
 

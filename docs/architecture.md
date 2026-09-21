@@ -27,6 +27,8 @@ TranscriptResult (segments + timestamps + confidence)
     |              degenerate_output
     |              reference_deficit (opt-in, needs a second transcript)
     |              spelled_out
+    |              script_drift
+    |              empty_output
     v
 HallucinationFlags (severity + evidence)
     |
@@ -62,6 +64,7 @@ See `docs/adr/` for the reasoning behind each.
 7. The repair never returns less than the source, nor much more (ADR 0007)
 8. Cap the chunk, never the file (ADR 0008)
 9. The spelling is authoritative (ADR 0009)
+10. Regenerate from the drift point, keep what the human typed (ADR 0010)
 
 ## Integration
 

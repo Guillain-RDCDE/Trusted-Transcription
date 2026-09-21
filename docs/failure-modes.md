@@ -19,9 +19,13 @@ How an ASR pipeline silently produces confident garbage, and the control that ca
 
 | 13 | Silent Skip | A file refused for its size before the chunking could apply; no second pass, no error | `prevention/chunking.py` | Critical |
 | 14 | Spelled-out Name | The speaker spelled a name because it was misheard; the draft keeps the wrong name *and* the letters | `spelled_out.py` + `repair/spellings.py` | Medium |
+| 15 | Script Drift | One line mixing writing systems on long audio; everything after it reads well and no longer follows the audio | `script_drift.py` | Critical |
+| 16 | Empty Output | Minutes of audible speech, a well-formed answer, zero words | `empty_output.py` + `prevention/reencode.py` | Critical |
 
 Modes 11 and 12 are failures of the correction stage, not of the engine ([ADR 0007](adr/0007-completeness-of-the-repair.md)).
 Mode 13 is a failure of plumbing ([ADR 0008](adr/0008-cap-the-chunk-not-the-file.md)): the cap belongs on the chunk, and the proof that nothing was lost is the sum of the chunk durations.
+Modes 15 and 16 come with a procedure rather than a rewrite ([ADR 0010](adr/0010-regenerate-from-the-drift-point.md)): regenerate from the drift point and keep what the human typed; re-encode before blaming the audio.
+Mode 2's phantom phrases are listed **per language** (`phantom_phrases.py`) and all checked by default, because they follow the decoded language, not the expected one.
 Mode 14 is the one case where the text itself tells you the engine was wrong ([ADR 0009](adr/0009-the-spelling-is-authoritative.md)): the spelling is authoritative, and the fix is deterministic.
 They are caught by comparing what the model was sent with what it returned — the only pair that means anything.
 

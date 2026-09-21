@@ -15,26 +15,16 @@ segment duration is disproportionately long relative to its word count
 
 from __future__ import annotations
 
-import re
-
+from trusted_transcription.detectors.phantom_phrases import match_phantom, patterns_for
 from trusted_transcription.models import (
     HallucinationFlag,
     Severity,
     TranscriptResult,
 )
 
-KNOWN_PHANTOM_PATTERNS = [
-    re.compile(r"(?i)thank\s+you\s+for\s+watching"),
-    re.compile(r"(?i)subscribe\s+to\s+(my|the)\s+channel"),
-    re.compile(r"(?i)sous[- ]titr[eé]s?\s+(par|r[eé]alis[eé]s)"),
-    re.compile(r"(?i)amara\.org"),
-    re.compile(r"(?i)thank\s+you\s+for\s+listening"),
-    re.compile(r"(?i)please\s+like\s+and\s+subscribe"),
-    re.compile(r"(?i)you$"),
-    re.compile(r"(?i)^\.+$"),
-    re.compile(r"(?i)^\s*\.\.\.\s*$"),
-    re.compile(r"(?i)merci d'avoir regard[eé]"),
-]
+# Kept for callers that imported the flat list; see phantom_phrases.py
+# for the per-language lists.
+KNOWN_PHANTOM_PATTERNS = patterns_for(None)
 
 MIN_WORDS_PER_SECOND = 0.3
 
@@ -46,9 +36,13 @@ class SilenceHallucinationDetector:
         self,
         energy_threshold: float = 0.01,
         min_wps: float = MIN_WORDS_PER_SECOND,
+        languages: list[str] | None = None,
     ):
         self.energy_threshold = energy_threshold
         self.min_wps = min_wps
+        # None checks every known language: phantom phrases follow the
+        # decoded language, which is not always the expected one.
+        self.languages = languages
 
     def detect(self, transcript: TranscriptResult) -> list[HallucinationFlag]:
         flags: list[HallucinationFlag] = []
@@ -62,18 +56,17 @@ class SilenceHallucinationDetector:
             if not text:
                 continue
 
-            for pattern in KNOWN_PHANTOM_PATTERNS:
-                if pattern.search(text):
-                    flags.append(
-                        HallucinationFlag(
-                            detector=self.name,
-                            severity=Severity.CRITICAL,
-                            segment_index=i,
-                            reason=f"Known phantom phrase: '{text}'",
-                            evidence={"pattern": pattern.pattern, "text": text},
-                        )
+            pattern = match_phantom(text, self.languages)
+            if pattern is not None:
+                flags.append(
+                    HallucinationFlag(
+                        detector=self.name,
+                        severity=Severity.CRITICAL,
+                        segment_index=i,
+                        reason=f"Known phantom phrase: '{text}'",
+                        evidence={"pattern": pattern.pattern, "text": text},
                     )
-                    break
+                )
 
             word_count = len(text.split())
             wps = word_count / duration

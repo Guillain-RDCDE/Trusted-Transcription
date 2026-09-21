@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.7.0 — 2026-09-21
+
+### Added
+- **Phantom phrases per language** (`detectors/phantom_phrases.py`):
+  English, French, German, Spanish, Italian, Portuguese, all checked by
+  default; `languages=` restricts the lists.
+- **Script drift** (`detectors/script_drift.py`): a segment mixing the
+  expected script with letters from another; the first one carries the
+  span to regenerate, from the drift point to the end of the file.
+- **Empty output** (`detectors/empty_output.py`): minutes of audible
+  speech and zero words, including hollow segments that carry only
+  anchors.
+- `prevention/reencode.py`: formats re-encoded before upload, the mono
+  speech MP3 command, and the stream-copied tail cut for a regeneration.
+- ADR 0010 — Regenerate from the drift point, keep what the human typed.
+- `corpus/sample/script_drift.json`, smoke-tested in CI.
+
+### Fixed
+- The phantom pattern meant for a segment that is only "you" matched
+  every sentence ending in "you".
+
 ## 0.6.0 — 2026-09-17
 
 ### Added

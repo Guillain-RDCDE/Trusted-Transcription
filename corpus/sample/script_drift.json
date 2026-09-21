@@ -1,0 +1,14 @@
+{
+  "segments": [
+    {"start": 0.0, "end": 12.0, "text": "Nous nous sommes rendus sur place en presence de la locataire qui nous a ouvert la porte."},
+    {"start": 12.0, "end": 25.0, "text": "Le sejour est en bon etat, les murs sont peints en blanc et le sol est carrele."},
+    {"start": 25.0, "end": 33.0, "text": "Je crois que témoign限 la gamine. Carinória a 많이 dureивать ou des Bre Marchessoft lorsque vous êtes là bullet."},
+    {"start": 33.0, "end": 47.0, "text": "La cuisine est equipee et l'ensemble des elements est en bon etat d'usage et de fonctionnement."},
+    {"start": 47.0, "end": 50.0, "text": "Sous-titrage Société Radio-Canada"}
+  ],
+  "metadata": {
+    "audio_duration_sec": 52.0,
+    "model": "whisper-1",
+    "language": "fr"
+  }
+}

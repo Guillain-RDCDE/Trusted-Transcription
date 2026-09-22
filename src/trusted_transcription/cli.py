@@ -120,6 +120,50 @@ def windows(boundaries_json, threshold, context_s, fmt):
     click.echo(f"\nContext window: {padded} short segment(s) out of {len(plan)}", err=True)
 
 
+@main.command("bench-report")
+@click.argument("results_jsonl", type=click.Path(exists=True))
+@click.option("--control", default=None, help="Engine the others are paired against")
+@click.option("--min-production", default=0.9, show_default=True,
+              help="Below this share of the reference's words, an engine is out")
+def bench_report(results_jsonl, control, min_production):
+    """Read an engine bench: two measures, paired wins, the biased-judge split (ADR 0011)."""
+    from trusted_transcription.eval.engine_bench import ResultStore, disqualified, summarize
+
+    rows = ResultStore(results_jsonl).all()
+    summaries = summarize(rows, control=control)
+    if not summaries:
+        click.echo("No rows.")
+        return
+
+    origins = sorted({o for s in summaries for o in s.by_origin})
+    head = f"{'ENGINE':<16} {'FILES':>5} {'ACCURACY':>9} {'PRODUCTION':>11}"
+    if control:
+        head += f"  {'VS ' + control.upper():>14}"
+    for o in origins:
+        head += f"  {'REF=' + o:>16}"
+    click.echo(head)
+    click.echo("-" * len(head))
+    for s in summaries:
+        line = f"{s.engine:<16} {s.files:>5} {s.accuracy:>9.1%} {s.production:>11.1%}"
+        if control:
+            paired = f"{s.wins_vs_control}W {s.losses_vs_control}L"
+            if s.engine == control:
+                paired = "control"
+            line += f"  {paired:>14}"
+        for o in origins:
+            value = s.by_origin.get(o)
+            line += f"  {(f'{value:.1%}' if value is not None else '-'):>16}"
+        if disqualified(s, min_production):
+            line += "   OUT: skips audio"
+        click.echo(line)
+
+    click.echo(
+        "\nRead accuracy and production together; a verdict holds only if the "
+        "control leads in the REF= group that favours the other engine.",
+        err=True,
+    )
+
+
 @main.command()
 @click.argument("transcript_json", type=click.Path(exists=True))
 def spell(transcript_json):

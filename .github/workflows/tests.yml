@@ -20,4 +20,5 @@ jobs:
       - run: PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/script_drift.json --format table
       - run: PYTHONPATH=src python -m trusted_transcription.cli spell corpus/sample/spellings.json
       - run: PYTHONPATH=src python -m trusted_transcription.cli chunks 3468.636 --bitrate 320
+      - run: PYTHONPATH=src python -m trusted_transcription.cli bench-report corpus/sample/bench_results.jsonl --control paid-api
       - run: PYTHONPATH=src python -m trusted_transcription.cli cost 60

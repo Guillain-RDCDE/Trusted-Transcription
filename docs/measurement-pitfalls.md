@@ -1,7 +1,7 @@
-# Measuring a change to an ASR pipeline — five pitfalls
+# Measuring a change to an ASR pipeline — six pitfalls
 
 Every number in this repository was read against a control. Here is
-why, and the four other traps that produced wrong conclusions before
+why, and the other traps that produced wrong conclusions before
 they were caught. They apply to any A/B comparison on Whisper or a
 similar engine.
 
@@ -62,6 +62,16 @@ the production behaviour and increment a counter**. Without the
 counter, a drift of one segment would produce wrong results in
 silence. `transcribe_with_context` carries the same guard in the
 library: `ContextWindowReport.fallbacks_desync`.
+
+## 6. One measure lies, and the judge is biased
+
+Comparing engines has its own traps, recorded in
+[ADR 0011](adr/0011-two-measures-or-none.md): accuracy alone rewards an
+engine that says little and says it right, so production travels with
+it; the human-validated reference resembles the engine whose draft was
+corrected, so the comparison is read inside each reference-origin
+group; and the runtime precision is part of the engine — eight-bit
+moved three models in three different directions.
 
 ## Practical rules that came with them
 

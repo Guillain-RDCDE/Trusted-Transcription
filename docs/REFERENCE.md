@@ -82,6 +82,14 @@ PYTHONPATH=src python -m trusted_transcription.cli spell corpus/sample/spellings
 
 A speaker who spells a name is telling you the engine got it wrong. `repair.spellings` rebuilds the word from the letters, corrects the dictated word before it when they resemble each other, only erases the letters when the word was already right, and abstains otherwise. No model, nine guardrails from real texts, three invariants (tags unchanged, idempotent, no invented word) — [ADR 0009](adr/0009-the-spelling-is-authoritative.md).
 
+## Comparing engines — two measures or none
+
+```bash
+PYTHONPATH=src python -m trusted_transcription.cli bench-report corpus/sample/bench_results.jsonl --control paid-api
+```
+
+Accuracy alone rewards an engine that transcribes half the file and gets that half right, so every row carries accuracy *and* production. The reference was corrected from one engine's draft and resembles it, so the comparison is also read inside each reference-origin group. Results are stored one line per (engine, file, precision) and never re-measured; a resource gate keeps the bench from evicting production's models ([ADR 0011](adr/0011-two-measures-or-none.md)).
+
 ## Long files — cap the chunk, never the file
 
 ```bash
@@ -127,6 +135,7 @@ Why two models instead of a fine-tune? Where does the human stay? Why determinis
 - [0008 — Cap the chunk, never the file](../docs/adr/0008-cap-the-chunk-not-the-file.md) (a guard older than the chunking below it silently dropped the longest dictations for a month)
 - [0009 — The spelling is authoritative](../docs/adr/0009-the-spelling-is-authoritative.md) (nine guardrails, each from a text that broke, and the limit accepted on purpose)
 - [0010 — Regenerate from the drift point, keep what the human typed](../docs/adr/0010-regenerate-from-the-drift-point.md) (and two field lessons: re-encode before blaming the audio, phantom phrases follow the decoded language)
+- [0011 — Two measures or none, and a judge you know is biased](../docs/adr/0011-two-measures-or-none.md) (accuracy and production together, the reference-origin split, why eight-bit gives a wrong verdict)
 
 Every figure behind those decisions was read against a control run. [Measurement pitfalls](measurement-pitfalls.md) lists the five traps that produced wrong conclusions before they were caught, starting with the fact that Whisper is not deterministic.
 

@@ -65,11 +65,12 @@ See `docs/adr/` for the reasoning behind each.
 8. Cap the chunk, never the file (ADR 0008)
 9. The spelling is authoritative (ADR 0009)
 10. Regenerate from the drift point, keep what the human typed (ADR 0010)
+11. Two measures or none, and a judge you know is biased (ADR 0011)
 
 ## Integration
 
 The pipeline is exposed three ways:
 
-- **CLI** (`tt run`, `tt detect`, `tt spell`, `tt windows`, `tt chunks`, `tt cost`) for operators
+- **CLI** (`tt run`, `tt detect`, `tt spell`, `tt windows`, `tt chunks`, `tt bench-report`, `tt cost`) for operators
 - **Python API** (`Pipeline().run(audio_path)`) for embedding
 - **MCP server** (`tt-mcp`) for AI agent orchestration

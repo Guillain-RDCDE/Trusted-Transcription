@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.8.0 — 2026-09-22
+
+### Added
+- **Engine bench** (`eval/engine_bench.py`): accuracy and production
+  as one row that cannot carry one without the other; paired wins
+  against a control on common files only; mean accuracy inside each
+  reference-origin group (the biased-judge check); precision recorded
+  on every row; an idempotent JSON-lines store; a resource gate that
+  refuses to run when the shared device is short of memory; failures
+  recorded, never swallowed.
+- `tt bench-report <results.jsonl> --control <engine>`, with a
+  synthetic sample smoke-tested in CI.
+- ADR 0011 — Two measures or none, and a judge you know is biased.
+- Measurement pitfalls: a sixth one.
+
 ## 0.7.0 — 2026-09-21
 
 ### Added

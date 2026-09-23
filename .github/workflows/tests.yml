@@ -11,14 +11,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - run: pip install pydantic click jiwer pytest
-      - run: PYTHONPATH=src python -m pytest tests/ -v
-      - run: PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/silence_hallucination.json --format table
-      - run: PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/clean_transcript.json --format table
-      - run: PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/prompt_echo.json --format table
-      - run: PYTHONPATH=src python -m trusted_transcription.cli windows corpus/sample/forced_cuts.json --format table
-      - run: PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/script_drift.json --format table
-      - run: PYTHONPATH=src python -m trusted_transcription.cli spell corpus/sample/spellings.json
-      - run: PYTHONPATH=src python -m trusted_transcription.cli chunks 3468.636 --bitrate 320
-      - run: PYTHONPATH=src python -m trusted_transcription.cli bench-report corpus/sample/bench_results.jsonl --control paid-api
-      - run: PYTHONPATH=src python -m trusted_transcription.cli cost 60
+      - run: pip install -e . pytest
+      - run: python -m pytest tests/ -v
+      - run: tt detect corpus/sample/silence_hallucination.json --format table
+      - run: tt detect corpus/sample/clean_transcript.json --format table
+      - run: tt detect corpus/sample/prompt_echo.json --format table
+      - run: tt detect corpus/sample/script_drift.json --format table
+      - run: tt windows corpus/sample/forced_cuts.json --format table
+      - run: tt spell corpus/sample/spellings.json
+      - run: tt chunks 3468.636 --bitrate 320
+      - run: tt bench-report corpus/sample/bench_results.jsonl --control paid-api
+      - run: tt cost 60
+
+  package:
+    # The wheel installs in a clean environment with nothing but the
+    # three declared dependencies, and the commands exist.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build
+      - run: python -m build
+      - run: pip install dist/*.whl
+      - run: cd / && tt --help && tt-mcp --help && tt-bench --help
+      - run: cd / && tt cost 60
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

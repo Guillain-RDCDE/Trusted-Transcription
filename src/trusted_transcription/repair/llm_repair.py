@@ -52,7 +52,7 @@ MAX_RETRIES = 3
 class LLMRepairer:
     def __init__(
         self,
-        model: str = "claude-sonnet-4-20250514",
+        model: str = "claude-opus-5",
         max_retries: int = MAX_RETRIES,
         client: Anthropic | None = None,
     ):
@@ -170,8 +170,13 @@ class LLMRepairer:
 
         return actions
 
+    # List price per million tokens for the default model; override
+    # both when you change the model.
+    INPUT_USD_PER_MTOK = 5.0
+    OUTPUT_USD_PER_MTOK = 25.0
+
     def _estimate_cost(self, response) -> float:
         usage = response.usage
-        input_cost = usage.input_tokens * 3.0 / 1_000_000
-        output_cost = usage.output_tokens * 15.0 / 1_000_000
+        input_cost = usage.input_tokens * self.INPUT_USD_PER_MTOK / 1_000_000
+        output_cost = usage.output_tokens * self.OUTPUT_USD_PER_MTOK / 1_000_000
         return round(input_cost + output_cost, 6)

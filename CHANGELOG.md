@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.9.0 — 2026-09-23
+
+### Changed
+- **Installable in one line.** `pip install -e .` gives the `tt`,
+  `tt-mcp` and `tt-bench` commands; no more `PYTHONPATH=src` anywhere
+  in the README, the reference, the CI or the Makefile.
+- **Three core dependencies.** The API clients moved to the `api`
+  extra; detectors, guards, prevention and bench run without them.
+- **Default repair model** updated to the current generation, with the
+  list price on the class so that a model change updates both.
+- CI builds the wheel and installs it in a clean environment, then
+  runs the commands from outside the repository.
+
+### Added
+- `publish` workflow: on a version tag, build, check that the tag and
+  the package version agree, upload to PyPI through trusted publishing.
+  Needs the one-time PyPI setup described in `docs/RELEASING.md`.
+- `docs/RELEASING.md`.
+
 ## 0.8.0 — 2026-09-22
 
 ### Added

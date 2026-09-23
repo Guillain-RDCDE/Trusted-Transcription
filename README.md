@@ -19,9 +19,11 @@ This project catches that — and six other ways ASR pipelines silently produce 
 ```bash
 git clone https://github.com/Guillain-RDCDE/Trusted-Transcription.git
 cd Trusted-Transcription
-pip install pydantic click jiwer
-PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/silence_hallucination.json --format table
+pip install -e .
+tt detect corpus/sample/silence_hallucination.json --format table
 ```
+
+The detectors, the guards and the prevention layer have three small dependencies and no API client. Engines and the repair model are optional: `pip install -e ".[api]"`.
 
 Output:
 
@@ -38,7 +40,7 @@ Total: 3 flags
 Three hallucinations caught. Zero API calls. Zero false positives on the clean sample:
 
 ```bash
-PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/clean_transcript.json --format table
+tt detect corpus/sample/clean_transcript.json --format table
 # No hallucinations detected.
 ```
 
@@ -50,7 +52,7 @@ turn, with no context. Give the model more audio than the segment and keep only
 the words that belong to it:
 
 ```bash
-PYTHONPATH=src python -m trusted_transcription.cli windows corpus/sample/forced_cuts.json
+tt windows corpus/sample/forced_cuts.json
 ```
 
 Boundaries never move. In production this removed almost all phantom phrases at

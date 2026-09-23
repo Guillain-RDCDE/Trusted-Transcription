@@ -7,12 +7,12 @@
 ## How it works
 
 ```
-Audio -> [context window] -> Whisper -> [7 detectors] -> [LLM repair] -> [scoring] -> Trusted transcript
+Audio -> [chunking] -> [context window] -> Whisper -> [detectors] -> [LLM repair] -> [scoring] -> Trusted transcript
 ```
 
 **Prevention comes first.** Most phantom phrases are not the model's fault: they appear on segments the pipeline itself starved — a few seconds cut at a photo timestamp, with no context. The context window gives the model more audio than the segment and keeps only the words that belong to it. Boundaries never move. In production this removed almost all phantom phrases at once ([ADR 0005](adr/0005-context-window-for-short-segments.md)).
 
-**Detection is deterministic.** No LLM in the loop until a flag fires. The 7 detectors are regex, arithmetic, and statistics — they run in 0.06 seconds, cost nothing, and never hallucinate themselves.
+**Detection is deterministic.** No LLM in the loop until a flag fires. The detectors are regex, arithmetic, and statistics — they run in a fraction of a second, cost nothing, and never hallucinate themselves.
 
 **Repair is constrained.** The LLM (Claude) gets structured output only, a confidence threshold at 0.7, and explicit permission to say "I don't touch this." Unconstrained repair makes things worse 23% of the time ([ADR 0004](../docs/adr/0004-anti-aggravation-guard.md) documents the experiment).
 
@@ -20,7 +20,7 @@ Audio -> [context window] -> Whisper -> [7 detectors] -> [LLM repair] -> [scorin
 
 **The human stays in the loop** on critical flags the LLM can't resolve. ~70% of transcriptions pass unattended; the rest route to review with the exact segments highlighted.
 
-## The 7 detectors
+## The detectors
 
 | Detector | What it catches | How |
 |----------|----------------|-----|
@@ -43,7 +43,7 @@ Audio -> [context window] -> Whisper -> [7 detectors] -> [LLM repair] -> [scorin
 Silent loss is the most dangerous family: every other hallucination produces visible garbage, these produce a shorter draft that reads fine. When a chunk is caught, `repair.retranscribe` re-transcribes **that chunk only** — without the prompt first, then with it, then in shorter pieces — and refuses any attempt that is itself broken ([ADR 0006](adr/0006-repair-the-chunk-not-the-file.md)).
 
 ```bash
-PYTHONPATH=src python -m trusted_transcription.cli detect corpus/sample/prompt_echo.json --format table
+tt detect corpus/sample/prompt_echo.json --format table
 ```
 
 Full catalog with symptoms and causes: [docs/failure-modes.md](../docs/failure-modes.md)
@@ -51,7 +51,7 @@ Full catalog with symptoms and causes: [docs/failure-modes.md](../docs/failure-m
 ## The context window — see what the model will hear
 
 ```bash
-PYTHONPATH=src python -m trusted_transcription.cli windows corpus/sample/forced_cuts.json
+tt windows corpus/sample/forced_cuts.json
 ```
 
 ```
@@ -77,7 +77,7 @@ Decode the padded window **without** anti-repetition penalties — `decoding_ove
 ## Spelled-out names — the spelling is authoritative
 
 ```bash
-PYTHONPATH=src python -m trusted_transcription.cli spell corpus/sample/spellings.json
+tt spell corpus/sample/spellings.json
 ```
 
 A speaker who spells a name is telling you the engine got it wrong. `repair.spellings` rebuilds the word from the letters, corrects the dictated word before it when they resemble each other, only erases the letters when the word was already right, and abstains otherwise. No model, nine guardrails from real texts, three invariants (tags unchanged, idempotent, no invented word) — [ADR 0009](adr/0009-the-spelling-is-authoritative.md).
@@ -85,7 +85,7 @@ A speaker who spells a name is telling you the engine got it wrong. `repair.spel
 ## Comparing engines — two measures or none
 
 ```bash
-PYTHONPATH=src python -m trusted_transcription.cli bench-report corpus/sample/bench_results.jsonl --control paid-api
+tt bench-report corpus/sample/bench_results.jsonl --control paid-api
 ```
 
 Accuracy alone rewards an engine that transcribes half the file and gets that half right, so every row carries accuracy *and* production. The reference was corrected from one engine's draft and resembles it, so the comparison is also read inside each reference-origin group. Results are stored one line per (engine, file, precision) and never re-measured; a resource gate keeps the bench from evicting production's models ([ADR 0011](adr/0011-two-measures-or-none.md)).
@@ -93,7 +93,7 @@ Accuracy alone rewards an engine that transcribes half the file and gets that ha
 ## Long files — cap the chunk, never the file
 
 ```bash
-PYTHONPATH=src python -m trusted_transcription.cli chunks 3468.636 --bitrate 320
+tt chunks 3468.636 --bitrate 320
 ```
 
 Plans nine-minute stream-copied chunks, marks the ones that must be re-cut and re-encoded to fit under the upload limit, refuses (visibly) the ones that cannot, and prints the proof that nothing was lost: the chunk durations sum to the source, to the millisecond. `transcribe_in_chunks` records a failed chunk with its error instead of swallowing it ([ADR 0008](adr/0008-cap-the-chunk-not-the-file.md)).
@@ -101,7 +101,7 @@ Plans nine-minute stream-copied chunks, marks the ones that must be re-cut and r
 ## MCP server — for AI agents
 
 ```bash
-PYTHONPATH=src python -m trusted_transcription.mcp_server
+tt-mcp
 ```
 
 5 tools exposed over stdio: `transcribe`, `detect_hallucinations`, `repair`, `score`, `estimate_cost`. Any MCP-compatible agent can drive the pipeline.
@@ -114,7 +114,7 @@ Example MCP client config:
 ## Cost estimation (no API key needed)
 
 ```bash
-PYTHONPATH=src python -m trusted_transcription.cli cost 60
+tt cost 60
 # Whisper API:  $0.3600
 # LLM repair:   $0.0360
 # Total:        $0.3960
@@ -142,8 +142,8 @@ Every figure behind those decisions was read against a control run. [Measurement
 ## Tests
 
 ```bash
-pip install pytest
-PYTHONPATH=src python -m pytest tests/ -v
+pip install -e ".[dev]"
+python -m pytest tests/ -v
 ```
 
 No API calls, no audio files. Pure logic on synthetic transcripts and a ground-truth word timeline.

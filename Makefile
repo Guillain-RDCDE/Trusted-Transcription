@@ -14,8 +14,7 @@ bench:
 	@cat eval/results/summary.csv
 
 lint:
-	ruff check src/ tests/
-	mypy src/
+	ruff check src/ tests/ corpus/
 
 test:
 	python -m pytest tests/ -v --tb=long

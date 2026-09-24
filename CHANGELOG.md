@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.9.1 — 2026-09-24
+
+### Added
+- Tests for every operator command, driven in-process on the committed
+  samples: what each prints and how it exits is now pinned.
+- The linter is a CI gate, pinned to an exact version, over the whole
+  tree including the sample fetcher.
+
+### Changed
+- The original files are lint-clean: unused imports, unsorted imports,
+  old-style optional annotations and long lines.
+
 ## 0.9.0 — 2026-09-23
 
 ### Changed

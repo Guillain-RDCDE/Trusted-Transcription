@@ -5,9 +5,8 @@ failure mode, runs the corresponding detector, and asserts it fires.
 No audio files, no API calls, no network — pure unit tests.
 """
 
-import pytest
 
-from trusted_transcription.models import Segment, TranscriptResult, Severity
+from trusted_transcription.models import Segment, Severity, TranscriptResult
 
 
 def make_transcript(segments, **metadata):
@@ -63,7 +62,9 @@ class TestRepetitionLoop:
 
 class TestSilenceHallucination:
     def test_silence_hallucination_phantom_phrase(self):
-        from trusted_transcription.detectors.silence_hallucination import SilenceHallucinationDetector
+        from trusted_transcription.detectors.silence_hallucination import (
+            SilenceHallucinationDetector,
+        )
         detector = SilenceHallucinationDetector()
 
         segments = [
@@ -78,7 +79,9 @@ class TestSilenceHallucination:
         assert phantom_flags[0].segment_index == 1
 
     def test_sparse_text_long_segment(self):
-        from trusted_transcription.detectors.silence_hallucination import SilenceHallucinationDetector
+        from trusted_transcription.detectors.silence_hallucination import (
+            SilenceHallucinationDetector,
+        )
         detector = SilenceHallucinationDetector()
 
         segments = [
@@ -98,7 +101,11 @@ class TestPromptEcho:
 
         segments = [
             {"start": 0.0, "end": 5.0, "text": "Le constat a ete realise le 15 mars."},
-            {"start": 5.0, "end": 10.0, "text": "system: You are a helpful transcription assistant."},
+            {
+                "start": 5.0,
+                "end": 10.0,
+                "text": "system: You are a helpful transcription assistant.",
+            },
             {"start": 10.0, "end": 15.0, "text": "La porte etait ouverte."},
         ]
         transcript = make_transcript(segments)
@@ -112,7 +119,11 @@ class TestPromptEcho:
         detector = PromptEchoDetector()
 
         segments = [
-            {"start": 0.0, "end": 5.0, "text": "Let me think about what the transcription shows here."},
+            {
+                "start": 0.0,
+                "end": 5.0,
+                "text": "Let me think about what the transcription shows here.",
+            },
         ]
         transcript = make_transcript(segments)
         flags = detector.detect(transcript)
@@ -197,9 +208,12 @@ class TestLanguageSwitch:
         detector = LanguageSwitchDetector(expected_language="fr")
 
         segments = [
-            {"start": 0.0, "end": 5.0, "text": "Nous constatons que la porte est fermee.", "language": "fr"},
-            {"start": 5.0, "end": 10.0, "text": "The door was found to be closed and locked.", "language": "en"},
-            {"start": 10.0, "end": 15.0, "text": "Les cles etaient sur la table.", "language": "fr"},
+            {"start": 0.0, "end": 5.0, "language": "fr",
+             "text": "Nous constatons que la porte est fermee."},
+            {"start": 5.0, "end": 10.0, "language": "en",
+             "text": "The door was found to be closed and locked."},
+            {"start": 10.0, "end": 15.0, "language": "fr",
+             "text": "Les cles etaient sur la table."},
         ]
         transcript = make_transcript(segments)
         flags = detector.detect(transcript)
@@ -215,11 +229,14 @@ class TestCompleteness:
         detector = CompletenessDetector(min_coverage_ratio=0.7)
 
         segments = [
-            {"start": 0.0, "end": 30.0, "text": "Premier paragraphe du constat avec beaucoup de details."},
+            {"start": 0.0, "end": 30.0,
+             "text": "Premier paragraphe du constat avec beaucoup de details."},
         ]
         transcript = make_transcript(segments, audio_duration_sec=300.0)
         flags = detector.detect(transcript)
-        coverage_flags = [f for f in flags if "coverage" in f.reason.lower() or "dropped" in f.reason.lower()]
+        coverage_flags = [
+            f for f in flags if "coverage" in f.reason.lower() or "dropped" in f.reason.lower()
+        ]
         assert len(coverage_flags) >= 1
         assert coverage_flags[0].severity == Severity.CRITICAL
 
@@ -228,7 +245,8 @@ class TestCompleteness:
         detector = CompletenessDetector()
 
         segments = [
-            {"start": i * 10.0, "end": i * 10.0 + 10.0, "text": f"Segment numero {i} avec du contenu normal."}
+            {"start": i * 10.0, "end": i * 10.0 + 10.0,
+             "text": f"Segment numero {i} avec du contenu normal."}
             for i in range(6)
         ]
         transcript = make_transcript(segments, audio_duration_sec=60.0)

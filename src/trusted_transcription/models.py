@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -18,8 +17,8 @@ class Segment(BaseModel):
     start: float = Field(description="Start time in seconds")
     end: float = Field(description="End time in seconds")
     text: str
-    confidence: Optional[float] = None
-    language: Optional[str] = None
+    confidence: float | None = None
+    language: str | None = None
 
 
 class HallucinationFlag(BaseModel):
@@ -57,7 +56,7 @@ class RepairResult(BaseModel):
 
 class PipelineReport(BaseModel):
     transcript: TranscriptResult
-    repairs: Optional[RepairResult] = None
+    repairs: RepairResult | None = None
     scores: dict = Field(default_factory=dict)
     cost_usd: float = 0.0
     duration_sec: float = 0.0

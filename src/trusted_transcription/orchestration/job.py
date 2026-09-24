@@ -14,11 +14,9 @@ at any time.
 from __future__ import annotations
 
 import hashlib
-import json
 import time
 from enum import Enum
 from pathlib import Path
-from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -41,9 +39,9 @@ class Job(BaseModel):
     max_retries: int = 3
     cost_usd: float = 0.0
     created_at: float = Field(default_factory=time.time)
-    completed_at: Optional[float] = None
-    error: Optional[str] = None
-    result_path: Optional[str] = None
+    completed_at: float | None = None
+    error: str | None = None
+    result_path: str | None = None
 
     @classmethod
     def from_audio(cls, audio_path: str | Path, max_retries: int = 3) -> Job:
@@ -69,7 +67,7 @@ class JobQueue:
         self._save(job)
         return job
 
-    def next_job(self) -> Optional[Job]:
+    def next_job(self) -> Job | None:
         for path in sorted(self.state_dir.glob("*.json")):
             job = Job.model_validate_json(path.read_text())
             if job.status == JobStatus.QUEUED:
@@ -104,7 +102,7 @@ class JobQueue:
         path = self.state_dir / f"{job.job_id}.json"
         path.write_text(job.model_dump_json(indent=2))
 
-    def _load(self, job_id: str) -> Optional[Job]:
+    def _load(self, job_id: str) -> Job | None:
         path = self.state_dir / f"{job_id}.json"
         if path.exists():
             return Job.model_validate_json(path.read_text())

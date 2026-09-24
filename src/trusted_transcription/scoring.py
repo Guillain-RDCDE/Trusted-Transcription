@@ -10,14 +10,12 @@ transcription, the questions that matter are:
 
 from __future__ import annotations
 
-from typing import Optional
-
 from trusted_transcription.models import Severity, TranscriptResult
 
 
 def compute_scores(
     transcript: TranscriptResult,
-    reference_text: Optional[str] = None,
+    reference_text: str | None = None,
 ) -> dict:
     scores: dict = {}
 
@@ -38,7 +36,7 @@ def compute_scores(
 
     if reference_text is not None:
         try:
-            from jiwer import wer, cer
+            from jiwer import cer, wer
 
             hypothesis = " ".join(seg.text for seg in transcript.segments)
             scores["wer"] = round(wer(reference_text, hypothesis), 4)

@@ -18,11 +18,9 @@ from __future__ import annotations
 
 import json
 import sys
-from pathlib import Path
 
 import click
 
-from trusted_transcription.detectors import ALL_DETECTORS
 from trusted_transcription.models import TranscriptResult
 from trusted_transcription.pipeline import Pipeline
 from trusted_transcription.repair.llm_repair import LLMRepairer

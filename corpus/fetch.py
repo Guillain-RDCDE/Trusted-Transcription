@@ -11,12 +11,10 @@ Only corpus/sample/ is committed (smoke test).
 
 from __future__ import annotations
 
-import hashlib
 import sys
 from pathlib import Path
 
 import click
-
 
 CORPUS_DIR = Path(__file__).parent / "data"
 SAMPLE_DIR = Path(__file__).parent / "sample"

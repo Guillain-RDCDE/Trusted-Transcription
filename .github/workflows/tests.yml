@@ -43,3 +43,14 @@ jobs:
         with:
           name: dist
           path: dist/
+
+  docker:
+    # The image carries the commands and nothing else, and runs them
+    # on a mounted sample.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t tt .
+      - run: docker run --rm tt cost 60
+      - run: docker run --rm -v "$PWD/corpus/sample:/data" tt detect /data/silence_hallucination.json --format table
+      - run: docker run --rm -v "$PWD/corpus/sample:/data" tt spell /data/spellings.json

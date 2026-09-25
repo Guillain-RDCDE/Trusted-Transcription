@@ -4,7 +4,7 @@
 Accepted (deployed in production, August 2026)
 
 ## Context
-The seven detectors catch phantom phrases *after* Whisper produced
+The detectors catch phantom phrases *after* Whisper produced
 them. In production the repair pass then deletes almost all of them
 before a human sees the draft. That looked like a solved problem
 until a reviewer parked a report for "misplaced photo anchors": the

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.9.2 — 2026-09-25
+
+### Added
+- `Dockerfile`: the commands and their three dependencies, nothing else;
+  built and run on a mounted sample in CI.
+- CI, release and license badges.
+
+### Changed
+- README rewritten around what the project does now — prevents, detects,
+  repairs without making things worse, measures honestly — with the
+  hard-coded detector counts removed from the prose and the image text.
+
 ## 0.9.1 — 2026-09-24
 
 ### Added

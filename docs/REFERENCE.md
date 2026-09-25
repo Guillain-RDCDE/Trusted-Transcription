@@ -98,6 +98,15 @@ tt chunks 3468.636 --bitrate 320
 
 Plans nine-minute stream-copied chunks, marks the ones that must be re-cut and re-encoded to fit under the upload limit, refuses (visibly) the ones that cannot, and prints the proof that nothing was lost: the chunk durations sum to the source, to the millisecond. `transcribe_in_chunks` records a failed chunk with its error instead of swallowing it ([ADR 0008](adr/0008-cap-the-chunk-not-the-file.md)).
 
+## Docker — the commands, nothing else
+
+```bash
+docker build -t tt .
+docker run --rm -v "$PWD/corpus/sample:/data" tt detect /data/silence_hallucination.json --format table
+```
+
+The image holds the package and its three dependencies; mount a directory on `/data` and pass paths under it. No engine and no API client inside.
+
 ## MCP server — for AI agents
 
 ```bash

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.10.0 — 2026-09-26
+
+### Added
+- **Detector bench** (`eval/detector_bench.py`): a labels file names
+  the detectors that must fire on each transcript; the run gives
+  precision and recall per detector and the list of every broken
+  expectation.
+- `tt eval <corpus_dir>`: the table, and exit 1 on any broken
+  expectation. Runs on the committed samples in CI as a regression
+  gate; on a real corpus it is the generated table of what each
+  detector is worth.
+- `corpus/sample/labels.json`: what the detectors must do on the samples.
+
 ## 0.9.2 — 2026-09-25
 
 ### Added

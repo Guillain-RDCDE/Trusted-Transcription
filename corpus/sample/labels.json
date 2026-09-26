@@ -1,0 +1,8 @@
+{
+  "silence_hallucination.json": ["silence_hallucination", "repetition_loop", "temporal_drift"],
+  "clean_transcript.json": [],
+  "prompt_echo.json": ["prompt_echo"],
+  "repetition_loop.json": ["repetition_loop"],
+  "script_drift.json": ["script_drift", "silence_hallucination"],
+  "spellings.json": ["spelled_out"]
+}

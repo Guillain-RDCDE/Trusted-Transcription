@@ -24,6 +24,7 @@ jobs:
       - run: tt chunks 3468.636 --bitrate 320
       - run: tt bench-report corpus/sample/bench_results.jsonl --control paid-api
       - run: tt cost 60
+      - run: tt eval corpus/sample
 
   package:
     # The wheel installs in a clean environment with nothing but the

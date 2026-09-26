@@ -71,6 +71,6 @@ See `docs/adr/` for the reasoning behind each.
 
 The pipeline is exposed three ways:
 
-- **CLI** (`tt run`, `tt detect`, `tt spell`, `tt windows`, `tt chunks`, `tt bench-report`, `tt cost`) for operators
+- **CLI** (`tt run`, `tt detect`, `tt spell`, `tt windows`, `tt chunks`, `tt eval`, `tt bench-report`, `tt cost`) for operators
 - **Python API** (`Pipeline().run(audio_path)`) for embedding
 - **MCP server** (`tt-mcp`) for AI agent orchestration

@@ -115,6 +115,21 @@ class TestBenchReport:
         assert "VS " not in result.output
 
 
+class TestEval:
+    def test_samples_meet_every_expectation(self, run):
+        result = run("eval", str(SAMPLES))
+        assert result.exit_code == 0, result.output
+        assert "every expectation met" in result.output
+        assert "spelled_out" in result.output
+
+    def test_broken_expectation_exits_one(self, run, tmp_path):
+        labels = tmp_path / "labels.json"
+        labels.write_text('{"clean_transcript.json": ["prompt_echo"]}', encoding="utf-8")
+        result = run("eval", str(SAMPLES), "--labels", str(labels))
+        assert result.exit_code == 1
+        assert "expected but did not fire on clean_transcript.json" in result.output
+
+
 class TestCost:
     def test_sixty_minutes(self, run):
         result = run("cost", "60")
@@ -124,5 +139,5 @@ class TestCost:
 
 def test_help_lists_every_command(run):
     result = run("--help")
-    for command in ("bench-report", "chunks", "cost", "detect", "run", "spell", "windows"):
+    for command in ("bench-report", "chunks", "cost", "detect", "eval", "run", "spell", "windows"):
         assert command in result.output

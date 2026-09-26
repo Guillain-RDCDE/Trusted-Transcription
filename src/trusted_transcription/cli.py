@@ -120,6 +120,26 @@ def windows(boundaries_json, threshold, context_s, fmt):
     click.echo(f"\nContext window: {padded} short segment(s) out of {len(plan)}", err=True)
 
 
+@main.command("eval")
+@click.argument("corpus_dir", type=click.Path(exists=True, file_okay=False))
+@click.option("--labels", "labels_path", type=click.Path(exists=True), default=None,
+              help="Expected detectors per file (default: <corpus_dir>/labels.json)")
+def eval_detectors(corpus_dir, labels_path):
+    """Precision and recall per detector against a labels file; exit 1 on any broken expectation."""
+    from trusted_transcription.eval.detector_bench import (
+        load_labels,
+        render,
+        run_detector_bench,
+    )
+
+    labels_path = labels_path or str(Path(corpus_dir) / "labels.json")
+    labels = load_labels(labels_path)
+    report = run_detector_bench(corpus_dir, labels)
+    click.echo(render(report))
+    if not report.clean:
+        sys.exit(1)
+
+
 @main.command("bench-report")
 @click.argument("results_jsonl", type=click.Path(exists=True))
 @click.option("--control", default=None, help="Engine the others are paired against")

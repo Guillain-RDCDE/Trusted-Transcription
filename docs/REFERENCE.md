@@ -82,6 +82,14 @@ tt spell corpus/sample/spellings.json
 
 A speaker who spells a name is telling you the engine got it wrong. `repair.spellings` rebuilds the word from the letters, corrects the dictated word before it when they resemble each other, only erases the letters when the word was already right, and abstains otherwise. No model, nine guardrails from real texts, three invariants (tags unchanged, idempotent, no invented word) — [ADR 0009](adr/0009-the-spelling-is-authoritative.md).
 
+## Evaluating the detectors — expected flags per file
+
+```bash
+tt eval corpus/sample
+```
+
+A labels file names, for each transcript, the detectors that must fire; everything else must stay silent. The command prints precision and recall per detector and exits non-zero on any broken expectation. On the committed samples it is the regression gate the CI runs; on a real corpus of engine outputs it is the table that says what each detector is worth — generated, never typed.
+
 ## Comparing engines — two measures or none
 
 ```bash

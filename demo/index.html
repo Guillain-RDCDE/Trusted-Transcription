@@ -91,11 +91,15 @@
   const flagsEl = document.getElementById("flags");
   const segsEl = document.getElementById("segments");
 
+  let ready = false;
   async function loadSample(name) {
+    runBtn.disabled = true;  // never detect on the previous sample's text
     const r = await fetch(`samples/${name}`);
     input.value = await r.text();
+    input.dataset.sample = name;
     flagsEl.innerHTML = '<p class="empty">Press Detect.</p>';
     segsEl.innerHTML = "";
+    runBtn.disabled = !ready;
   }
   sample.addEventListener("change", () => loadSample(sample.value));
   loadSample(sample.value);
@@ -122,6 +126,7 @@ def detect(raw):
                        "segments": [s.model_dump() for s in t.segments]})
 `);
     status.textContent = `Ready — ${wheel.replace(/-py3.*$/, "").replace("trusted_transcription-", "version ")}`;
+    ready = true;
     runBtn.disabled = false;
   } catch (e) {
     status.textContent = "The Python runtime could not load: " + e;

@@ -21,6 +21,10 @@ liability. Everything in it was learned in production, measured against a
 control, and shipped: the detectors that catch the lies, the guards that keep
 the repair honest, and the prevention layer that removes the cause.
 
+## Try it in your browser
+
+**[guillain-rdcde.github.io/Trusted-Transcription](https://guillain-rdcde.github.io/Trusted-Transcription/)** — paste a transcript or load a sample, press Detect. The same detectors run in your browser; nothing is uploaded.
+
 ## Try it in 30 seconds (no API key needed)
 
 ```bash

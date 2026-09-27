@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trusted Transcription — try the detectors</title>
+<meta property="og:title" content="Trusted Transcription — try the detectors in your browser">
+<meta property="og:description" content="Paste a Whisper transcript, see the confident lies flagged. Runs entirely in your browser; nothing is uploaded.">
+<style>
+  :root { --bg: #0c1018; --panel: #151b27; --ink: #e8ecf4; --dim: #8b97ad; --red: #ef5448; --teal: #389ecd; --line: #253044; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding: 0 16px 48px; }
+  main { max-width: 1040px; margin: 0 auto; }
+  header { padding: 40px 0 8px; border-left: 6px solid var(--red); padding-left: 18px; margin-top: 32px; }
+  h1 { margin: 0; font-size: 2rem; line-height: 1.15; }
+  h1 span { color: var(--red); font-weight: 400; }
+  .lead { color: var(--dim); margin: 8px 0 0; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .col { flex: 1 1 420px; min-width: 0; }
+  label { display: block; color: var(--dim); font-size: .85rem; margin-bottom: 6px; }
+  textarea { width: 100%; min-height: 360px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 12px; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; resize: vertical; }
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
+  button, select { background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; font-size: .95rem; cursor: pointer; }
+  button.primary { background: var(--red); border-color: var(--red); color: #fff; font-weight: 600; }
+  button:disabled { opacity: .5; cursor: wait; }
+  #status { color: var(--dim); font-size: .9rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--dim); font-weight: 500; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+  .sev-critical { color: var(--red); font-weight: 600; }
+  .sev-warning { color: #f0b429; }
+  .sev-info { color: var(--teal); }
+  .empty { color: var(--teal); padding: 24px 0; }
+  .seg { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin: 6px 0; font-size: .92rem; }
+  .seg.flagged { border-color: var(--red); }
+  .seg .t { color: var(--dim); font-size: .8rem; font-family: ui-monospace, monospace; }
+  footer { margin-top: 40px; color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line); padding-top: 16px; }
+  a { color: var(--teal); }
+  .overflow { overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Trusted <span>Transcription</span></h1>
+    <p class="lead">Paste a Whisper transcript, see the confident lies flagged. The detectors run in your browser through Pyodide; nothing is uploaded anywhere.</p>
+  </header>
+
+  <div class="toolbar">
+    <label for="sample" style="margin:0">Load a sample:</label>
+    <select id="sample">
+      <option value="silence_hallucination.json">Phantom phrase on silence</option>
+      <option value="prompt_echo.json">Vocabulary prompt echoed</option>
+      <option value="script_drift.json">Script drift on long audio</option>
+      <option value="spellings.json">Spelled-out names</option>
+      <option value="repetition_loop.json">Repetition loop</option>
+      <option value="clean_transcript.json">Clean dictation (no flag)</option>
+    </select>
+    <button id="run" class="primary" disabled>Detect</button>
+    <span id="status">Loading the Python runtime…</span>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label for="input">Transcript JSON — <code>{"segments": [{"start", "end", "text"}], "metadata": {…}}</code>, the shape Whisper's verbose output maps to</label>
+      <textarea id="input" spellcheck="false"></textarea>
+    </div>
+    <div class="col">
+      <label>Flags</label>
+      <div id="flags" class="overflow"><p class="empty">Load a sample or paste a transcript, then press Detect.</p></div>
+      <label style="margin-top:16px">Segments</label>
+      <div id="segments"></div>
+    </div>
+  </div>
+
+  <footer>
+    Every detector here was learned in production, measured against a control, and shipped.
+    <a href="https://github.com/Guillain-RDCDE/Trusted-Transcription">Source, the architecture decisions and the dead ends</a> ·
+    <code>pip install -e .</code> gives the same detectors as a command line ·
+    MIT, Guillain d'Erceville.
+  </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.28.0/full/pyodide.js"></script>
+<script>
+(async () => {
+  const status = document.getElementById("status");
+  const runBtn = document.getElementById("run");
+  const input = document.getElementById("input");
+  const sample = document.getElementById("sample");
+  const flagsEl = document.getElementById("flags");
+  const segsEl = document.getElementById("segments");
+
+  async function loadSample(name) {
+    const r = await fetch(`samples/${name}`);
+    input.value = await r.text();
+    flagsEl.innerHTML = '<p class="empty">Press Detect.</p>';
+    segsEl.innerHTML = "";
+  }
+  sample.addEventListener("change", () => loadSample(sample.value));
+  loadSample(sample.value);
+
+  let pyodide;
+  try {
+    pyodide = await loadPyodide();
+    status.textContent = "Loading pydantic…";
+    await pyodide.loadPackage(["pydantic", "micropip"]);
+    status.textContent = "Loading the detectors…";
+    const wheel = (await (await fetch("wheels/latest.txt")).text()).trim();
+    const micropip = pyodide.pyimport("micropip");
+    // jiwer is only used by the scoring module; the detectors do not need it.
+    await micropip.install.callKwargs(`${location.href.replace(/[^/]*$/, "")}wheels/${wheel}`, { deps: false });
+    await pyodide.runPythonAsync(`
+import json
+from trusted_transcription.detectors import ALL_DETECTORS
+from trusted_transcription.models import TranscriptResult
+def detect(raw):
+    t = TranscriptResult.model_validate_json(raw)
+    flags = [f for d in ALL_DETECTORS for f in d.detect(t)]
+    flags.sort(key=lambda f: (f.segment_index, f.severity.value))
+    return json.dumps({"flags": [f.model_dump() for f in flags],
+                       "segments": [s.model_dump() for s in t.segments]})
+`);
+    status.textContent = `Ready — ${wheel.replace(/-py3.*$/, "").replace("trusted_transcription-", "version ")}`;
+    runBtn.disabled = false;
+  } catch (e) {
+    status.textContent = "The Python runtime could not load: " + e;
+    return;
+  }
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+  runBtn.addEventListener("click", () => {
+    runBtn.disabled = true;
+    try {
+      const out = JSON.parse(pyodide.globals.get("detect")(input.value));
+      const flagged = new Set(out.flags.map(f => f.segment_index));
+      if (!out.flags.length) {
+        flagsEl.innerHTML = '<p class="empty">No hallucinations detected.</p>';
+      } else {
+        flagsEl.innerHTML = `<table><thead><tr><th>Seg</th><th>Severity</th><th>Detector</th><th>Reason</th></tr></thead><tbody>` +
+          out.flags.map(f => `<tr><td>${f.segment_index}</td><td class="sev-${esc(f.severity)}">${esc(f.severity)}</td><td><code>${esc(f.detector)}</code></td><td>${esc(f.reason)}</td></tr>`).join("") +
+          `</tbody></table>`;
+      }
+      segsEl.innerHTML = out.segments.map((s, i) =>
+        `<div class="seg${flagged.has(i) ? " flagged" : ""}"><span class="t">#${i} ${Number(s.start).toFixed(1)}–${Number(s.end).toFixed(1)}s</span><br>${esc(s.text)}</div>`).join("");
+    } catch (e) {
+      flagsEl.innerHTML = `<p class="sev-critical">Could not read the transcript: ${esc(e.message || e)}</p>`;
+    } finally {
+      runBtn.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

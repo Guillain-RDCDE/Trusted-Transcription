@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+- Social preview card regenerated: the promise no longer carries a
+  detector count or a timing, which had been stale since the second
+  release.
+
 ## 0.10.0 — 2026-09-26
 
 ### Added

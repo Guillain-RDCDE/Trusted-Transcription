@@ -8,7 +8,7 @@ How an ASR pipeline silently produces confident garbage, and the control that ca
 | 2 | Silence Hallucination | Text on silence ("Thank you for watching") | `silence_hallucination.py` | High |
 | 3 | Prompt Echo | System prompt or reasoning in output | `prompt_echo.py` | Critical |
 | 4 | Temporal Drift | Timestamps overlap, reverse, or stall | `temporal_drift.py` | Medium |
-| 5 | Phantom Subtitle | Coherent text unrelated to context | `phantom_subtitle.py` | High |
+| 5 | Phantom Subtitle | Coherent text unrelated to context | `phantom_subtitle.py` (opt-in) | High |
 | 6 | Language Switch | French transcript switches to English | `language_switch.py` | Medium |
 | 7 | Completeness Failure | Sections silently missing, no error | `completeness.py` | Critical |
 | 8 | Degenerate Output | One word thousands of times, one sentence hundreds | `loop_guard.py` | High |
@@ -33,6 +33,8 @@ Modes 9 and 10 are the two faces of the same incident ([ADR 0006](adr/0006-repai
 mode 9 needs only the prompt, mode 10 needs a second transcript. Mode 8 differs from mode 1 in scale —
 a local stutter versus a text that is a loop as a whole — and in the calibration that keeps
 ritual formulas out of it.
+
+Mode 5's vocabulary-overlap detector is **not in the default list**: on a clean read-aloud recording ([corpus/real](../corpus/real/RESULTS.md)) it fired on a third of the segments — short narrative sentences share no vocabulary with their neighbours. The per-language phrase lists of mode 2 catch the phantom subtitles it was meant for.
 
 ## Root cause you control: starved segments
 

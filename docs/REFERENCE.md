@@ -28,7 +28,7 @@ Audio -> [chunking] -> [context window] -> Whisper -> [detectors] -> [LLM repair
 | `silence_hallucination` | "Thank you for watching" on silence | Known phantom patterns + word/sec ratio |
 | `prompt_echo` | System prompt leaked into output | Pattern matching on instruction markers |
 | `temporal_drift` | Timestamps overlap, reverse, stall | Pairwise arithmetic on consecutive segments |
-| `phantom_subtitle` | Coherent text unrelated to context | Jaccard distance to neighbor vocabulary |
+| `phantom_subtitle` (opt-in) | Coherent text unrelated to context | Jaccard distance to neighbor vocabulary — fires on clean narration, see `corpus/real` |
 | `language_switch` | French transcript turns English | Language tag + function-word markers |
 | `completeness` | Sections silently dropped | Coverage ratio + words-per-minute |
 | `degenerate_output` | One word thousands of times | Dominant-word share + repeated block, refrains allowed |

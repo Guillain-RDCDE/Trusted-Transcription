@@ -30,7 +30,6 @@ ALL_DETECTORS: list[Detector] = [
     SilenceHallucinationDetector(),
     PromptEchoDetector(),
     TemporalDriftDetector(),
-    PhantomSubtitleDetector(),
     LanguageSwitchDetector(),
     CompletenessDetector(),
     DegenerateOutputDetector(),
@@ -39,6 +38,11 @@ ALL_DETECTORS: list[Detector] = [
     EmptyOutputDetector(),
 ]
 
-# ReferenceDeficitDetector needs a second transcript of the same audio
-# and is therefore not in the default list; construct it with one.
-__all__ = ["ALL_DETECTORS", "Detector", "ReferenceDeficitDetector"]
+# Not in the default list:
+# - ReferenceDeficitDetector needs a second transcript of the same audio;
+# - PhantomSubtitleDetector (vocabulary overlap with the neighbouring
+#   segments) fired on a third of the segments of a clean read-aloud
+#   recording (corpus/real/RESULTS.md): short narrative sentences share
+#   no vocabulary with their neighbours. The phrase lists catch the
+#   phantom subtitles it was meant for.
+__all__ = ["ALL_DETECTORS", "Detector", "PhantomSubtitleDetector", "ReferenceDeficitDetector"]

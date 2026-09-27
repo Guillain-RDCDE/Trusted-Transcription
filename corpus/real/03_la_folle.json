@@ -1,0 +1,1215 @@
+{
+ "segments": [
+  {
+   "start": 1.66,
+   "end": 4.46,
+   "text": "La folle des comptes de la bécasse",
+   "confidence": 0.5452,
+   "language": "fr"
+  },
+  {
+   "start": 5.0,
+   "end": 6.9,
+   "text": "Ceci est un enregistrement LibriVox.",
+   "confidence": 0.5452,
+   "language": "fr"
+  },
+  {
+   "start": 7.08,
+   "end": 9.06,
+   "text": "Tous nos enregistrements appartiennent au domaine public.",
+   "confidence": 0.5452,
+   "language": "fr"
+  },
+  {
+   "start": 9.66,
+   "end": 15.12,
+   "text": "Pour vous renseigner notre sujet ou pour participer, rendez-vous sur LibriVox.org.",
+   "confidence": 0.5452,
+   "language": "fr"
+  },
+  {
+   "start": 15.78,
+   "end": 17.06,
+   "text": "Enregistré par Bernard.",
+   "confidence": 0.5452,
+   "language": "fr"
+  },
+  {
+   "start": 18.74,
+   "end": 21.22,
+   "text": "Les comptes de la bécasse de Guy de Maupassant.",
+   "confidence": 0.5452,
+   "language": "fr"
+  },
+  {
+   "start": 21.64,
+   "end": 22.56,
+   "text": "La folle.",
+   "confidence": 0.5452,
+   "language": "fr"
+  },
+  {
+   "start": 25.02,
+   "end": 26.72,
+   "text": "À Robert de Bonnière",
+   "confidence": 0.5452,
+   "language": "fr"
+  },
+  {
+   "start": 28.2,
+   "end": 31.02,
+   "text": "« Tenez, dit monsieur Mathieu Dandelin.",
+   "confidence": 0.9618,
+   "language": "fr"
+  },
+  {
+   "start": 32.02,
+   "end": 35.2,
+   "text": "Les bécasses me rappellent une bien sinistre anecdote de la guerre.",
+   "confidence": 0.9618,
+   "language": "fr"
+  },
+  {
+   "start": 36.22,
+   "end": 39.16,
+   "text": "Vous connaissez ma propriété dans le faubourg de Cormeille.",
+   "confidence": 0.9618,
+   "language": "fr"
+  },
+  {
+   "start": 39.9,
+   "end": 42.3,
+   "text": "Je l'habitai au moment de l'arrivée des Prussiens.",
+   "confidence": 0.9618,
+   "language": "fr"
+  },
+  {
+   "start": 43.56,
+   "end": 46.02,
+   "text": "J'avais alors pour voisine une espèce de folle,",
+   "confidence": 0.9618,
+   "language": "fr"
+  },
+  {
+   "start": 46.38,
+   "end": 49.12,
+   "text": "dont l'esprit s'était gardé sous les coups du malheur.",
+   "confidence": 0.9618,
+   "language": "fr"
+  },
+  {
+   "start": 49.88,
+   "end": 52.2,
+   "text": "Jadis, à l'âge de vingt-cinq ans,",
+   "confidence": 0.9618,
+   "language": "fr"
+  },
+  {
+   "start": 52.2,
+   "end": 57.0,
+   "text": "il avait perdu en un seul mois son père, son mari et son enfant nouveau-né.",
+   "confidence": 0.7851,
+   "language": "fr"
+  },
+  {
+   "start": 58.08,
+   "end": 60.48,
+   "text": "Quand la mort est entrée une fois dans une maison,",
+   "confidence": 0.7851,
+   "language": "fr"
+  },
+  {
+   "start": 60.64,
+   "end": 62.56,
+   "text": "elle y revient presque toujours immédiatement,",
+   "confidence": 0.7851,
+   "language": "fr"
+  },
+  {
+   "start": 63.06,
+   "end": 64.64,
+   "text": "comme si elle connaissait la porte.",
+   "confidence": 0.7851,
+   "language": "fr"
+  },
+  {
+   "start": 65.86,
+   "end": 68.64,
+   "text": "La pauvre jeune femme, foudroyée par le chagrin,",
+   "confidence": 0.7851,
+   "language": "fr"
+  },
+  {
+   "start": 68.78,
+   "end": 71.34,
+   "text": "prie le lit, délira pendant six semaines.",
+   "confidence": 0.7851,
+   "language": "fr"
+  },
+  {
+   "start": 71.94,
+   "end": 75.34,
+   "text": "Puis, une sorte de lassitude calme,",
+   "confidence": 0.7851,
+   "language": "fr"
+  },
+  {
+   "start": 75.52,
+   "end": 77.4,
+   "text": "succédant à cette crise violente,",
+   "confidence": 0.7851,
+   "language": "fr"
+  },
+  {
+   "start": 77.92,
+   "end": 79.06,
+   "text": "elle resta sans mouvement,",
+   "confidence": 0.7851,
+   "language": "fr"
+  },
+  {
+   "start": 79.82,
+   "end": 82.72,
+   "text": "mangeant à peine, remuant seulement les yeux.",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 83.54,
+   "end": 85.14,
+   "text": "Chaque fois qu'on voulait la faire lever,",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 85.98,
+   "end": 87.76,
+   "text": "elle criait comme si on lui tuait.",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 88.68,
+   "end": 90.26,
+   "text": "On la laissa donc toujours couchée,",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 91.24,
+   "end": 94.0,
+   "text": "ne la tirant de ses draps que pour les soins de sa toilette",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 94.0,
+   "end": 95.26,
+   "text": "et pour retourner ses matelas.",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 96.82,
+   "end": 98.74,
+   "text": "Une vieille bonne restait près d'elle,",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 99.32,
+   "end": 100.76,
+   "text": "la faisait boire de temps en temps",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 100.76,
+   "end": 102.34,
+   "text": "ou mâchait un peu de viande froide.",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 103.38,
+   "end": 106.7,
+   "text": "Que se passait-il dans cette âme désespérée ?",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 106.7,
+   "end": 107.46,
+   "text": "On ne le suit jamais,",
+   "confidence": 0.9886,
+   "language": "fr"
+  },
+  {
+   "start": 108.14,
+   "end": 109.5,
+   "text": "car elle ne parle à plus.",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 110.56,
+   "end": 112.42,
+   "text": "Sonjet-elle au mort ?",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 112.42,
+   "end": 113.8,
+   "text": "Révasse-t-elle tristement,",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 113.94,
+   "end": 115.04,
+   "text": "sans souvenir précis,",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 115.8,
+   "end": 117.58,
+   "text": "ou bien sa pensée année-antire",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 117.58,
+   "end": 120.96,
+   "text": "restait-elle immobile, comme de l'eau s'encourant ?",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 120.96,
+   "end": 122.4,
+   "text": "Pendant quinze années,",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 122.9,
+   "end": 125.7,
+   "text": "elle demeura ainsi fermée et inerte.",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 126.92,
+   "end": 127.68,
+   "text": "La guerre vint,",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 128.52,
+   "end": 129.84,
+   "text": "et dans les premiers jours de décembre,",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 129.98,
+   "end": 131.64,
+   "text": "les prussiens pénétraient à Cormeille.",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 133.02,
+   "end": 134.78,
+   "text": "Je me rappelle cela comme d'hier.",
+   "confidence": 0.9862,
+   "language": "fr"
+  },
+  {
+   "start": 135.46,
+   "end": 137.74,
+   "text": "Il gelait à fondre les pierres,",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 138.1,
+   "end": 139.52,
+   "text": "et j'étais étendu moi-même",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 139.52,
+   "end": 141.92,
+   "text": "dans un fauteuil immobilisé par la goutte,",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 142.26,
+   "end": 143.8,
+   "text": "quand j'entendis le battement lourd",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 143.8,
+   "end": 144.98,
+   "text": "et rythmé de leur pas.",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 146.08,
+   "end": 147.62,
+   "text": "De ma fenêtre je l'ai vie passée.",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 148.42,
+   "end": 150.6,
+   "text": "Il défilait interminablement,",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 151.18,
+   "end": 153.26,
+   "text": "tous pareils, avec ce mouvement de pantins",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 153.26,
+   "end": 154.14,
+   "text": "qui leur est particulier.",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 155.2,
+   "end": 157.96,
+   "text": "Puis les chefs distribuèrent leurs hommes aux habitants.",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 158.74,
+   "end": 159.76,
+   "text": "J'en eut dix-sept.",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 160.54,
+   "end": 163.08,
+   "text": "La voisine, la folle, en avait douze,",
+   "confidence": 0.952,
+   "language": "fr"
+  },
+  {
+   "start": 163.6,
+   "end": 167.44,
+   "text": "dont un commandant, vrai soudard, violent bourru.",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 168.56,
+   "end": 170.9,
+   "text": "Pendant les premiers jours, tout se passait normalement.",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 171.26,
+   "end": 173.84,
+   "text": "On avait dit à l'efficier d'à côté que la dame était malade,",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 174.26,
+   "end": 175.52,
+   "text": "et il ne s'en inquiète à guerre.",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 176.3,
+   "end": 178.92,
+   "text": "Mais bientôt cette femme qu'on ne voyait jamais l'irita.",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 179.62,
+   "end": 181.16,
+   "text": "Il s'informa de la maladie.",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 181.82,
+   "end": 183.8,
+   "text": "On répondit que son hôtet s'était couché",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 183.8,
+   "end": 186.12,
+   "text": "depuis quinze ans par suite d'un violent chagrin.",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 187.1,
+   "end": 188.56,
+   "text": "Il n'en crut rien sans doute,",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 189.4,
+   "end": 191.1,
+   "text": "et s'imagina que la pauvre insensée",
+   "confidence": 0.9833,
+   "language": "fr"
+  },
+  {
+   "start": 191.1,
+   "end": 192.8,
+   "text": "ne quittait pas son lit par fierté,",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 193.4,
+   "end": 194.6,
+   "text": "pour ne pas voir les Prussiens",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 194.6,
+   "end": 197.76,
+   "text": "et ne leur point parler et ne les point frôler.",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 199.28,
+   "end": 200.88,
+   "text": "Il exigeait qu'elle le reçut,",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 201.62,
+   "end": 203.44,
+   "text": "en le fiantrer dans sa chambre.",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 204.32,
+   "end": 205.68,
+   "text": "Il demandait d'un ton brusque,",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 206.12,
+   "end": 207.88,
+   "text": "« Je vous prirai, madame,",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 208.54,
+   "end": 212.62,
+   "text": "de vous lever et te descendre pour qu'on fous foi. »",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 212.62,
+   "end": 215.64,
+   "text": "Elle tourna vers lui ses yeux vagues, ses yeux vides,",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 216.46,
+   "end": 217.6,
+   "text": "et ne répondit pas.",
+   "confidence": 0.9687,
+   "language": "fr"
+  },
+  {
+   "start": 218.48,
+   "end": 221.94,
+   "text": "Il reprit, « Je ne tolérerai pas d'insolence.",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 222.2,
+   "end": 225.06,
+   "text": "Si vous ne fous levez pas de pône volonté,",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 225.72,
+   "end": 227.54,
+   "text": "je trouverai bien un moyen",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 227.54,
+   "end": 231.42,
+   "text": "de fous faire brômener toute seule. »",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 231.42,
+   "end": 232.98,
+   "text": "Elle ne fit pas un geste,",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 233.14,
+   "end": 235.36,
+   "text": "toujours immobile, comme si elle ne lui pas vue.",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 236.36,
+   "end": 238.8,
+   "text": "Il rageait, prenant ce silence calme",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 238.8,
+   "end": 240.92,
+   "text": "pour une marque de mépris suprême,",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 240.98,
+   "end": 241.6,
+   "text": "et il ajouta,",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 241.94,
+   "end": 247.58,
+   "text": "« Si vous n'êtes pas tessentu demain. »",
+   "confidence": 0.9876,
+   "language": "fr"
+  },
+  {
+   "start": 248.76,
+   "end": 251.74,
+   "text": "Le lendemain, la vieille bonne est perdue,",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 252.26,
+   "end": 253.16,
+   "text": "la voulute est billée,",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 253.74,
+   "end": 255.6,
+   "text": "mais la folle se mit à hurler en se débattant.",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 256.52,
+   "end": 258.14,
+   "text": "Le officier monta bien vite,",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 258.56,
+   "end": 261.38,
+   "text": "et la servante se jetant à ses genoux cria,",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 262.28,
+   "end": 264.1,
+   "text": "« Elle ne veut pas, monsieur, elle ne veut pas.",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 264.38,
+   "end": 267.78,
+   "text": "Pardonnez-lui, elle est si malheureuse. »",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 267.78,
+   "end": 269.2,
+   "text": "Le soldat restait embarrassé,",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 269.3,
+   "end": 271.04,
+   "text": "nausant, malgré sa colère,",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 271.38,
+   "end": 272.86,
+   "text": "la faire tirer du lit par ses hommes.",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 274.0,
+   "end": 275.8,
+   "text": "Mais soudain, il se mit à rire",
+   "confidence": 0.9905,
+   "language": "fr"
+  },
+  {
+   "start": 275.8,
+   "end": 277.02,
+   "text": "et donna des ordres en allemand.",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 277.62,
+   "end": 279.82,
+   "text": "Et bientôt, on vit sortir",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 279.82,
+   "end": 282.1,
+   "text": "un détachement qui soutenait un matelas",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 282.1,
+   "end": 283.34,
+   "text": "comme en porte un blessé.",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 284.34,
+   "end": 286.9,
+   "text": "Dans celui qu'on avait point des faits,",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 287.0,
+   "end": 290.06,
+   "text": "la folle toujours silencieuse restait tranquille,",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 290.3,
+   "end": 291.54,
+   "text": "indifférente aux événements,",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 292.14,
+   "end": 293.24,
+   "text": "tant qu'on la laissait coucher.",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 294.2,
+   "end": 295.5,
+   "text": "Un homme par derrière",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 295.5,
+   "end": 297.54,
+   "text": "portait un paquet de vêtements féminins.",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 299.0,
+   "end": 300.88,
+   "text": "Et le officier prononça,",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 301.26,
+   "end": 302.44,
+   "text": "en se frottant les mains,",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 303.9,
+   "end": 304.9,
+   "text": "« Nous ferons bien,",
+   "confidence": 0.9826,
+   "language": "fr"
+  },
+  {
+   "start": 304.9,
+   "end": 307.6,
+   "text": "si vous ne pouvez pas vous appiller toute seule,",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 307.9,
+   "end": 309.84,
+   "text": "et faire une bêtite promenade.",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 311.02,
+   "end": 311.22,
+   "text": "»",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 311.22,
+   "end": 313.74,
+   "text": "Puis, on vit s'éloigner le cortège",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 313.74,
+   "end": 315.66,
+   "text": "dans la direction de la forêt d'Himoville.",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 316.6,
+   "end": 317.78,
+   "text": "Deux heures plus tard,",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 318.86,
+   "end": 320.36,
+   "text": "les soldats revinrent tout seul.",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 321.4,
+   "end": 323.24,
+   "text": "On ne revit plus la folle.",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 323.84,
+   "end": 324.82,
+   "text": "Qu'en avait-il fait,",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 325.2,
+   "end": 327.16,
+   "text": "ou l'avait-il porté ?",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 327.16,
+   "end": 327.88,
+   "text": "On ne le suit jamais.",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 329.48,
+   "end": 331.4,
+   "text": "La neige tombait maintenant jour et nuit,",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 331.74,
+   "end": 333.98,
+   "text": "en se velissant la plaine et les bois",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 333.98,
+   "end": 335.98,
+   "text": "sous un linceul de mousse glacée.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 336.74,
+   "end": 338.7,
+   "text": "Les loups venaient hurler jusqu'à nos portes.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 339.54,
+   "end": 341.76,
+   "text": "La pensée de cette femme perdue me hantait.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 342.46,
+   "end": 343.92,
+   "text": "Et je fis plusieurs démarches",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 343.92,
+   "end": 345.48,
+   "text": "auprès de l'autorité prussienne",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 345.48,
+   "end": 347.54,
+   "text": "afin d'obtenir des renseignements.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 348.48,
+   "end": 349.84,
+   "text": "Je faillis être fusillé.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 351.4,
+   "end": 352.74,
+   "text": "Le printemps revint.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 353.36,
+   "end": 355.1,
+   "text": "L'armée d'occupation s'éloigna.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 355.56,
+   "end": 357.52,
+   "text": "La maison de ma voisine restait fermée.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 358.08,
+   "end": 359.9,
+   "text": "L'herbe de rue poussait dans les allées.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 361.36,
+   "end": 363.22,
+   "text": "La vieille bonne était morte pendant l'hiver.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 363.9,
+   "end": 366.16,
+   "text": "Personne ne s'occupait plus de cette aventure.",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 366.54,
+   "end": 368.2,
+   "text": "Moi seul y songeai sans cesse.",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 370.12,
+   "end": 372.52,
+   "text": "Qu'avait-il fait de cette femme ?",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 372.52,
+   "end": 374.22,
+   "text": "C'était-elle enfui à travers les bois ?",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 374.88,
+   "end": 376.38,
+   "text": "L'avait-on recueilli quelque part",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 376.38,
+   "end": 377.92,
+   "text": "et gardait dans un hôpital",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 377.92,
+   "end": 381.22,
+   "text": "sans pouvoir obtenir d'elle aucun renseignement ?",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 381.8,
+   "end": 383.82,
+   "text": "Rien ne venait alléger mes doutes.",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 384.58,
+   "end": 387.28,
+   "text": "Mais peu à peu le temps apaisa le souci de mon cœur.",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 387.88,
+   "end": 390.18,
+   "text": "Or, à l'automne suivant,",
+   "confidence": 0.9965,
+   "language": "fr"
+  },
+  {
+   "start": 390.18,
+   "end": 392.48,
+   "text": "les bécasses passèrent en masse",
+   "confidence": 0.9844,
+   "language": "fr"
+  },
+  {
+   "start": 392.48,
+   "end": 395.08,
+   "text": "et, comme ma goutte me laissait un peu de répit,",
+   "confidence": 0.9844,
+   "language": "fr"
+  },
+  {
+   "start": 395.82,
+   "end": 397.44,
+   "text": "je me traînais jusqu'à la forêt.",
+   "confidence": 0.9844,
+   "language": "fr"
+  },
+  {
+   "start": 398.38,
+   "end": 401.6,
+   "text": "J'avais déjà tué quatre ou cinq oiseaux à l'ombèque,",
+   "confidence": 0.9844,
+   "language": "fr"
+  },
+  {
+   "start": 402.22,
+   "end": 405.28,
+   "text": "quand j'en ai bâti un qui disparut dans un fossé plein de branches.",
+   "confidence": 0.9844,
+   "language": "fr"
+  },
+  {
+   "start": 405.98,
+   "end": 408.86,
+   "text": "Je fus obligé d'y descendre pour ira masser ma bête.",
+   "confidence": 0.9844,
+   "language": "fr"
+  },
+  {
+   "start": 410.06,
+   "end": 412.54,
+   "text": "Je l'a trouvée tombée auprès d'une tête de mort.",
+   "confidence": 0.9844,
+   "language": "fr"
+  },
+  {
+   "start": 413.22,
+   "end": 417.1,
+   "text": "Et brusquement le souvenir de la folle m'arriva dans la poitrine comme un coup de poing.",
+   "confidence": 0.9844,
+   "language": "fr"
+  },
+  {
+   "start": 417.8,
+   "end": 421.1,
+   "text": "Bien d'autres avaient expiré dans ces bois peut-être en cette année sinistre.",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 422.36,
+   "end": 423.44,
+   "text": "Mais je ne sais pas pourquoi.",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 423.98,
+   "end": 426.38,
+   "text": "J'étais sûr, sûr, vous dis-je,",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 427.0,
+   "end": 429.92,
+   "text": "que je rencontrais la tête de cette misérable maniaque.",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 430.52,
+   "end": 431.66,
+   "text": "Et soudain je compris.",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 432.34,
+   "end": 433.22,
+   "text": "Je devinais tout.",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 434.1,
+   "end": 437.74,
+   "text": "Il l'avait abandonné sur ce matelas dans la forêt froide des désertes.",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 438.28,
+   "end": 440.1,
+   "text": "Et fidèle a son idée fixe,",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 440.84,
+   "end": 444.28,
+   "text": "elle s'était laissée mourir sous l'épée et léger du vais des neiges",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 444.28,
+   "end": 446.72,
+   "text": "et sans remuer le bras ou la jambe.",
+   "confidence": 0.9902,
+   "language": "fr"
+  },
+  {
+   "start": 447.48,
+   "end": 449.16,
+   "text": "Puis les loups l'avaient dévoré",
+   "confidence": 0.9961,
+   "language": "fr"
+  },
+  {
+   "start": 449.16,
+   "end": 453.14,
+   "text": "et les oiseaux avaient fait leur nid avec la laine de son lit déchiré.",
+   "confidence": 0.9961,
+   "language": "fr"
+  },
+  {
+   "start": 454.4,
+   "end": 456.04,
+   "text": "J'ai gardé ce tristosement.",
+   "confidence": 0.9961,
+   "language": "fr"
+  },
+  {
+   "start": 456.64,
+   "end": 459.48,
+   "text": "Je fais des vœux pour que nos fils ne voient plus jamais de guerre.",
+   "confidence": 0.9961,
+   "language": "fr"
+  },
+  {
+   "start": 461.28,
+   "end": 463.48,
+   "text": "5 décembre 1882.",
+   "confidence": 0.9961,
+   "language": "fr"
+  },
+  {
+   "start": 465.98,
+   "end": 467.26,
+   "text": "Fin de la folle.",
+   "confidence": 0.9961,
+   "language": "fr"
+  }
+ ],
+ "metadata": {
+  "audio_duration_sec": 472.45,
+  "model": "faster-whisper small int8 cpu",
+  "language": "fr",
+  "source": "https://archive.org/download/les_contes_de_la_becasse_0809_librivox/lescontesdelabecasse_03_maupassant_64kb.mp3",
+  "license": "public domain (LibriVox)"
+ }
+}

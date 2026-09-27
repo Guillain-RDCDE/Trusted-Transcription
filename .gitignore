@@ -12,3 +12,4 @@ eval/results/*.json
 .pytest_cache/
 *.tmp
 .env
+corpus/real/audio/

@@ -1,0 +1,900 @@
+{
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.58,
+   "text": "La bécasse des comptes de la bécasse.",
+   "confidence": 0.8486,
+   "language": "fr"
+  },
+  {
+   "start": 4.74,
+   "end": 7.34,
+   "text": "Ceci est un enregistrement LibriVox.",
+   "confidence": 0.8486,
+   "language": "fr"
+  },
+  {
+   "start": 8.16,
+   "end": 11.04,
+   "text": "Tous nos enregistrements appartiennent au domaine public.",
+   "confidence": 0.8486,
+   "language": "fr"
+  },
+  {
+   "start": 11.98,
+   "end": 15.48,
+   "text": "Pour vous renseigner à notre sujet ou pour participer,",
+   "confidence": 0.8486,
+   "language": "fr"
+  },
+  {
+   "start": 16.3,
+   "end": 20.18,
+   "text": "rendez-vous sur LibriVox.org.",
+   "confidence": 0.8486,
+   "language": "fr"
+  },
+  {
+   "start": 21.58,
+   "end": 24.48,
+   "text": "Enregistré par Didier.",
+   "confidence": 0.8486,
+   "language": "fr"
+  },
+  {
+   "start": 25.58,
+   "end": 27.26,
+   "text": "Les comptes de la bécasse.",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 27.68,
+   "end": 28.92,
+   "text": "De Guy de Maupassant.",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 29.8,
+   "end": 30.76,
+   "text": "La bécasse.",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 32.78,
+   "end": 36.44,
+   "text": "Le vieux baron des Ravaux avait été pendant 40 ans",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 36.44,
+   "end": 38.26,
+   "text": "le roi des chasseurs de sa province.",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 39.06,
+   "end": 40.62,
+   "text": "Mais depuis cinq à six années,",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 41.14,
+   "end": 43.48,
+   "text": "une paralysie des jambes, le clou et à son fauteuil",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 44.14,
+   "end": 46.26,
+   "text": "et il ne pouvait plus que tirer des pigeons",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 46.26,
+   "end": 47.86,
+   "text": "de la fenêtre de son salon",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 47.86,
+   "end": 49.6,
+   "text": "ou du haut de son grand péron.",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 50.4,
+   "end": 52.52,
+   "text": "Le reste du temps, il lisait.",
+   "confidence": 0.7636,
+   "language": "fr"
+  },
+  {
+   "start": 52.52,
+   "end": 55.6,
+   "text": "C'était un homme de commerce aimable",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 55.6,
+   "end": 58.88,
+   "text": "chez qui était resté beaucoup de l'esprit lettré",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 58.88,
+   "end": 59.96,
+   "text": "du dernier siècle.",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 61.2,
+   "end": 62.58,
+   "text": "Il adorait les comptes,",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 62.98,
+   "end": 64.62,
+   "text": "les petits comptes polissons",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 64.62,
+   "end": 66.74,
+   "text": "et aussi les histoires vraies",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 66.74,
+   "end": 68.6,
+   "text": "arrivées dans son entourage.",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 69.76,
+   "end": 71.26,
+   "text": "Dès qu'un ami entrait chez lui,",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 71.72,
+   "end": 72.2,
+   "text": "il demandait.",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 73.06,
+   "end": 74.52,
+   "text": "Eh bien, quoi de nouveau ?",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 75.54,
+   "end": 76.88,
+   "text": "Et il savait interroger",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 76.88,
+   "end": 78.82,
+   "text": "à la façon d'un juge d'instruction.",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 79.94,
+   "end": 81.3,
+   "text": "Par les jours de soleil,",
+   "confidence": 0.8449,
+   "language": "fr"
+  },
+  {
+   "start": 81.3,
+   "end": 83.2,
+   "text": "il faisait rouler devant la porte",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 83.2,
+   "end": 85.88,
+   "text": "son large fauteuil pareille à un lit.",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 86.66,
+   "end": 88.86,
+   "text": "Un domestique, derrière son dos,",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 89.6,
+   "end": 91.66,
+   "text": "tenait les fusils, les chargés",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 91.66,
+   "end": 93.32,
+   "text": "et les passait à son maître.",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 93.96,
+   "end": 96.6,
+   "text": "Un autre valet, caché dans un massif,",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 97.24,
+   "end": 99.12,
+   "text": "lâchait un pigeon de temps en temps",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 99.12,
+   "end": 100.8,
+   "text": "à des intervalles irréguliers",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 100.8,
+   "end": 103.28,
+   "text": "pour que le baron ne fût pas prévenu",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 103.28,
+   "end": 104.7,
+   "text": "et demeurât en éveil.",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 105.72,
+   "end": 107.1,
+   "text": "Et du matin au soir,",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 107.48,
+   "end": 109.06,
+   "text": "il tirait les oiseaux rapides,",
+   "confidence": 0.9233,
+   "language": "fr"
+  },
+  {
+   "start": 109.06,
+   "end": 111.24,
+   "text": "se désolant quand il s'était laissé",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 111.24,
+   "end": 113.42,
+   "text": "surprendre et rie entre l'arme",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 113.42,
+   "end": 114.86,
+   "text": "quand la bête tombait d'aplomb",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 114.86,
+   "end": 117.64,
+   "text": "ou faisait quelques culbutines attendues et drôles.",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 118.5,
+   "end": 120.3,
+   "text": "Il se tournait alors vers le garçon",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 120.3,
+   "end": 121.68,
+   "text": "qui chargeait les armes",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 121.68,
+   "end": 124.28,
+   "text": "et il demandait en suffocant de guetter.",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 125.04,
+   "end": 127.06,
+   "text": "Y est-il celui-là, Joseph ?",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 127.64,
+   "end": 130.14,
+   "text": "As-tu vu comme il est descendu ?",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 130.14,
+   "end": 132.38,
+   "text": "Et Joseph répondait invariablement.",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 133.32,
+   "end": 135.26,
+   "text": "Oh, monsieur le baron",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 135.26,
+   "end": 136.36,
+   "text": "ne les manque pas.",
+   "confidence": 0.972,
+   "language": "fr"
+  },
+  {
+   "start": 136.36,
+   "end": 139.06,
+   "text": "À l'automne, au moment des chasses,",
+   "confidence": 0.9679,
+   "language": "fr"
+  },
+  {
+   "start": 139.62,
+   "end": 141.82,
+   "text": "il invitait comme à l'ancien temps ses amis",
+   "confidence": 0.9679,
+   "language": "fr"
+  },
+  {
+   "start": 142.36,
+   "end": 144.82,
+   "text": "et il aimait entendre loin les détonations.",
+   "confidence": 0.9679,
+   "language": "fr"
+  },
+  {
+   "start": 145.54,
+   "end": 148.28,
+   "text": "Il les comptait heureux quand elle se précipitait.",
+   "confidence": 0.9679,
+   "language": "fr"
+  },
+  {
+   "start": 149.06,
+   "end": 151.34,
+   "text": "Et le soir, il exigeait de chacun",
+   "confidence": 0.9679,
+   "language": "fr"
+  },
+  {
+   "start": 151.34,
+   "end": 153.58,
+   "text": "le récit fidèle de sa journée.",
+   "confidence": 0.9679,
+   "language": "fr"
+  },
+  {
+   "start": 154.34,
+   "end": 156.76,
+   "text": "Et on restait trois heures à table",
+   "confidence": 0.9679,
+   "language": "fr"
+  },
+  {
+   "start": 156.76,
+   "end": 158.62,
+   "text": "en racontant des coups de fusil.",
+   "confidence": 0.9679,
+   "language": "fr"
+  },
+  {
+   "start": 159.42,
+   "end": 162.66,
+   "text": "C'était d'étranges et invraisemblables aventures",
+   "confidence": 0.9679,
+   "language": "fr"
+  },
+  {
+   "start": 162.66,
+   "end": 165.96,
+   "text": "où se complaisaient l'humeur hableuse des chasseurs.",
+   "confidence": 0.8302,
+   "language": "fr"
+  },
+  {
+   "start": 166.92,
+   "end": 169.9,
+   "text": "Quelques-unes avaient fait date et revenaient régulièrement.",
+   "confidence": 0.8302,
+   "language": "fr"
+  },
+  {
+   "start": 170.56,
+   "end": 172.94,
+   "text": "L'histoire d'un lapin que le petit vie-compte",
+   "confidence": 0.8302,
+   "language": "fr"
+  },
+  {
+   "start": 172.94,
+   "end": 175.06,
+   "text": "de Bouril avait manqué dans son vestibule",
+   "confidence": 0.8302,
+   "language": "fr"
+  },
+  {
+   "start": 175.06,
+   "end": 178.66,
+   "text": "les faisait se tordre chaque année de la même façon.",
+   "confidence": 0.8302,
+   "language": "fr"
+  },
+  {
+   "start": 179.48,
+   "end": 180.48,
+   "text": "Toutes les cinq minutes,",
+   "confidence": 0.8302,
+   "language": "fr"
+  },
+  {
+   "start": 180.88,
+   "end": 182.72,
+   "text": "un nouvel orateur prononçait.",
+   "confidence": 0.8302,
+   "language": "fr"
+  },
+  {
+   "start": 183.64,
+   "end": 185.64,
+   "text": "J'entends, beer, beer,",
+   "confidence": 0.8302,
+   "language": "fr"
+  },
+  {
+   "start": 186.18,
+   "end": 188.8,
+   "text": "et une compagnie magnifique me paradie pas.",
+   "confidence": 0.8302,
+   "language": "fr"
+  },
+  {
+   "start": 188.8,
+   "end": 191.84,
+   "text": "J'ajuste, pif, paf,",
+   "confidence": 0.88,
+   "language": "fr"
+  },
+  {
+   "start": 192.34,
+   "end": 194.62,
+   "text": "j'envoie tomber une pluie, une vraie pluie.",
+   "confidence": 0.88,
+   "language": "fr"
+  },
+  {
+   "start": 194.86,
+   "end": 198.04,
+   "text": "Il y en avait sept, et tous étonnés,",
+   "confidence": 0.88,
+   "language": "fr"
+  },
+  {
+   "start": 198.48,
+   "end": 200.82,
+   "text": "mes réciproquement crédules s'extasièrent.",
+   "confidence": 0.88,
+   "language": "fr"
+  },
+  {
+   "start": 201.58,
+   "end": 203.3,
+   "text": "Mais il existait dans la maison",
+   "confidence": 0.88,
+   "language": "fr"
+  },
+  {
+   "start": 203.3,
+   "end": 206.64,
+   "text": "une vieille coutume appelée le Compte de la Bécasse.",
+   "confidence": 0.88,
+   "language": "fr"
+  },
+  {
+   "start": 207.36,
+   "end": 210.42,
+   "text": "Au moment du passage de cette reine des gibiers,",
+   "confidence": 0.88,
+   "language": "fr"
+  },
+  {
+   "start": 211.04,
+   "end": 213.48,
+   "text": "la même cérémonie recommencait à chaque dîner.",
+   "confidence": 0.88,
+   "language": "fr"
+  },
+  {
+   "start": 214.22,
+   "end": 216.28,
+   "text": "Comme ils adoraient l'incomparable oiseau,",
+   "confidence": 0.88,
+   "language": "fr"
+  },
+  {
+   "start": 216.28,
+   "end": 218.28,
+   "text": "on en mangeait tous les soirs,",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 218.48,
+   "end": 219.44,
+   "text": "un parc en vives.",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 220.24,
+   "end": 222.8,
+   "text": "Mais on avait soin de laisser dans un plat",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 222.8,
+   "end": 223.62,
+   "text": "toutes les têtes.",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 224.62,
+   "end": 226.94,
+   "text": "Alors le baron, officiant comme un évêque,",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 227.5,
+   "end": 229.54,
+   "text": "se faisait apporter sur une assiette",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 229.54,
+   "end": 230.7,
+   "text": "un peu de graisse,",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 231.34,
+   "end": 233.76,
+   "text": "ou agnait avec soin les têtes précieuses,",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 234.16,
+   "end": 235.68,
+   "text": "en les tenant par le bout",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 235.68,
+   "end": 237.92,
+   "text": "de la mincégueille qui leur sert de bec.",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 238.88,
+   "end": 241.34,
+   "text": "Une chandelle allumée était posée près de lui",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 241.34,
+   "end": 243.42,
+   "text": "et tout le monde se taisait",
+   "confidence": 0.9386,
+   "language": "fr"
+  },
+  {
+   "start": 243.42,
+   "end": 245.38,
+   "text": "dans l'anxiété de la tante.",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 246.1,
+   "end": 248.2,
+   "text": "Puis ils saisissaient un écran",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 248.2,
+   "end": 249.14,
+   "text": "ainsi préparé,",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 249.5,
+   "end": 250.9,
+   "text": "le fixé sur une épingle,",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 251.24,
+   "end": 252.98,
+   "text": "piqué l'épingle sur un bouchon,",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 253.52,
+   "end": 255.54,
+   "text": "maintenait le tout en équilibre",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 255.54,
+   "end": 257.92,
+   "text": "au moyen de petits bâtons croisés",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 257.92,
+   "end": 258.86,
+   "text": "comme des balanciers,",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 259.46,
+   "end": 261.66,
+   "text": "et plantait délicatement cet appareil",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 261.66,
+   "end": 262.92,
+   "text": "sur un goulot de bouteilles",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 262.92,
+   "end": 264.76,
+   "text": "en manière de tourniquets.",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 265.7,
+   "end": 267.52,
+   "text": "Tous les convives comptaient ensemble",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 267.52,
+   "end": 268.78,
+   "text": "d'une voix forte.",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 270.04,
+   "end": 272.86,
+   "text": "« Une, deux, trois ! »",
+   "confidence": 0.8431,
+   "language": "fr"
+  },
+  {
+   "start": 272.86,
+   "end": 275.02,
+   "text": "Et le baron, d'un coup de doigt,",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 275.54,
+   "end": 277.38,
+   "text": "faisait vivement pivoter ce joujou.",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 278.32,
+   "end": 281.4,
+   "text": "Celui désinvité et que désignait en s'arrêtant,",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 281.9,
+   "end": 284.5,
+   "text": "le long bec pointu devenait maître",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 284.5,
+   "end": 285.56,
+   "text": "de toutes les têtes,",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 285.98,
+   "end": 288.94,
+   "text": "régale exquis qui faisait loucher ses voisins.",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 289.72,
+   "end": 291.24,
+   "text": "Il les prenait une à une",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 291.24,
+   "end": 293.24,
+   "text": "et les faisait griller sur la chandelle.",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 294.12,
+   "end": 296.86,
+   "text": "La graisse crépitait, la peau risolée fumait,",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 298.02,
+   "end": 300.02,
+   "text": "et l'élu du hasard croquait le crâne",
+   "confidence": 0.9478,
+   "language": "fr"
+  },
+  {
+   "start": 300.02,
+   "end": 302.52,
+   "text": "suifait en le tenant par le nez",
+   "confidence": 0.9455,
+   "language": "fr"
+  },
+  {
+   "start": 302.52,
+   "end": 304.78,
+   "text": "et en poussant des exclamations de plaisir.",
+   "confidence": 0.9455,
+   "language": "fr"
+  },
+  {
+   "start": 305.98,
+   "end": 306.74,
+   "text": "Et chaque fois,",
+   "confidence": 0.9455,
+   "language": "fr"
+  },
+  {
+   "start": 307.34,
+   "end": 309.22,
+   "text": "les dîners, levant leur verre,",
+   "confidence": 0.9455,
+   "language": "fr"
+  },
+  {
+   "start": 309.58,
+   "end": 310.56,
+   "text": "buvait à sa santé.",
+   "confidence": 0.9455,
+   "language": "fr"
+  },
+  {
+   "start": 311.68,
+   "end": 314.16,
+   "text": "Puis, quand il avait achevé le dernier,",
+   "confidence": 0.9455,
+   "language": "fr"
+  },
+  {
+   "start": 314.88,
+   "end": 316.72,
+   "text": "il devait, sur l'ordre du baron,",
+   "confidence": 0.9455,
+   "language": "fr"
+  },
+  {
+   "start": 317.3,
+   "end": 320.28,
+   "text": "compter une histoire pour anemniser les déshérités.",
+   "confidence": 0.9455,
+   "language": "fr"
+  },
+  {
+   "start": 321.0,
+   "end": 322.82,
+   "text": "Voici quelques ans de ces récits.",
+   "confidence": 0.9455,
+   "language": "fr"
+  },
+  {
+   "start": 333.28,
+   "end": 334.68,
+   "text": "Sous-titres réalisés par la communauté d'Amara.org",
+   "confidence": 0.028,
+   "language": "fr"
+  }
+ ],
+ "metadata": {
+  "audio_duration_sec": 334.707,
+  "model": "faster-whisper small int8 cpu",
+  "language": "fr",
+  "source": "https://archive.org/download/les_contes_de_la_becasse_0809_librivox/lescontesdelabecasse_01_maupassant_64kb.mp3",
+  "license": "public domain (LibriVox)"
+ }
+}

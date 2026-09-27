@@ -2,5 +2,7 @@
   "01_la_becasse.json": [
     "silence_hallucination"
   ],
-  "03_la_folle.json": []
+  "03_la_folle.json": [],
+  "05_menuet.json": [],
+  "10_en_mer.json": []
 }

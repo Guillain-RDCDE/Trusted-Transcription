@@ -1,0 +1,1005 @@
+{
+ "segments": [
+  {
+   "start": 2.02,
+   "end": 4.44,
+   "text": "Menuer des comptes de la Bécasse",
+   "confidence": 0.805,
+   "language": "fr"
+  },
+  {
+   "start": 5.0,
+   "end": 6.9,
+   "text": "Ceci est un enregistrement LibriVox.",
+   "confidence": 0.805,
+   "language": "fr"
+  },
+  {
+   "start": 7.24,
+   "end": 9.36,
+   "text": "Tous nos enregistrements appartiennent au domaine public.",
+   "confidence": 0.805,
+   "language": "fr"
+  },
+  {
+   "start": 10.06,
+   "end": 15.12,
+   "text": "Pour vous renseigner à notre sujet ou pour participer, rendez-vous sur LibriVox.org.",
+   "confidence": 0.805,
+   "language": "fr"
+  },
+  {
+   "start": 16.02,
+   "end": 17.6,
+   "text": "Enregistré par Bernard.",
+   "confidence": 0.805,
+   "language": "fr"
+  },
+  {
+   "start": 19.58,
+   "end": 21.94,
+   "text": "Les comptes de la Bécasse, de Guy de Maupassant.",
+   "confidence": 0.805,
+   "language": "fr"
+  },
+  {
+   "start": 22.94,
+   "end": 23.34,
+   "text": "Menuer",
+   "confidence": 0.805,
+   "language": "fr"
+  },
+  {
+   "start": 29.84,
+   "end": 34.34,
+   "text": "Les grands malheurs de ma triste guerre, dit Jean Bridel, un vieux garçon qui passait pour sceptique.",
+   "confidence": 0.6926,
+   "language": "fr"
+  },
+  {
+   "start": 35.76,
+   "end": 37.06,
+   "text": "J'ai vu la guerre de bien près.",
+   "confidence": 0.6926,
+   "language": "fr"
+  },
+  {
+   "start": 37.86,
+   "end": 39.34,
+   "text": "Jean jambait les corps sans appitoiement.",
+   "confidence": 0.6926,
+   "language": "fr"
+  },
+  {
+   "start": 40.68,
+   "end": 45.08,
+   "text": "Les fortes brutalités de la nature ou des hommes peuvent nous faire pousser des cris d'horreur ou d'indignation.",
+   "confidence": 0.6926,
+   "language": "fr"
+  },
+  {
+   "start": 45.92,
+   "end": 48.58,
+   "text": "Mais ne nous donne point ce pincement au cœur.",
+   "confidence": 0.6926,
+   "language": "fr"
+  },
+  {
+   "start": 49.22,
+   "end": 53.12,
+   "text": "Ce frisson qui vous passe dans le dos à la vue de certaines petites choses navrantes.",
+   "confidence": 0.6926,
+   "language": "fr"
+  },
+  {
+   "start": 54.98,
+   "end": 58.12,
+   "text": "La plus violente douleur qu'on puisse éprouver, certes,",
+   "confidence": 0.9917,
+   "language": "fr"
+  },
+  {
+   "start": 58.92,
+   "end": 63.02,
+   "text": "est la perte d'un enfant pour une mère et la perte de la mère pour un homme.",
+   "confidence": 0.9917,
+   "language": "fr"
+  },
+  {
+   "start": 63.88,
+   "end": 67.8,
+   "text": "Cela est violent, terrible, cela boulevert ses déchires.",
+   "confidence": 0.9917,
+   "language": "fr"
+  },
+  {
+   "start": 68.5,
+   "end": 72.52,
+   "text": "Mais on guérit de ces catastrophes comme de larges blessures saignantes.",
+   "confidence": 0.9917,
+   "language": "fr"
+  },
+  {
+   "start": 73.26,
+   "end": 78.1,
+   "text": "Or, certaines rencontres, certaines choses entre aperçues,",
+   "confidence": 0.9917,
+   "language": "fr"
+  },
+  {
+   "start": 78.1,
+   "end": 83.42,
+   "text": "devinées, certains chagrin secrets, certaines perfidies du sort,",
+   "confidence": 0.7053,
+   "language": "fr"
+  },
+  {
+   "start": 84.06,
+   "end": 87.12,
+   "text": "qui remuent en nous tout un monde douloureux de pensée,",
+   "confidence": 0.7053,
+   "language": "fr"
+  },
+  {
+   "start": 87.68,
+   "end": 92.96,
+   "text": "qui entreouvrent devant nous brusquement la porte mystérieuse des souffrances morales,",
+   "confidence": 0.7053,
+   "language": "fr"
+  },
+  {
+   "start": 93.3,
+   "end": 97.88,
+   "text": "compliquées, incurables, d'autant plus profondes qu'elles semblent bénignes,",
+   "confidence": 0.7053,
+   "language": "fr"
+  },
+  {
+   "start": 98.42,
+   "end": 102.7,
+   "text": "d'autant plus cuisantes qu'elles semblent presque insaisissables,",
+   "confidence": 0.7053,
+   "language": "fr"
+  },
+  {
+   "start": 103.24,
+   "end": 106.46,
+   "text": "d'autant plus tenaces qu'elles semblent factices.",
+   "confidence": 0.7053,
+   "language": "fr"
+  },
+  {
+   "start": 107.12,
+   "end": 110.72,
+   "text": "Nous laissent à l'âme comme une traînée, un goût d'amertume,",
+   "confidence": 0.985,
+   "language": "fr"
+  },
+  {
+   "start": 111.42,
+   "end": 116.46,
+   "text": "une sensation de désenchantement dont nous sommes longtemps à nous débarrasser.",
+   "confidence": 0.985,
+   "language": "fr"
+  },
+  {
+   "start": 117.78,
+   "end": 122.64,
+   "text": "J'ai toujours devant les yeux deux ou trois choses que d'autres nus point remarqués assurément",
+   "confidence": 0.985,
+   "language": "fr"
+  },
+  {
+   "start": 122.64,
+   "end": 127.3,
+   "text": "et qui sont entrés en moi comme de longues et minces piqûres inguérissables.",
+   "confidence": 0.985,
+   "language": "fr"
+  },
+  {
+   "start": 128.9,
+   "end": 133.26,
+   "text": "Vous ne comprendriez peut-être pas l'émotion qui m'est restée de ces rapides impressions.",
+   "confidence": 0.985,
+   "language": "fr"
+  },
+  {
+   "start": 134.14,
+   "end": 135.68,
+   "text": "Je ne vous en dirai qu'une.",
+   "confidence": 0.9253,
+   "language": "fr"
+  },
+  {
+   "start": 137.08,
+   "end": 139.5,
+   "text": "Elle est très vieille, mais vive comme d'hier.",
+   "confidence": 0.9253,
+   "language": "fr"
+  },
+  {
+   "start": 140.34,
+   "end": 144.18,
+   "text": "Il se peut que mon imagination seule et fait les frais de mon attendrissement.",
+   "confidence": 0.9253,
+   "language": "fr"
+  },
+  {
+   "start": 145.46,
+   "end": 146.5,
+   "text": "J'ai cinquante ans.",
+   "confidence": 0.9253,
+   "language": "fr"
+  },
+  {
+   "start": 147.48,
+   "end": 149.64,
+   "text": "J'étais jeune, alors, et j'étudiais le droit.",
+   "confidence": 0.9253,
+   "language": "fr"
+  },
+  {
+   "start": 150.54,
+   "end": 154.56,
+   "text": "Un peu triste, un peu rêveur, imprégné d'une philosophie mélancolique,",
+   "confidence": 0.9253,
+   "language": "fr"
+  },
+  {
+   "start": 155.12,
+   "end": 160.2,
+   "text": "je n'aimais guère les cafés brouillants, les camarades brayarnis, les filles stupides.",
+   "confidence": 0.9253,
+   "language": "fr"
+  },
+  {
+   "start": 161.1,
+   "end": 166.9,
+   "text": "Je me levais tôt, et une de mes plus cher voluptés était de me promener seul vers huit heures du matin",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 166.9,
+   "end": 169.24,
+   "text": "dans la pépinière du Luxembourg.",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 170.68,
+   "end": 174.48,
+   "text": "Vous ne l'avez pas connue, vous autres, cette pépinière ?",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 174.48,
+   "end": 176.62,
+   "text": "C'était comme un jardin oublié de l'autre siècle,",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 177.36,
+   "end": 180.18,
+   "text": "un jardin joli comme un doux sourire de vieille,",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 180.82,
+   "end": 184.08,
+   "text": "des touffus séparés les allées étroites et régulières,",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 184.8,
+   "end": 189.0,
+   "text": "à les calmes entre deux murs de feuillage taillés avec méthode,",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 189.72,
+   "end": 193.82,
+   "text": "les grands ciseaux du jardinier élignaient sans relâche ces cloisons de branche,",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 194.3,
+   "end": 198.34,
+   "text": "et, de place en place, ont rencontré des parterres de fleurs,",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 198.8,
+   "end": 202.9,
+   "text": "des plate-bandes de petits arbres rangés comme des collégiens en promenade,",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 203.48,
+   "end": 207.44,
+   "text": "des sociétés de rosiers magnifiques ou des régiments d'arbres affruits.",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 208.92,
+   "end": 211.9,
+   "text": "Tout un coin de ce ravissant bosquet était habité par les abeilles.",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 212.92,
+   "end": 216.44,
+   "text": "Leur maison de paille savamment espacée sur des planches,",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 216.44,
+   "end": 221.64,
+   "text": "ouvrées au soleil, leur porte grande, comme l'entrée d'un déacoudre,",
+   "confidence": 0.9892,
+   "language": "fr"
+  },
+  {
+   "start": 222.36,
+   "end": 225.66,
+   "text": "et ont rencontré tout le long des chemins des mouches bourdonnantes et dorées,",
+   "confidence": 0.9892,
+   "language": "fr"
+  },
+  {
+   "start": 226.16,
+   "end": 231.28,
+   "text": "vraies maîtresses de ce lieu pacifique, vraies promeneuses de ces tranquilles allées en corridor.",
+   "confidence": 0.9892,
+   "language": "fr"
+  },
+  {
+   "start": 232.8,
+   "end": 237.5,
+   "text": "Je venais là presque tous les matins, je m'asseyais sur un banc et je lisais.",
+   "confidence": 0.9892,
+   "language": "fr"
+  },
+  {
+   "start": 238.42,
+   "end": 242.22,
+   "text": "Parfois je laissais retomber le livre sur mes genoux pour rêver,",
+   "confidence": 0.9892,
+   "language": "fr"
+  },
+  {
+   "start": 242.22,
+   "end": 249.24,
+   "text": "pour écouter autour de moi vivre Paris et jouir du repos infini de ses charmilles à la mode ancienne.",
+   "confidence": 0.9806,
+   "language": "fr"
+  },
+  {
+   "start": 250.6,
+   "end": 255.7,
+   "text": "Mais je m'aperçus bientôt que je n'étais pas seul à fréquenter ce lieu dès l'ouverture des barrières,",
+   "confidence": 0.9806,
+   "language": "fr"
+  },
+  {
+   "start": 256.28,
+   "end": 262.36,
+   "text": "et je rencontrais parfois, né à né, au coin d'un massif, un étrange petit vieillard.",
+   "confidence": 0.9806,
+   "language": "fr"
+  },
+  {
+   "start": 263.26,
+   "end": 266.7,
+   "text": "Il portait des souliers à boucles d'argent, une culotte à pont,",
+   "confidence": 0.9806,
+   "language": "fr"
+  },
+  {
+   "start": 266.7,
+   "end": 271.78,
+   "text": "une redingotte tabac d'Espagne, une dentelle en guise de cravate,",
+   "confidence": 0.8144,
+   "language": "fr"
+  },
+  {
+   "start": 271.98,
+   "end": 278.2,
+   "text": "et un invraisemblable chapeau gris à grand bord et à grand poil, qui faisait penser au déluge.",
+   "confidence": 0.8144,
+   "language": "fr"
+  },
+  {
+   "start": 279.36,
+   "end": 284.2,
+   "text": "Il était maigre, fort maigre, onguleux, gris maçant et souriant.",
+   "confidence": 0.8144,
+   "language": "fr"
+  },
+  {
+   "start": 285.3,
+   "end": 289.82,
+   "text": "Ses yeux vifs, palpités, s'agités sous un mouvement continu des paupières,",
+   "confidence": 0.8144,
+   "language": "fr"
+  },
+  {
+   "start": 290.56,
+   "end": 293.66,
+   "text": "et il avait toujours à la main une superbe canne à pommes hautes d'or,",
+   "confidence": 0.8144,
+   "language": "fr"
+  },
+  {
+   "start": 293.66,
+   "end": 296.54,
+   "text": "qui devait être pour lui quelques souvenirs magnifiques.",
+   "confidence": 0.9086,
+   "language": "fr"
+  },
+  {
+   "start": 297.54,
+   "end": 302.02,
+   "text": "Ce bonhomme m'étonna d'abord, puis m'intéressa outre mesure,",
+   "confidence": 0.9086,
+   "language": "fr"
+  },
+  {
+   "start": 302.86,
+   "end": 304.88,
+   "text": "et je le guettais à travers les murs de feuilles.",
+   "confidence": 0.9086,
+   "language": "fr"
+  },
+  {
+   "start": 305.42,
+   "end": 309.86,
+   "text": "Je le suivais de loin, m'arrêtant au détour des bosquets pour naître point vu.",
+   "confidence": 0.9086,
+   "language": "fr"
+  },
+  {
+   "start": 311.0,
+   "end": 316.06,
+   "text": "Et voilà qu'un matin, comme il se croyait bien seul, il se mit à faire des mouvements singuliers,",
+   "confidence": 0.9086,
+   "language": "fr"
+  },
+  {
+   "start": 316.06,
+   "end": 323.34,
+   "text": "quelques petits bons d'abord, puis une révérence, puis il bâti, de sa jambe grêle,",
+   "confidence": 0.478,
+   "language": "fr"
+  },
+  {
+   "start": 323.82,
+   "end": 325.68,
+   "text": "un autre chat encore alerte.",
+   "confidence": 0.478,
+   "language": "fr"
+  },
+  {
+   "start": 326.08,
+   "end": 330.9,
+   "text": "Puis il commença à pivoter galamment, sautillant, se trémoussant d'une façon drôle,",
+   "confidence": 0.478,
+   "language": "fr"
+  },
+  {
+   "start": 331.56,
+   "end": 335.86,
+   "text": "souriant comme devant un public, faisant des grâces, arrondissant les bras,",
+   "confidence": 0.478,
+   "language": "fr"
+  },
+  {
+   "start": 336.02,
+   "end": 339.92,
+   "text": "tortillant son pauvre corps de marionnette, adressant dans le vide",
+   "confidence": 0.478,
+   "language": "fr"
+  },
+  {
+   "start": 339.92,
+   "end": 343.82,
+   "text": "de légers salus attendrissants et ridicules, il dansait.",
+   "confidence": 0.478,
+   "language": "fr"
+  },
+  {
+   "start": 345.26,
+   "end": 351.64,
+   "text": "Je demeurais pétrifier d'étonnement, me demandant lequel des deux était fou, lui ou moi.",
+   "confidence": 0.9987,
+   "language": "fr"
+  },
+  {
+   "start": 352.32,
+   "end": 356.88,
+   "text": "Mais il s'arrêta soudain, s'avança comme font les acteurs sur la scène,",
+   "confidence": 0.9987,
+   "language": "fr"
+  },
+  {
+   "start": 357.42,
+   "end": 362.02,
+   "text": "puis s'inclina en reculant, avec des sourires gracieux et des baisers de comédienne,",
+   "confidence": 0.9987,
+   "language": "fr"
+  },
+  {
+   "start": 362.52,
+   "end": 366.0,
+   "text": "qu'il jetait de sa main tremblante aux deux rangés d'arbres taillés.",
+   "confidence": 0.9987,
+   "language": "fr"
+  },
+  {
+   "start": 367.14,
+   "end": 369.98,
+   "text": "Et il reprit avec gravité sa promenade.",
+   "confidence": 0.9987,
+   "language": "fr"
+  },
+  {
+   "start": 371.0,
+   "end": 376.08,
+   "text": "À partir de ce jour, je ne le perdis plus de vue, et chaque matin",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 376.08,
+   "end": 379.1,
+   "text": "il recommençait son exercice invraisemblable.",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 380.42,
+   "end": 382.82,
+   "text": "Une envie folle me prie de lui parler.",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 383.78,
+   "end": 386.6,
+   "text": "Je me risquais, et l'ayant salué, je lui dis,",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 387.7,
+   "end": 390.96,
+   "text": "« Il fait bien bon aujourd'hui, monsieur » il s'inclina.",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 391.88,
+   "end": 394.76,
+   "text": "« Oui, monsieur, c'est un vrai temps de jadis.",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 396.5,
+   "end": 400.48,
+   "text": "Huit jours après, nous étions amis, et je connais son histoire.",
+   "confidence": 0.9915,
+   "language": "fr"
+  },
+  {
+   "start": 401.3,
+   "end": 405.74,
+   "text": "Il avait été maître de danse à l'opéra, du temps du roi Louis XV.",
+   "confidence": 0.9915,
+   "language": "fr"
+  },
+  {
+   "start": 406.8,
+   "end": 411.48,
+   "text": "Sa belle-can était un cadeau du Conte de Clermont, et quand on lui parlait de danse,",
+   "confidence": 0.9915,
+   "language": "fr"
+  },
+  {
+   "start": 412.14,
+   "end": 413.88,
+   "text": "il ne s'arrêtait plus de bavarder.",
+   "confidence": 0.9915,
+   "language": "fr"
+  },
+  {
+   "start": 414.8,
+   "end": 416.78,
+   "text": "Or voilà qu'un jour il me confia.",
+   "confidence": 0.9915,
+   "language": "fr"
+  },
+  {
+   "start": 418.22,
+   "end": 420.82,
+   "text": "« J'ai épousé la castrie, monsieur.",
+   "confidence": 0.9915,
+   "language": "fr"
+  },
+  {
+   "start": 421.62,
+   "end": 425.88,
+   "text": "Je vous présenterai, si vous voulez, mais elle ne vient ici que sur le tanteau.",
+   "confidence": 0.9197,
+   "language": "fr"
+  },
+  {
+   "start": 426.82,
+   "end": 429.94,
+   "text": "Ce jardin, voyez-vous, c'est notre plaisir et notre vie.",
+   "confidence": 0.9197,
+   "language": "fr"
+  },
+  {
+   "start": 430.5,
+   "end": 432.12,
+   "text": "C'est tout ce qui nous reste d'autrefois.",
+   "confidence": 0.9197,
+   "language": "fr"
+  },
+  {
+   "start": 433.0,
+   "end": 436.18,
+   "text": "Il nous semble que nous ne pourrions plus exister si nous ne l'avions point.",
+   "confidence": 0.9197,
+   "language": "fr"
+  },
+  {
+   "start": 437.16,
+   "end": 440.02,
+   "text": "Cela est vieux et distingue, n'est-ce pas ?",
+   "confidence": 0.9197,
+   "language": "fr"
+  },
+  {
+   "start": 440.02,
+   "end": 443.28,
+   "text": "Je crois y respirer un air qui n'a point changé depuis ma jeunesse.",
+   "confidence": 0.9197,
+   "language": "fr"
+  },
+  {
+   "start": 444.14,
+   "end": 447.18,
+   "text": "Ma femme et moi nous y passons toutes nos après-midi.",
+   "confidence": 0.9197,
+   "language": "fr"
+  },
+  {
+   "start": 448.14,
+   "end": 451.68,
+   "text": "Mais moi j'y viens dès le matin car je me lève de bonheur.",
+   "confidence": 0.9664,
+   "language": "fr"
+  },
+  {
+   "start": 453.36,
+   "end": 456.34,
+   "text": "Dès que j'ai fini de déjeuner, je retournais au Luxembourg,",
+   "confidence": 0.9664,
+   "language": "fr"
+  },
+  {
+   "start": 456.72,
+   "end": 460.34,
+   "text": "et bientôt j'ai perçu mon ami qui donnait le bras avec cérémonie",
+   "confidence": 0.9664,
+   "language": "fr"
+  },
+  {
+   "start": 460.34,
+   "end": 464.94,
+   "text": "à une toute vieille femme vêtue de noir et à qui je fus présenté.",
+   "confidence": 0.9664,
+   "language": "fr"
+  },
+  {
+   "start": 466.04,
+   "end": 466.94,
+   "text": "C'était la castrie.",
+   "confidence": 0.9664,
+   "language": "fr"
+  },
+  {
+   "start": 467.64,
+   "end": 471.24,
+   "text": "La grande danseuse aimait des princes, aimait du roi,",
+   "confidence": 0.9664,
+   "language": "fr"
+  },
+  {
+   "start": 471.24,
+   "end": 475.5,
+   "text": "aimait de tout ce siècle galant qui semble avoir laissé dans le monde",
+   "confidence": 0.6924,
+   "language": "fr"
+  },
+  {
+   "start": 475.5,
+   "end": 476.3,
+   "text": "une odeur d'amour.",
+   "confidence": 0.6924,
+   "language": "fr"
+  },
+  {
+   "start": 477.36,
+   "end": 478.84,
+   "text": "Nous nous assîmes sur un banc.",
+   "confidence": 0.6924,
+   "language": "fr"
+  },
+  {
+   "start": 479.8,
+   "end": 483.96,
+   "text": "C'était au mois de mai un parfum de fleurs voltiger dans les allées propretes.",
+   "confidence": 0.6924,
+   "language": "fr"
+  },
+  {
+   "start": 484.68,
+   "end": 489.26,
+   "text": "Un banc soleil glissait entre les feuilles et semait sur nous de larges gouttes de lumière.",
+   "confidence": 0.6924,
+   "language": "fr"
+  },
+  {
+   "start": 490.38,
+   "end": 494.04,
+   "text": "La robe noire de la castrie semblait toute mouillée de clarté.",
+   "confidence": 0.6924,
+   "language": "fr"
+  },
+  {
+   "start": 494.9,
+   "end": 498.46,
+   "text": "Le jardin était vide en entendant loin rouler des fiacres.",
+   "confidence": 0.6924,
+   "language": "fr"
+  },
+  {
+   "start": 499.46,
+   "end": 503.86,
+   "text": "— Expliquez-moi donc, dit-je aux vieux danseurs, ce que c'était que le menuet.",
+   "confidence": 0.9863,
+   "language": "fr"
+  },
+  {
+   "start": 504.5,
+   "end": 505.82,
+   "text": "Il le tréçaillit.",
+   "confidence": 0.9863,
+   "language": "fr"
+  },
+  {
+   "start": 506.66,
+   "end": 509.52,
+   "text": "— Le menuet, monsieur, c'est la reine des danse.",
+   "confidence": 0.9863,
+   "language": "fr"
+  },
+  {
+   "start": 510.36,
+   "end": 512.46,
+   "text": "— Et la danse des reines, entendez-vous ?",
+   "confidence": 0.9863,
+   "language": "fr"
+  },
+  {
+   "start": 513.26,
+   "end": 516.18,
+   "text": "Depuis qu'il n'y a plus de roi, il n'y a plus de menuet.",
+   "confidence": 0.9863,
+   "language": "fr"
+  },
+  {
+   "start": 516.98,
+   "end": 523.58,
+   "text": "Et il commença, en stile pompeux, un long héloge d'itirambique auquel je ne comprends rien.",
+   "confidence": 0.9863,
+   "language": "fr"
+  },
+  {
+   "start": 523.58,
+   "end": 528.72,
+   "text": "— Je voulais me faire décrire les pas, tous les mouvements les posent.",
+   "confidence": 0.9861,
+   "language": "fr"
+  },
+  {
+   "start": 529.38,
+   "end": 533.4,
+   "text": "Il s'embrouillait, s'exaspérant de son impuissance, nerveux et désolé.",
+   "confidence": 0.9861,
+   "language": "fr"
+  },
+  {
+   "start": 534.26,
+   "end": 539.48,
+   "text": "Et soudain, se tournant vers son antique compagne, toujours silencieuse et grave.",
+   "confidence": 0.9861,
+   "language": "fr"
+  },
+  {
+   "start": 540.42,
+   "end": 548.58,
+   "text": "— Élise, veux-tu, dit, veux-tu, tu seras bien gentil, veux-tu que nous montrions à ce monsieur ce que c'était ?",
+   "confidence": 0.9861,
+   "language": "fr"
+  },
+  {
+   "start": 549.94,
+   "end": 556.54,
+   "text": "Elle tourna ses yeux inquiets de tous les côtés, puis se leva, sans dire un mot et vint se placer en face de lui.",
+   "confidence": 0.965,
+   "language": "fr"
+  },
+  {
+   "start": 557.44,
+   "end": 559.68,
+   "text": "Alors je vis une chose inoubliable.",
+   "confidence": 0.965,
+   "language": "fr"
+  },
+  {
+   "start": 560.48,
+   "end": 571.78,
+   "text": "Il les allait et venait avec des si magrés enfantines, se souriaient, se balancer, s'incliner, se tirer pareil à deux vieilles poupées, pour effédancer une mécanique ancienne.",
+   "confidence": 0.965,
+   "language": "fr"
+  },
+  {
+   "start": 572.52,
+   "end": 577.94,
+   "text": "Un peu brisé, construit jadis par un ouvrier fortabil, suivant la manière de son temps.",
+   "confidence": 0.965,
+   "language": "fr"
+  },
+  {
+   "start": 578.62,
+   "end": 585.96,
+   "text": "Et je les regardais, le cœur troublé de sensations extraordinaires, la mému d'une indicible mélancolie.",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 586.78,
+   "end": 591.4,
+   "text": "Il me semblait voir une apparition lamentable et comique, l'ombre démodée d'un siècle.",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 592.16,
+   "end": 593.82,
+   "text": "J'avais envie de rire et besoin de pleurer.",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 594.84,
+   "end": 599.12,
+   "text": "Tout à coup il s'arrêtait, il s'avait terminé les figures de la danse.",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 600.3,
+   "end": 608.64,
+   "text": "Pendant quelques secondes, il restèrent debout l'un devant l'autre, grimaçant d'une façon surprenante, puis il s'embrassait en sanglettan.",
+   "confidence": 0.7509,
+   "language": "fr"
+  },
+  {
+   "start": 610.68,
+   "end": 613.4,
+   "text": "Je partais trois jours après pour la province.",
+   "confidence": 0.7509,
+   "language": "fr"
+  },
+  {
+   "start": 614.44,
+   "end": 615.56,
+   "text": "Je ne les ai point revues.",
+   "confidence": 0.7509,
+   "language": "fr"
+  },
+  {
+   "start": 616.5,
+   "end": 620.88,
+   "text": "Quand je revins à Paris, deux ans plus tard, on avait détruit la pépinière.",
+   "confidence": 0.7509,
+   "language": "fr"
+  },
+  {
+   "start": 620.88,
+   "end": 629.88,
+   "text": "Que sont-ils devenus sans le cher jardin d'autrefois, avec ses jardins en labyrinthe, son odeur du passé, et les détours gracieux des charmilles ?",
+   "confidence": 0.5999,
+   "language": "fr"
+  },
+  {
+   "start": 630.72,
+   "end": 632.22,
+   "text": "Sont-ils morts ?",
+   "confidence": 0.5999,
+   "language": "fr"
+  },
+  {
+   "start": 632.22,
+   "end": 645.88,
+   "text": "Errent-ils par les rues modernes, comme des exilés sans espoir, dans ce tile, spectre fallot, un menuet fantastique entre les six près d'un cimetière, le long des sentiers bordés de tombe, au clair de l'une ?",
+   "confidence": 0.5999,
+   "language": "fr"
+  },
+  {
+   "start": 646.42,
+   "end": 650.02,
+   "text": "Leurs souvenirs me hantent, m'obsèdent, me torturent.",
+   "confidence": 0.5999,
+   "language": "fr"
+  },
+  {
+   "start": 650.02,
+   "end": 651.82,
+   "text": "Demeurons-moi comme une blessure.",
+   "confidence": 0.9355,
+   "language": "fr"
+  },
+  {
+   "start": 652.36,
+   "end": 653.02,
+   "text": "Pourquoi ?",
+   "confidence": 0.9355,
+   "language": "fr"
+  },
+  {
+   "start": 653.54,
+   "end": 654.36,
+   "text": "Je n'en sais rien.",
+   "confidence": 0.9355,
+   "language": "fr"
+  },
+  {
+   "start": 655.16,
+   "end": 656.64,
+   "text": "Vous trouverez cela ridicule sans doute.",
+   "confidence": 0.9355,
+   "language": "fr"
+  },
+  {
+   "start": 658.02,
+   "end": 659.68,
+   "text": "Fin de menuet.",
+   "confidence": 0.9355,
+   "language": "fr"
+  }
+ ],
+ "metadata": {
+  "audio_duration_sec": 664.973,
+  "model": "faster-whisper small int8 cpu",
+  "language": "fr",
+  "source": "https://archive.org/download/les_contes_de_la_becasse_0809_librivox/lescontesdelabecasse_05_maupassant_64kb.mp3",
+  "license": "public domain (LibriVox)"
+ }
+}

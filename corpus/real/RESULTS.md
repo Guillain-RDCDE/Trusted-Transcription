@@ -11,6 +11,8 @@ Reference: Project Gutenberg #11714.
 |---|---:|---:|---:|---:|
 | La Bécasse | 5.6 min | 127 | 84.2% | 107.7% |
 | La Folle | 7.9 min | 172 | 84.2% | 105.0% |
+| Menuet | 11.1 min | 142 | 87.2% | 102.5% |
+| En Mer | 12.7 min | 280 | 87.8% | 103.8% |
 
 Accuracy is the share of produced words that align with the book; production the words
 returned relative to the book. Production above 100% is the LibriVox announcement at each
@@ -33,7 +35,7 @@ silence_hallucination      1   0   0       100%     100%
 spelled_out                0   0   0          -        -
 temporal_drift             0   0   0          -        -
 
-2 files, every expectation met.
+4 files, every expectation met.
 ```
 
 ### 01_la_becasse.json

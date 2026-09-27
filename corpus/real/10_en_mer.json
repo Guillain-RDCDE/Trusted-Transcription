@@ -1,0 +1,1971 @@
+{
+ "segments": [
+  {
+   "start": 1.8,
+   "end": 4.66,
+   "text": "En mer des Comptes de la Bécasse.",
+   "confidence": 0.859,
+   "language": "fr"
+  },
+  {
+   "start": 5.0,
+   "end": 6.76,
+   "text": "Ceci est un enregistrement LibriVox.",
+   "confidence": 0.859,
+   "language": "fr"
+  },
+  {
+   "start": 7.38,
+   "end": 9.4,
+   "text": "Tous nos enregistrements appartiennent au domaine public.",
+   "confidence": 0.859,
+   "language": "fr"
+  },
+  {
+   "start": 10.02,
+   "end": 15.64,
+   "text": "Pour vous renseigner à notre sujet ou pour participer, rendez-vous sur LibriVox.org.",
+   "confidence": 0.859,
+   "language": "fr"
+  },
+  {
+   "start": 16.36,
+   "end": 17.54,
+   "text": "Enregistré par Bernard.",
+   "confidence": 0.859,
+   "language": "fr"
+  },
+  {
+   "start": 18.74,
+   "end": 21.24,
+   "text": "Les Comptes de la Bécasse de Guy de Maupassant.",
+   "confidence": 0.859,
+   "language": "fr"
+  },
+  {
+   "start": 21.88,
+   "end": 22.44,
+   "text": "En mer.",
+   "confidence": 0.859,
+   "language": "fr"
+  },
+  {
+   "start": 24.62,
+   "end": 26.4,
+   "text": "À Henri Seara.",
+   "confidence": 0.859,
+   "language": "fr"
+  },
+  {
+   "start": 29.04,
+   "end": 32.3,
+   "text": "On lisait dernièrement dans les journaux les lignes suivantes.",
+   "confidence": 0.9604,
+   "language": "fr"
+  },
+  {
+   "start": 32.96,
+   "end": 34.26,
+   "text": "Boulogne sur mer.",
+   "confidence": 0.9604,
+   "language": "fr"
+  },
+  {
+   "start": 35.32,
+   "end": 36.14,
+   "text": "22 janvier.",
+   "confidence": 0.9604,
+   "language": "fr"
+  },
+  {
+   "start": 37.32,
+   "end": 38.04,
+   "text": "On nous écrit.",
+   "confidence": 0.9604,
+   "language": "fr"
+  },
+  {
+   "start": 39.42,
+   "end": 44.02,
+   "text": "Un affreux malheur vient de jeter la consternation parmi notre population maritime,",
+   "confidence": 0.9604,
+   "language": "fr"
+  },
+  {
+   "start": 44.86,
+   "end": 47.88,
+   "text": "déjà si éprouvée depuis deux années.",
+   "confidence": 0.9604,
+   "language": "fr"
+  },
+  {
+   "start": 48.92,
+   "end": 52.16,
+   "text": "Le bateau de pêche commandé par le patron Javel,",
+   "confidence": 0.9604,
+   "language": "fr"
+  },
+  {
+   "start": 52.16,
+   "end": 58.74,
+   "text": "entrant dans le port, a été jeté à l'ouest et est venu se briser sur les roches du bris lame de la jetée.",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 59.9,
+   "end": 65.54,
+   "text": "Malgré les efforts du bateau de sauvetage et des lignes envoyées au moyen du fusil port Amar,",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 66.06,
+   "end": 68.54,
+   "text": "quatre hommes et le mousse ont péris.",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 70.72,
+   "end": 72.32,
+   "text": "Le mauvais temps continue.",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 73.26,
+   "end": 74.9,
+   "text": "On craint de nouveaux sinistres.",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 76.36,
+   "end": 78.32,
+   "text": "Quel est ce patron Javel ?",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 78.32,
+   "end": 80.58,
+   "text": "Est-il le frère du Manchot ?",
+   "confidence": 0.9871,
+   "language": "fr"
+  },
+  {
+   "start": 80.58,
+   "end": 86.6,
+   "text": "Si le pauvre homme roulé par la vague et mort peut-être sous les débris de son bateau mis en pièce,",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 87.18,
+   "end": 91.92,
+   "text": "et celui auquel je pense, il avait assisté, voici dix-huit ans maintenant,",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 92.54,
+   "end": 98.78,
+   "text": "à un autre drame, terrible et simple, comme sont toujours ces drames formidables des flots.",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 100.74,
+   "end": 104.68,
+   "text": "Javel aîné était alors patron d'un chalutier.",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 105.52,
+   "end": 108.34,
+   "text": "Le chalutier est le bateau de pêche par excellence,",
+   "confidence": 0.9984,
+   "language": "fr"
+  },
+  {
+   "start": 108.98,
+   "end": 115.38,
+   "text": "solide à ne craindre aucun temps, le ventreron roulé sans cesse par les lames comme un bouchon,",
+   "confidence": 0.9914,
+   "language": "fr"
+  },
+  {
+   "start": 115.86,
+   "end": 120.2,
+   "text": "toujours dehors, toujours fouetté par les vendures et salées de la Manche.",
+   "confidence": 0.9914,
+   "language": "fr"
+  },
+  {
+   "start": 120.92,
+   "end": 125.04,
+   "text": "Il travaille la mer, infatigable, la voile gonflée,",
+   "confidence": 0.9914,
+   "language": "fr"
+  },
+  {
+   "start": 125.6,
+   "end": 128.9,
+   "text": "traînant par le flanc un grand filet qui racle le fond de l'océan,",
+   "confidence": 0.9914,
+   "language": "fr"
+  },
+  {
+   "start": 129.52,
+   "end": 132.44,
+   "text": "et détache et cueille toutes les bêtes endormies dans les roches.",
+   "confidence": 0.9914,
+   "language": "fr"
+  },
+  {
+   "start": 132.44,
+   "end": 137.56,
+   "text": "Les poissons plaques, les hauts sables, les crabes lourds aux pattes crochues,",
+   "confidence": 0.9337,
+   "language": "fr"
+  },
+  {
+   "start": 138.2,
+   "end": 139.78,
+   "text": "les hauts marres aux moustaches pointues.",
+   "confidence": 0.9337,
+   "language": "fr"
+  },
+  {
+   "start": 141.0,
+   "end": 145.0,
+   "text": "Quand la brise est fraîche et la vague courte, le bateau se met à pêcher.",
+   "confidence": 0.9337,
+   "language": "fr"
+  },
+  {
+   "start": 145.76,
+   "end": 148.88,
+   "text": "Son filet est fixé tout le long d'une grande tige de bois,",
+   "confidence": 0.9337,
+   "language": "fr"
+  },
+  {
+   "start": 149.5,
+   "end": 156.44,
+   "text": "garni de fer qui laisse descendre au moyen de deux câbles glissant sur deux rouleaux au debout de l'embarcation.",
+   "confidence": 0.9337,
+   "language": "fr"
+  },
+  {
+   "start": 157.06,
+   "end": 160.58,
+   "text": "Et le bateau, dérivant sous le vent et le courant,",
+   "confidence": 0.9808,
+   "language": "fr"
+  },
+  {
+   "start": 161.14,
+   "end": 164.88,
+   "text": "tire avec lui cet appareil qui ravage et dévaste le sol de la mer.",
+   "confidence": 0.9808,
+   "language": "fr"
+  },
+  {
+   "start": 166.8,
+   "end": 171.22,
+   "text": "Javel avait à son bord son frère cadet, quatre hommes et un mousse.",
+   "confidence": 0.9808,
+   "language": "fr"
+  },
+  {
+   "start": 171.9,
+   "end": 175.44,
+   "text": "Il était sorti de boulogne par un beau temps clair pour jeter le chalut.",
+   "confidence": 0.9808,
+   "language": "fr"
+  },
+  {
+   "start": 176.34,
+   "end": 181.0,
+   "text": "Or bientôt le vent s'éleva et une bourrasque survenant",
+   "confidence": 0.9808,
+   "language": "fr"
+  },
+  {
+   "start": 181.0,
+   "end": 183.46,
+   "text": "s'enforça le chalutier à fuir.",
+   "confidence": 0.7752,
+   "language": "fr"
+  },
+  {
+   "start": 184.34,
+   "end": 186.68,
+   "text": "Il gagna les côtes d'Angleterre.",
+   "confidence": 0.7752,
+   "language": "fr"
+  },
+  {
+   "start": 187.22,
+   "end": 189.34,
+   "text": "Mais la mer des montées battait les falaises,",
+   "confidence": 0.7752,
+   "language": "fr"
+  },
+  {
+   "start": 189.86,
+   "end": 193.34,
+   "text": "ce ruet contre la terre rendait impossible l'entrée des ports.",
+   "confidence": 0.7752,
+   "language": "fr"
+  },
+  {
+   "start": 194.34,
+   "end": 198.02,
+   "text": "Le petit bateau reprit le large et revint sur les côtes de France.",
+   "confidence": 0.7752,
+   "language": "fr"
+  },
+  {
+   "start": 199.08,
+   "end": 202.54,
+   "text": "La tempête continuait à faire enfranchissable les jeter,",
+   "confidence": 0.7752,
+   "language": "fr"
+  },
+  {
+   "start": 202.94,
+   "end": 206.86,
+   "text": "enveloppant d'écumes, de bruit et de danger tous les abords des refuges.",
+   "confidence": 0.7752,
+   "language": "fr"
+  },
+  {
+   "start": 208.48,
+   "end": 212.4,
+   "text": "Le chalutier repartit encore, courant sur le dos des flots,",
+   "confidence": 0.9918,
+   "language": "fr"
+  },
+  {
+   "start": 212.7,
+   "end": 218.04,
+   "text": "baloté, secoué, ruisselant, souffleté par des paquets d'eau mais gaillard.",
+   "confidence": 0.9918,
+   "language": "fr"
+  },
+  {
+   "start": 218.62,
+   "end": 222.0,
+   "text": "Malgré tout, accoutumé à ces gros temps qui le tenaient parfois",
+   "confidence": 0.9918,
+   "language": "fr"
+  },
+  {
+   "start": 222.0,
+   "end": 225.52,
+   "text": "cinq ou six jours, errant entre les deux pays voisins",
+   "confidence": 0.9918,
+   "language": "fr"
+  },
+  {
+   "start": 225.52,
+   "end": 227.64,
+   "text": "sans pouvoir aborder l'un ou l'autre.",
+   "confidence": 0.9918,
+   "language": "fr"
+  },
+  {
+   "start": 229.58,
+   "end": 233.84,
+   "text": "Puis, enfin, l'ouragan se calma comme il se trouvait en pleine mer",
+   "confidence": 0.9918,
+   "language": "fr"
+  },
+  {
+   "start": 233.84,
+   "end": 236.18,
+   "text": "et, bien que la vague fût encore forte,",
+   "confidence": 0.9744,
+   "language": "fr"
+  },
+  {
+   "start": 236.96,
+   "end": 238.84,
+   "text": "le patron commanda de jeter le chalut.",
+   "confidence": 0.9744,
+   "language": "fr"
+  },
+  {
+   "start": 239.86,
+   "end": 243.4,
+   "text": "Donc le grand engin de pêche fut passé par-dessus bord",
+   "confidence": 0.9744,
+   "language": "fr"
+  },
+  {
+   "start": 243.4,
+   "end": 246.2,
+   "text": "et deux hommes à l'avant, deux hommes à l'arrière,",
+   "confidence": 0.9744,
+   "language": "fr"
+  },
+  {
+   "start": 246.34,
+   "end": 249.86,
+   "text": "commencèrent à filer sur les rouleaux, les amars qui le tenaient.",
+   "confidence": 0.9744,
+   "language": "fr"
+  },
+  {
+   "start": 250.76,
+   "end": 252.8,
+   "text": "Soudain, il touche à le fond.",
+   "confidence": 0.9744,
+   "language": "fr"
+  },
+  {
+   "start": 253.78,
+   "end": 256.02,
+   "text": "Mais une haute lame inclinant le bateau,",
+   "confidence": 0.9744,
+   "language": "fr"
+  },
+  {
+   "start": 256.54,
+   "end": 258.42,
+   "text": "j'avais le cadet qui se trouvait à l'avant",
+   "confidence": 0.9744,
+   "language": "fr"
+  },
+  {
+   "start": 258.42,
+   "end": 260.04,
+   "text": "et dirigait la descente du filet,",
+   "confidence": 0.9744,
+   "language": "fr"
+  },
+  {
+   "start": 260.04,
+   "end": 263.88,
+   "text": "chant cela et son bras se trouva saisie entre la corde,",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 264.2,
+   "end": 268.2,
+   "text": "un instant détendu par la secousse et le bois où elle glissait.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 269.0,
+   "end": 271.86,
+   "text": "Il fit un effort désespéré, tachant de l'autre main",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 271.86,
+   "end": 275.04,
+   "text": "de soulever l'amar, mais le chalut traînait déjà",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 275.04,
+   "end": 277.7,
+   "text": "et le câble roi dit, ne s'est d'à point.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 279.42,
+   "end": 281.88,
+   "text": "L'homme, crispé par la douleur, appela,",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 282.54,
+   "end": 283.32,
+   "text": "tout sa courure.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 284.06,
+   "end": 285.26,
+   "text": "Son frère quitte à la barre.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 285.88,
+   "end": 288.7,
+   "text": "Il se jeterre sur la corde, s'efforçant de dégager",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 288.7,
+   "end": 290.06,
+   "text": "le membre qu'elle broyait.",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 290.48,
+   "end": 291.48,
+   "text": "Ce fut en vingt.",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 292.4,
+   "end": 294.6,
+   "text": "« Faut couper, » dit un matelot,",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 295.26,
+   "end": 297.48,
+   "text": "et il tira de sa poche un large couteau",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 297.48,
+   "end": 300.94,
+   "text": "qui pouvait en deux coups sauver le bras de Javel Cadet.",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 302.02,
+   "end": 304.98,
+   "text": "Mais couper, s'était perdre le chalut.",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 305.62,
+   "end": 307.14,
+   "text": "Et ce chalut valait de l'argent,",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 307.8,
+   "end": 310.66,
+   "text": "beaucoup d'argent, quinze cents francs,",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 310.78,
+   "end": 312.6,
+   "text": "et il appartenait à Javel Haené,",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 312.88,
+   "end": 313.86,
+   "text": "qui tenait à son avoir.",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 314.88,
+   "end": 317.9,
+   "text": "Il cria le cœur torturé,",
+   "confidence": 0.9908,
+   "language": "fr"
+  },
+  {
+   "start": 317.9,
+   "end": 319.72,
+   "text": "« Non, on coupe pas.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 319.86,
+   "end": 322.12,
+   "text": "Attends, je vois l'offer ! »",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 322.12,
+   "end": 323.72,
+   "text": "et il courut au gouvernail,",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 324.18,
+   "end": 325.66,
+   "text": "mettant toute la barre dessous.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 326.76,
+   "end": 328.3,
+   "text": "Le bateau n'obéit qu'à peine,",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 329.04,
+   "end": 330.3,
+   "text": "paralysé par ce filet",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 330.3,
+   "end": 332.06,
+   "text": "qui immobilisait son impulsion",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 332.06,
+   "end": 333.64,
+   "text": "et entraînait d'ailleurs",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 333.64,
+   "end": 335.38,
+   "text": "par la force de la dérive et du vent.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 336.58,
+   "end": 339.28,
+   "text": "Javel Cadet s'était laissé tomber sur les genoux,",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 339.78,
+   "end": 341.68,
+   "text": "les dents serrées, les yeux à gare.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 342.26,
+   "end": 343.08,
+   "text": "Il ne disait rien.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 343.96,
+   "end": 345.86,
+   "text": "Son frère revint, créniant",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 345.86,
+   "end": 347.34,
+   "text": "toujours le couteau d'un marin.",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 348.06,
+   "end": 349.08,
+   "text": "« Attends, attends !",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 349.08,
+   "end": 349.84,
+   "text": "Coupe pas !",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 349.84,
+   "end": 352.0,
+   "text": "Faut mouiller l'encre ! »",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 352.0,
+   "end": 353.16,
+   "text": "L'encre fut mouillée,",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 353.68,
+   "end": 355.04,
+   "text": "toute la chaîne filée,",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 355.6,
+   "end": 357.32,
+   "text": "puis on se mit à virer au cabestan",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 357.32,
+   "end": 358.94,
+   "text": "pour détendre les amars du chalut.",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 359.62,
+   "end": 361.6,
+   "text": "Elle s'amolire, enfin,",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 362.26,
+   "end": 363.84,
+   "text": "et on dégagea le braille nerde,",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 364.12,
+   "end": 365.9,
+   "text": "sous la manche de laine en sanglantée.",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 366.84,
+   "end": 368.52,
+   "text": "Javel Cadet semblait idiot.",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 369.36,
+   "end": 370.84,
+   "text": "On lui retira la vareuse",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 370.84,
+   "end": 372.1,
+   "text": "et on vit une chose horrible,",
+   "confidence": 0.9934,
+   "language": "fr"
+  },
+  {
+   "start": 372.7,
+   "end": 374.24,
+   "text": "une bouillie de chair",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 374.24,
+   "end": 376.02,
+   "text": "dont le sang jaillissait à flots",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 376.02,
+   "end": 377.86,
+   "text": "qu'on eut dit poussée par une pompe.",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 378.52,
+   "end": 380.42,
+   "text": "Alors l'homme regarda son bras",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 380.42,
+   "end": 384.0,
+   "text": "et murmura « foutu ».",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 384.0,
+   "end": 386.16,
+   "text": "Puis, comme les moragies faisaient une marre",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 386.16,
+   "end": 387.08,
+   "text": "sur le pont du bateau,",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 387.42,
+   "end": 389.22,
+   "text": "un des matelots cria « Il va se vider,",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 389.7,
+   "end": 391.36,
+   "text": "founouer la veine ».",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 391.36,
+   "end": 393.18,
+   "text": "Alors ils prirent une ficelle,",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 393.6,
+   "end": 395.72,
+   "text": "une grosse ficelle brune et goudronnée,",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 396.28,
+   "end": 397.76,
+   "text": "et en laissant le membre au-dessus",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 397.76,
+   "end": 399.76,
+   "text": "de la blessure, ils sérèrent de toutes leurs forces.",
+   "confidence": 0.9969,
+   "language": "fr"
+  },
+  {
+   "start": 400.56,
+   "end": 402.56,
+   "text": "Les jets de sang s'arrêtaient peu à peu",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 402.56,
+   "end": 404.8,
+   "text": "et finirent par cesser tout à fait.",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 405.72,
+   "end": 408.24,
+   "text": "Javel Cadet se leva son bras",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 408.24,
+   "end": 409.32,
+   "text": "pendait à son côté.",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 410.36,
+   "end": 411.66,
+   "text": "Il le prit de l'autre main,",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 412.4,
+   "end": 413.88,
+   "text": "le sous-leva le tourna,",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 414.22,
+   "end": 415.02,
+   "text": "le secoua.",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 415.86,
+   "end": 416.74,
+   "text": "Tout était rompu,",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 417.34,
+   "end": 418.16,
+   "text": "les eaux cassées,",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 418.94,
+   "end": 420.28,
+   "text": "les muscles seuls retenaient",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 420.28,
+   "end": 421.54,
+   "text": "ce morceau de son corps.",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 422.8,
+   "end": 424.52,
+   "text": "Il le considérait d'un oeil mordre,",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 425.14,
+   "end": 425.66,
+   "text": "réfléchissant.",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 426.48,
+   "end": 428.62,
+   "text": "Puis il s'assit sur une voile pliée",
+   "confidence": 0.9964,
+   "language": "fr"
+  },
+  {
+   "start": 428.62,
+   "end": 430.8,
+   "text": "et les camarades lui conseillèrent",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 430.8,
+   "end": 432.38,
+   "text": "de mouiller sans cesse la blessure",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 432.38,
+   "end": 434.18,
+   "text": "pour empêcher le mâle noir.",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 435.66,
+   "end": 437.4,
+   "text": "On mit un saut auprès de lui",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 437.4,
+   "end": 439.48,
+   "text": "et, de minute en minute,",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 439.86,
+   "end": 442.66,
+   "text": "il puisait dedans au moyen d'un verre",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 442.66,
+   "end": 444.6,
+   "text": "et baignait l'horrible plaie en laissant",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 444.6,
+   "end": 446.76,
+   "text": "couler dessus un petit filet d'eau claire.",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 447.98,
+   "end": 450.56,
+   "text": "« Tu serais mieux en bas », lui dit son frère.",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 451.32,
+   "end": 453.56,
+   "text": "Il descendit mais au bout d'une heure remonta,",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 454.2,
+   "end": 456.16,
+   "text": "ne se sentant pas bien tout seul,",
+   "confidence": 0.9975,
+   "language": "fr"
+  },
+  {
+   "start": 456.16,
+   "end": 458.76,
+   "text": "et puis il préférait le grand air.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 459.56,
+   "end": 461.36,
+   "text": "Il se rassit sur sa voile",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 461.36,
+   "end": 463.08,
+   "text": "et recommença à bassiner son bras.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 464.2,
+   "end": 465.1,
+   "text": "La pêche était bonne,",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 465.82,
+   "end": 467.82,
+   "text": "les larges poissons à ventres blancs",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 467.82,
+   "end": 468.82,
+   "text": "gisées à côté de lui,",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 469.6,
+   "end": 471.24,
+   "text": "secoués par des spasmes de morts.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 472.02,
+   "end": 473.42,
+   "text": "Il les regardait sans cesser",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 473.42,
+   "end": 474.86,
+   "text": "d'arroser ses chers écrasés.",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 476.06,
+   "end": 477.52,
+   "text": "Comme on allait regagner Boulogne,",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 477.78,
+   "end": 479.18,
+   "text": "un nouveau coup de vent se déchaîna",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 479.18,
+   "end": 481.3,
+   "text": "et le petit bateau recommença",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 481.3,
+   "end": 483.88,
+   "text": "sa course folle, bondissant et culbutant,",
+   "confidence": 0.9939,
+   "language": "fr"
+  },
+  {
+   "start": 484.44,
+   "end": 486.02,
+   "text": "secouant le triste blessé.",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 486.92,
+   "end": 490.78,
+   "text": "La nuit vint, le temps fut gros jusqu'à l'horreur.",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 491.54,
+   "end": 492.94,
+   "text": "Au soleil le vent on apercevait",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 492.94,
+   "end": 493.92,
+   "text": "de nouveau l'Angleterre mais,",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 494.48,
+   "end": 495.88,
+   "text": "comme la mer était moins dure,",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 495.94,
+   "end": 498.3,
+   "text": "on repartit pour la France en l'ouvoyant.",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 499.64,
+   "end": 501.32,
+   "text": "Vers le soir j'avais écadé",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 501.32,
+   "end": 502.54,
+   "text": "à pelaces et camarades",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 502.54,
+   "end": 504.38,
+   "text": "et leur montra des traces noires,",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 504.76,
+   "end": 507.02,
+   "text": "toute une vilaine apparence de pourriture",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 507.02,
+   "end": 508.24,
+   "text": "sur la partie du membre",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 508.88,
+   "end": 510.1,
+   "text": "qui ne tenait plus à lui.",
+   "confidence": 0.9963,
+   "language": "fr"
+  },
+  {
+   "start": 511.04,
+   "end": 513.2,
+   "text": "Les matelots regardés, disant leur avis,",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 514.52,
+   "end": 516.08,
+   "text": "ça pourrait bien être le noir,",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 516.54,
+   "end": 517.12,
+   "text": "pensait l'un.",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 518.24,
+   "end": 520.5,
+   "text": "« Faudrait de lui au salé là-dessus,",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 521.16,
+   "end": 522.18,
+   "text": "déclarer un autre.",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 523.26,
+   "end": 524.98,
+   "text": "On apporte à donc de l'eau salée",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 524.98,
+   "end": 526.6,
+   "text": "et on enversa sur le mâle.",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 527.5,
+   "end": 529.02,
+   "text": "Le blessé devint livide,",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 529.56,
+   "end": 531.68,
+   "text": "grinça des dents, se tordit un peu,",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 532.32,
+   "end": 533.22,
+   "text": "mais il ne cria pas.",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 534.2,
+   "end": 536.7,
+   "text": "Puis, quand la brûlure se fut calmée,",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 537.52,
+   "end": 539.08,
+   "text": "donne-moi ton couteau, dit-il à son frère.",
+   "confidence": 0.9869,
+   "language": "fr"
+  },
+  {
+   "start": 539.08,
+   "end": 541.2,
+   "text": "Le frère tendit son couteau.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 542.14,
+   "end": 543.8,
+   "text": "Tiens-moi le bras en l'air,",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 544.4,
+   "end": 545.76,
+   "text": "toudré, tire-dessus.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 546.62,
+   "end": 547.78,
+   "text": "On fit ce qu'il demandait.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 548.72,
+   "end": 550.2,
+   "text": "Alors il se mit à couper lui-même.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 550.66,
+   "end": 553.32,
+   "text": "Il coupait doucement, avec réflexion,",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 554.02,
+   "end": 555.3,
+   "text": "tranchant les derniers tendons",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 555.3,
+   "end": 558.1,
+   "text": "avec cette lame aigu comme un fil de rasoir,",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 558.8,
+   "end": 561.12,
+   "text": "et bientôt il n'eut plus qu'un moignon.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 561.96,
+   "end": 564.24,
+   "text": "Il poussa un profond soupire et déclara",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 564.24,
+   "end": 567.22,
+   "text": "« Fallait ça, j'étais foutu.",
+   "confidence": 0.9981,
+   "language": "fr"
+  },
+  {
+   "start": 569.14,
+   "end": 571.82,
+   "text": "Il semblait soulagé et respirait avec force.",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 572.62,
+   "end": 574.18,
+   "text": "Il recommença à verser de l'eau",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 574.18,
+   "end": 576.06,
+   "text": "sur le tronçon de membre qui lui restait.",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 577.08,
+   "end": 579.5,
+   "text": "La nuit fut mauvaise encore et on ne put atterrir.",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 580.28,
+   "end": 581.34,
+   "text": "Quand le jour parut,",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 581.96,
+   "end": 583.62,
+   "text": "j'avais le cadet pris son bras",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 583.62,
+   "end": 585.6,
+   "text": "détaché et l'examina longuement.",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 586.44,
+   "end": 587.92,
+   "text": "La putréfaction se déclarait.",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 588.74,
+   "end": 590.7,
+   "text": "Les camarades vinrent aussi l'examiner.",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 591.86,
+   "end": 593.4,
+   "text": "Et il se le passait demain en main,",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 593.96,
+   "end": 595.78,
+   "text": "le tâter, le retourner, le flairer.",
+   "confidence": 0.9947,
+   "language": "fr"
+  },
+  {
+   "start": 596.28,
+   "end": 597.3,
+   "text": "Son frère dit,",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 598.08,
+   "end": 599.58,
+   "text": "« Faut jeter ça à la mer, Aster.",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 600.78,
+   "end": 602.42,
+   "text": "Mais j'avais le cadet se fâcha.",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 603.1,
+   "end": 605.28,
+   "text": "Ah mais non, ah mais non,",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 605.8,
+   "end": 607.36,
+   "text": "je veux point, c'est à moi,",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 607.78,
+   "end": 609.38,
+   "text": "pas vrai, puisque c'est mon bras.",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 610.44,
+   "end": 612.76,
+   "text": "Il le reprit et le posa entre ses jambes.",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 613.76,
+   "end": 615.62,
+   "text": "Il va pas moins pourrir, dit l'aîné.",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 616.52,
+   "end": 618.44,
+   "text": "Alors une idée vinte au blessé,",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 618.56,
+   "end": 619.64,
+   "text": "pour conserver le poisson",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 619.64,
+   "end": 621.02,
+   "text": "quand on tenait longtemps la mer,",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 621.8,
+   "end": 623.44,
+   "text": "on l'ampilait en baril de sel.",
+   "confidence": 0.982,
+   "language": "fr"
+  },
+  {
+   "start": 624.38,
+   "end": 625.42,
+   "text": "Il demanda,",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 625.78,
+   "end": 628.88,
+   "text": "« Je pourris en petit point le mettre dans la sommure ?",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 629.52,
+   "end": 631.64,
+   "text": "Ça, c'est vrai, déclarèrent les autres.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 632.5,
+   "end": 634.7,
+   "text": "Alors on vida un des barils",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 634.7,
+   "end": 636.88,
+   "text": "pleins déjà de la pêche des jours derniers.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 637.3,
+   "end": 639.72,
+   "text": "Et tout au fond, on déposa le bras.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 640.42,
+   "end": 641.74,
+   "text": "On verra du sel dessus,",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 641.94,
+   "end": 643.9,
+   "text": "puis on replaça un à un les poissons.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 644.86,
+   "end": 647.3,
+   "text": "Un des matelots fit cette plaisanterie.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 648.1,
+   "end": 650.08,
+   "text": "Pourvu que je le vendions point à la crier.",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 651.02,
+   "end": 652.36,
+   "text": "Et tout le monde rit,",
+   "confidence": 0.9988,
+   "language": "fr"
+  },
+  {
+   "start": 652.36,
+   "end": 653.98,
+   "text": "hormis les deux javels.",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 654.9,
+   "end": 656.12,
+   "text": "Le vent soufflait toujours.",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 656.9,
+   "end": 658.86,
+   "text": "On l'ouvoya encore en vue de boulogne",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 658.86,
+   "end": 660.1,
+   "text": "jusqu'au lendemain dix heures.",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 661.02,
+   "end": 662.9,
+   "text": "Le blessé continuait sans cesse",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 662.9,
+   "end": 664.34,
+   "text": "à jeter de l'eau sur sa plaie.",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 665.28,
+   "end": 666.86,
+   "text": "De temps en temps il se levait",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 666.86,
+   "end": 668.9,
+   "text": "et marchait d'un bout à l'autre du bateau.",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 669.92,
+   "end": 671.26,
+   "text": "Son frère qui tenait la barre",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 671.26,
+   "end": 673.3,
+   "text": "le suivait de l'œil en hauchant la tête.",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 674.36,
+   "end": 675.78,
+   "text": "On finit par rentrer au port.",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 676.84,
+   "end": 678.5,
+   "text": "Le médecin examina la blessure",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 678.5,
+   "end": 679.82,
+   "text": "et la déclara en bonne voie.",
+   "confidence": 0.9951,
+   "language": "fr"
+  },
+  {
+   "start": 679.82,
+   "end": 682.06,
+   "text": "Il fit un pencement complet",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 682.06,
+   "end": 683.6,
+   "text": "et ordonna le repos.",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 684.56,
+   "end": 686.22,
+   "text": "Mais javel ne voulu pas de coucher",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 686.22,
+   "end": 687.76,
+   "text": "sans avoir repris son bras",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 687.76,
+   "end": 689.98,
+   "text": "et il le retourna bien vite au port",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 689.98,
+   "end": 692.58,
+   "text": "pour retrouver le baril qu'il avait marqué d'une croix.",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 693.56,
+   "end": 695.0,
+   "text": "On le vida devant lui",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 695.0,
+   "end": 697.02,
+   "text": "et il re-saisit son membre",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 697.02,
+   "end": 698.76,
+   "text": "bien conservé dans la sommure,",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 699.72,
+   "end": 700.8,
+   "text": "ridé, rafraîchie.",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 701.7,
+   "end": 703.44,
+   "text": "Il l'envelo pas dans une serviette",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 703.44,
+   "end": 704.58,
+   "text": "emportée à cette intention",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 704.58,
+   "end": 705.56,
+   "text": "et rentra chez lui.",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 706.54,
+   "end": 708.52,
+   "text": "Sa femme et ses enfants examinèrent longuement",
+   "confidence": 0.9766,
+   "language": "fr"
+  },
+  {
+   "start": 708.52,
+   "end": 709.56,
+   "text": "ce débris du père,",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 710.2,
+   "end": 712.84,
+   "text": "t'attant les doigts enlevant les brins de sel",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 712.84,
+   "end": 714.18,
+   "text": "restés sous les ongles,",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 714.7,
+   "end": 716.26,
+   "text": "puis on fit venir le menuisier",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 716.26,
+   "end": 718.16,
+   "text": "pour un petit cercueil.",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 718.9,
+   "end": 719.7,
+   "text": "Le lendemain,",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 720.14,
+   "end": 722.26,
+   "text": "l'équipage complet du chalutier",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 722.26,
+   "end": 724.18,
+   "text": "suivit l'enterrement du bras détaché.",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 725.08,
+   "end": 726.74,
+   "text": "Les deux frères côte à côte",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 726.74,
+   "end": 728.02,
+   "text": "conduisaient le deuil.",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 728.74,
+   "end": 730.44,
+   "text": "Le sacristan de la paroisse",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 730.44,
+   "end": 732.78,
+   "text": "tenait son cadavre sous son aisselle.",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 733.78,
+   "end": 736.06,
+   "text": "J'avais le cadet cessa de naviguer.",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 736.48,
+   "end": 737.8,
+   "text": "Il obtint eu un petit emploi",
+   "confidence": 0.9946,
+   "language": "fr"
+  },
+  {
+   "start": 737.8,
+   "end": 740.04,
+   "text": "dans le port et quand il parlait plus tard",
+   "confidence": 0.9825,
+   "language": "fr"
+  },
+  {
+   "start": 740.04,
+   "end": 742.06,
+   "text": "de son accident, il confiait",
+   "confidence": 0.9825,
+   "language": "fr"
+  },
+  {
+   "start": 742.06,
+   "end": 743.36,
+   "text": "tout bas à son auditeur.",
+   "confidence": 0.9825,
+   "language": "fr"
+  },
+  {
+   "start": 744.1,
+   "end": 745.46,
+   "text": "Si le frère avait voulu",
+   "confidence": 0.9825,
+   "language": "fr"
+  },
+  {
+   "start": 745.46,
+   "end": 747.52,
+   "text": "couper le chalut, j'aurais",
+   "confidence": 0.9825,
+   "language": "fr"
+  },
+  {
+   "start": 747.52,
+   "end": 749.04,
+   "text": "encore mon bras, pour sûr.",
+   "confidence": 0.9825,
+   "language": "fr"
+  },
+  {
+   "start": 750.18,
+   "end": 751.82,
+   "text": "Mais il était regardant à son bien.",
+   "confidence": 0.9825,
+   "language": "fr"
+  },
+  {
+   "start": 752.64,
+   "end": 753.82,
+   "text": "Fin de en mer.",
+   "confidence": 0.9825,
+   "language": "fr"
+  }
+ ],
+ "metadata": {
+  "audio_duration_sec": 759.066,
+  "model": "faster-whisper small int8 cpu",
+  "language": "fr",
+  "source": "https://archive.org/download/les_contes_de_la_becasse_0809_librivox/lescontesdelabecasse_10_maupassant_64kb.mp3",
+  "license": "public domain (LibriVox)"
+ }
+}

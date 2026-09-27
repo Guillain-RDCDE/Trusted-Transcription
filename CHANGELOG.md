@@ -1,8 +1,20 @@
 # Changelog
 
-## Unreleased
+## 0.11.0 — 2026-09-27
+
+### Added
+- **In-browser demo** on GitHub Pages: the detectors run in the visitor's
+  browser through Pyodide, on the package's own wheel; nothing is
+  uploaded. Deployed by the `pages` workflow on every push.
+- **Real corpus** (`corpus/real/`): four chapters of a public-domain
+  LibriVox reading transcribed with faster-whisper, the book text as
+  reference, reviewed expectations, and a generated `RESULTS.md` with
+  the engine bench and the detector bench.
 
 ### Changed
+- `phantom_subtitle` is no longer in the default detector list: on a
+  clean read-aloud recording it fired on a third of the segments. Still
+  importable for anyone who wants it.
 - Social preview card regenerated: the promise no longer carries a
   detector count or a timing, which had been stale since the second
   release.

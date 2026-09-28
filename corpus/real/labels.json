@@ -1,6 +1,7 @@
 {
   "01_la_becasse.json": [
-    "silence_hallucination"
+    "silence_hallucination",
+    "trailing_credit"
   ],
   "03_la_folle.json": [],
   "05_menuet.json": [],

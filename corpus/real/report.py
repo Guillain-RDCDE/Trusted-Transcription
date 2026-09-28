@@ -44,7 +44,7 @@ STORIES = {
 # followed by seconds of silence, on which the engine returns a subtitle
 # credit that nobody read: a real phantom phrase, expected as such.
 EXPECTED: dict[str, list[str]] = {
-    "01_la_becasse": ["silence_hallucination"],
+    "01_la_becasse": ["silence_hallucination", "trailing_credit"],
 }
 
 

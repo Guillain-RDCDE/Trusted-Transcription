@@ -37,6 +37,7 @@ Audio -> [chunking] -> [context window] -> Whisper -> [detectors] -> [LLM repair
 | `spelled_out` | A name spelled letter by letter next to the misheard word | Hyphen / dot / capital sequences, resemblance to the words before |
 | `script_drift` | One line mixing writing systems; the rest no longer follows the audio | Letters from another script inside a segment, span to regenerate |
 | `empty_output` | Minutes of audible speech, zero words | Words per minute over the whole file, hollow segments |
+| `trailing_credit` | A credit on the silence after the last words, whatever the language | Short last segment after a long gap |
 
 `silence_hallucination` checks phantom phrases in English, French, German, Spanish, Italian and Portuguese by default — they follow the decoded language, not the expected one.
 

@@ -29,6 +29,7 @@ TranscriptResult (segments + timestamps + confidence)
     |              spelled_out
     |              script_drift
     |              empty_output
+    |              trailing_credit
     v
 HallucinationFlags (severity + evidence)
     |

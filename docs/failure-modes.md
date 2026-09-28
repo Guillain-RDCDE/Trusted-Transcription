@@ -21,6 +21,7 @@ How an ASR pipeline silently produces confident garbage, and the control that ca
 | 14 | Spelled-out Name | The speaker spelled a name because it was misheard; the draft keeps the wrong name *and* the letters | `spelled_out.py` + `repair/spellings.py` | Medium |
 | 15 | Script Drift | One line mixing writing systems on long audio; everything after it reads well and no longer follows the audio | `script_drift.py` | Critical |
 | 16 | Empty Output | Minutes of audible speech, a well-formed answer, zero words | `empty_output.py` + `prevention/reencode.py` | Critical |
+| 17 | Trailing Credit | A short last segment after seconds of silence at the end of the file, whatever the words | `trailing_credit.py` | Medium |
 
 Modes 11 and 12 are failures of the correction stage, not of the engine ([ADR 0007](adr/0007-completeness-of-the-repair.md)).
 Mode 13 is a failure of plumbing ([ADR 0008](adr/0008-cap-the-chunk-not-the-file.md)): the cap belongs on the chunk, and the proof that nothing was lost is the sum of the chunk durations.
@@ -34,6 +35,7 @@ mode 9 needs only the prompt, mode 10 needs a second transcript. Mode 8 differs 
 a local stutter versus a text that is a loop as a whole — and in the calibration that keeps
 ritual formulas out of it.
 
+Mode 17 came out of the public corpus ([corpus/real](../corpus/real/RESULTS.md)): the reader stops, ten seconds pass, and the engine returns a subtitle credit. Mode 2 knows the words; mode 17 knows the shape, so a credit in a language not yet listed is still caught.
 Mode 5's vocabulary-overlap detector is **not in the default list**: on a clean read-aloud recording ([corpus/real](../corpus/real/RESULTS.md)) it fired on a third of the segments — short narrative sentences share no vocabulary with their neighbours. The per-language phrase lists of mode 2 catch the phantom subtitles it was meant for.
 
 ## Root cause you control: starved segments

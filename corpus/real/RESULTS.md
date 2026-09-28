@@ -34,10 +34,12 @@ script_drift               0   0   0          -        -
 silence_hallucination      1   0   0       100%     100%
 spelled_out                0   0   0          -        -
 temporal_drift             0   0   0          -        -
+trailing_credit            1   0   0       100%     100%
 
 4 files, every expectation met.
 ```
 
 ### 01_la_becasse.json
 - `silence_hallucination` on segment 126: Known phantom phrase: 'Sous-titres réalisés par la communauté d'Amara.org'
+- `trailing_credit` on segment 126: Short last segment after 10.5s of silence — the shape of a subtitle credit on the trailing
 

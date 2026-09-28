@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.12.0 — 2026-09-28
+
+### Added
+- **Trailing credit** (`detectors/trailing_credit.py`): a short last
+  segment after seconds of silence at the end of the file — the shape
+  of a subtitle credit, whatever the words or the language. Shaped by
+  the public corpus, where the one real phantom phrase sits after ten
+  seconds of silence and the clean endings follow within a breath.
+
 ## 0.11.0 — 2026-09-27
 
 ### Added

@@ -6,6 +6,9 @@ name: publish
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    # Re-run the upload for the current tag once the PyPI trusted
+    # publisher exists, without cutting a new release.
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,6 +20,7 @@ jobs:
       - run: pip install build
       - run: python -m build
       - name: Tag and package version must agree
+        if: github.ref_type == 'tag'
         run: |
           tag="${GITHUB_REF_NAME#v}"
           version=$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")

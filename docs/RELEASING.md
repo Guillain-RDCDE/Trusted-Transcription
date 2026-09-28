@@ -21,23 +21,35 @@ A release is a tag. Everything else follows from it.
 5. Create the GitHub release from the tag with the changelog section
    as notes.
 
-## One-time setup for PyPI (not done yet)
+## One-time setup for PyPI
 
 The `publish` workflow uses PyPI's trusted publishing: PyPI accepts
 uploads from this repository's workflow directly, and no token is
 stored in GitHub or on any machine.
 
-1. On PyPI, create the project `trusted-transcription` (or reserve
-   the name with a first manual upload of the wheel built by the
-   `package` job).
-2. In the project's *Publishing* settings, add a trusted publisher:
-   owner `Guillain-RDCDE`, repository `Trusted-Transcription`,
-   workflow `publish.yml`, environment `pypi`.
-3. On GitHub, create an environment named `pypi` (Settings →
-   Environments). Optionally require a reviewer on it: the upload
-   then waits for one click.
+1. On GitHub, the environment `pypi` exists (done).
+2. On PyPI, signed in, open *Account settings → Publishing* and add a
+   **pending publisher** — the project does not need to exist first:
 
-Until that is done, the `publish` workflow fails at the upload step
+   | Field | Value |
+   |---|---|
+   | PyPI project name | `trusted-transcription` |
+   | Owner | `Guillain-RDCDE` |
+   | Repository name | `Trusted-Transcription` |
+   | Workflow name | `publish.yml` |
+   | Environment name | `pypi` |
+
+3. Run the upload for the current tag without cutting a new release:
+
+   ```bash
+   gh workflow run publish.yml --ref v0.12.0
+   ```
+
+   The first successful upload creates the project and turns the
+   pending publisher into a regular one. Every later tag publishes on
+   its own.
+
+Until step 2 is done, the `publish` workflow fails at the upload step
 and nothing else is affected; the `tests` workflow still proves the
 wheel installs.
 

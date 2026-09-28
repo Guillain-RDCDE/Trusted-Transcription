@@ -16,6 +16,7 @@ from trusted_transcription.detectors.script_drift import ScriptDriftDetector
 from trusted_transcription.detectors.silence_hallucination import SilenceHallucinationDetector
 from trusted_transcription.detectors.spelled_out import SpelledOutDetector
 from trusted_transcription.detectors.temporal_drift import TemporalDriftDetector
+from trusted_transcription.detectors.trailing_credit import TrailingCreditDetector
 from trusted_transcription.models import HallucinationFlag, TranscriptResult
 
 
@@ -36,6 +37,7 @@ ALL_DETECTORS: list[Detector] = [
     SpelledOutDetector(),
     ScriptDriftDetector(),
     EmptyOutputDetector(),
+    TrailingCreditDetector(),
 ]
 
 # Not in the default list:

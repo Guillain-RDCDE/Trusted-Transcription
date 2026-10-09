@@ -4,6 +4,14 @@
 
 # Trusted-Transcription
 
+<!-- opening -->
+> An AI that transcribes speech will sometimes write things nobody said, with full confidence. This catches them before a client does.
+>
+> Detectors for hallucinated and degenerate output, guards that keep the repair honest, and a context-window fix that removes most of the cause, all measured against a control on real production audio.
+>
+> AI kept honest in production, where one wrong word is a legal liability. Part of the work of [Guillain d’Erceville](https://github.com/Guillain-RDCDE), forward deployed engineer.
+<!-- opening -->
+
 [![tests](https://github.com/Guillain-RDCDE/Trusted-Transcription/actions/workflows/tests.yml/badge.svg)](https://github.com/Guillain-RDCDE/Trusted-Transcription/actions/workflows/tests.yml)
 [![release](https://img.shields.io/github/v/release/Guillain-RDCDE/Trusted-Transcription)](https://github.com/Guillain-RDCDE/Trusted-Transcription/releases)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)

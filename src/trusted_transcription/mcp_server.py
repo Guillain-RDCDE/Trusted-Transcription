@@ -22,6 +22,7 @@ from typing import Any
 
 import click
 
+from trusted_transcription import __version__
 from trusted_transcription.models import TranscriptResult
 from trusted_transcription.pipeline import Pipeline
 from trusted_transcription.repair.llm_repair import LLMRepairer
@@ -202,7 +203,7 @@ def run_stdio_server() -> None:
                     "capabilities": {"tools": {}},
                     "serverInfo": {
                         "name": "trusted-transcription",
-                        "version": "0.1.0",
+                        "version": __version__,
                     },
                 },
             }

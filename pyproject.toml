@@ -4,7 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trusted-transcription"
-version = "0.12.0"
+# Single source: __version__ in src/trusted_transcription/__init__.py.
+dynamic = ["version"]
 description = "Catch confident lies in automatic transcription — hallucination detection, LLM repair, and quality scoring for production ASR pipelines."
 readme = "README.md"
 license = "MIT"
@@ -46,6 +47,9 @@ tt-bench = "trusted_transcription.eval_runner:main"
 [project.urls]
 Repository = "https://github.com/Guillain-RDCDE/Trusted-Transcription"
 Changelog = "https://github.com/Guillain-RDCDE/Trusted-Transcription/blob/main/CHANGELOG.md"
+
+[tool.hatch.version]
+path = "src/trusted_transcription/__init__.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/trusted_transcription"]

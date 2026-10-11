@@ -4,8 +4,10 @@ A release is a tag. Everything else follows from it.
 
 ## Every release
 
-1. Bump `version` in `pyproject.toml` and `__version__` in
-   `src/trusted_transcription/__init__.py` — they must agree.
+1. Bump `__version__` in `src/trusted_transcription/__init__.py`.
+   It is the only place the version is written: the package
+   metadata, `tt-mcp`'s server info and the publish workflow's tag
+   check all read it from there.
 2. Add the section to `CHANGELOG.md`.
 3. Commit, then tag and push:
 

@@ -23,7 +23,7 @@ jobs:
         if: github.ref_type == 'tag'
         run: |
           tag="${GITHUB_REF_NAME#v}"
-          version=$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")
+          version=$(python -c "import sys; sys.path.insert(0, 'src'); import trusted_transcription as t; print(t.__version__)")
           test "$tag" = "$version" || { echo "tag $tag != version $version"; exit 1; }
       - uses: actions/upload-artifact@v6
         with:

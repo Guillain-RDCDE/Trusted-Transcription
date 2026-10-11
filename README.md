@@ -59,6 +59,14 @@ tt detect corpus/sample/clean_transcript.json --format table
 # No hallucinations detected.
 ```
 
+The package is not on PyPI yet: `pip install trusted-transcription` finds
+nothing. Install from a clone as above, or the commands alone straight from
+a release tag (the samples stay in the clone):
+
+```bash
+pip install "git+https://github.com/Guillain-RDCDE/Trusted-Transcription.git@v0.12.0"
+```
+
 Three small dependencies and no API client. Engines and the repair model are
 optional (`pip install -e ".[api]"`). Or without installing anything:
 

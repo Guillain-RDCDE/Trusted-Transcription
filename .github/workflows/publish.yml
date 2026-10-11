@@ -3,39 +3,54 @@ name: publish
 # Requires a trusted publisher on PyPI for this repository and
 # workflow, and a GitHub environment named "pypi" — see
 # docs/RELEASING.md. No token is stored anywhere.
+#
+# Nothing is uploaded unless the whole tests workflow passes on the
+# tagged commit and the tag matches __version__. What goes to PyPI is
+# the exact wheel and sdist the tests workflow built and installed.
 on:
   push:
     tags: ["v*"]
   workflow_dispatch:
     # Re-run the upload for the current tag once the PyPI trusted
     # publisher exists, without cutting a new release.
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  build:
+  tests:
+    uses: ./.github/workflows/tests.yml
+
+  version:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install build
-      - run: python -m build
       - name: Tag and package version must agree
         if: github.ref_type == 'tag'
         run: |
           tag="${GITHUB_REF_NAME#v}"
           version=$(python -c "import sys; sys.path.insert(0, 'src'); import trusted_transcription as t; print(t.__version__)")
           test "$tag" = "$version" || { echo "tag $tag != version $version"; exit 1; }
-      - uses: actions/upload-artifact@v6
-        with:
-          name: dist
-          path: dist/
+      - name: Only a tag is published
+        if: github.ref_type != 'tag'
+        run: |
+          echo "publish runs on a v* tag, not on ${GITHUB_REF_NAME}"
+          exit 1
+
   publish:
-    needs: build
+    needs: [tests, version]
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     environment: pypi
     permissions:
       id-token: write
     steps:
+      # Built and installed by the tests workflow's "package" job.
       - uses: actions/download-artifact@v7
         with:
           name: dist

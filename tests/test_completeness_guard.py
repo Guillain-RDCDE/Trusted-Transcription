@@ -57,7 +57,7 @@ class TestNetLoss:
         # Delete the cuisine except one word kept in the middle.
         cuisine = words(ROOMS[2])
         kept = cuisine[len(cuisine) // 2]
-        out = " ".join(ROOMS[:2] + [kept] + ROOMS[3:])
+        out = " ".join([*ROOMS[:2], kept, *ROOMS[3:]])
         r = net_loss(FULL, out)
         assert r.max_net_loss == len(cuisine) - 1
 

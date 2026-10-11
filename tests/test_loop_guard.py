@@ -58,7 +58,7 @@ class TestIsDegenerate:
 
     def test_short_sentence_hundreds_of_times(self):
         text = "il n'est pas venu. " * 188
-        degenerate, reason = is_degenerate(text)
+        degenerate, _reason = is_degenerate(text)
         assert degenerate
 
     def test_ritual_formula_a_handful_of_times_is_legitimate(self):

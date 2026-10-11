@@ -80,6 +80,9 @@ class ChunkPolicy:
         return estimated_bytes(self.chunk_s, self.ceiling_bps) <= self.limit_bytes
 
 
+DEFAULT_POLICY = ChunkPolicy()
+
+
 def plan_chunks(duration_s: float, chunk_s: float = CHUNK_S) -> list[tuple[float, float]]:
     """Contiguous ``(start, end)`` chunks covering ``[0, duration_s]`` exactly.
 
@@ -141,7 +144,7 @@ class UploadPlan:
 def plan_upload(
     duration_s: float,
     bitrate_bps: int,
-    policy: ChunkPolicy = ChunkPolicy(),
+    policy: ChunkPolicy = DEFAULT_POLICY,
     reencode_bps: int | None = None,
 ) -> UploadPlan:
     """Plan chunks for an upload and decide which need re-encoding.
@@ -253,7 +256,7 @@ def transcribe_in_chunks(
     for i, (a, b) in enumerate(chunks):
         try:
             parts.append(transcribe_fn(a, b).strip())
-        except Exception as exc:  # noqa: BLE001 - every failure must stay visible
+        except Exception as exc:  # broad on purpose: every failure must stay visible
             result.failed.append(i)
             result.errors[i] = f"{type(exc).__name__}: {exc}"
     result.text = joiner.join(p for p in parts if p)

@@ -196,6 +196,29 @@ def _match_case(model: str, word: str) -> str:
     return word.lower()
 
 
+def _best_candidate(
+    words: list[tuple[int, int, str]], spelled: str
+) -> tuple[float, int, str] | None:
+    """The run of words before the spelling that it most resembles.
+
+    Returns (ratio, words used, dictated), or None if no run qualifies.
+    """
+    best: tuple[float, int, str] | None = None
+    for n in range(1, len(words) + 1):
+        chunk = words[:n]
+        dictated = " ".join(w for _, _, w in reversed(chunk))
+        candidate = dictated.replace(" ", "")
+        if n == 1:
+            # Guardrail 4: compare the last element of a compound.
+            candidate = candidate.rsplit("-", 1)[-1]
+            if len(candidate) <= 2:
+                continue  # guardrail 5
+        ratio = similarity(candidate, spelled)
+        if best is None or ratio > best[0]:
+            best = (ratio, n, dictated)
+    return best
+
+
 def resolve(text: str) -> list[SpellingFix]:
     """Decide, for every spelling, what to do — without touching the text."""
     fixes: list[SpellingFix] = []
@@ -223,20 +246,7 @@ def resolve(text: str) -> list[SpellingFix]:
             fixes.append(SpellingFix(sp, "abstain", reason="no word before the spelling"))
             continue
 
-        best: tuple[float, int, str] | None = None  # (ratio, words used, dictated)
-        for n in range(1, len(words) + 1):
-            chunk = words[:n]
-            dictated = " ".join(w for _, _, w in reversed(chunk))
-            candidate = dictated.replace(" ", "")
-            if n == 1:
-                # Guardrail 4: compare the last element of a compound.
-                candidate = candidate.rsplit("-", 1)[-1]
-                if len(candidate) <= 2:
-                    continue  # guardrail 5
-            ratio = similarity(candidate, sp.word)
-            if best is None or ratio > best[0]:
-                best = (ratio, n, dictated)
-
+        best = _best_candidate(words, sp.word)
         if best is None:
             fixes.append(SpellingFix(sp, "abstain", reason="only one- or two-letter words before"))
             continue
@@ -319,7 +329,4 @@ def unchanged_vocabulary(source: str, output: str) -> bool:
     src_words = {_fold(w) for w in re.findall(r"[^\W\d_]+", source)}
     src_words |= {_fold(sp.word) for sp in find_spellings(source)}
     src_words |= {_fold(w.rsplit("-", 1)[-1]) for w in re.findall(r"[^\W\d_]+-[^\W\d_]+", source)}
-    for w in re.findall(r"[^\W\d_]+", output):
-        if _fold(w) not in src_words:
-            return False
-    return True
+    return all(_fold(w) in src_words for w in re.findall(r"[^\W\d_]+", output))

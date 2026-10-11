@@ -8,6 +8,8 @@ once, fallbacks are counted.
 
 from __future__ import annotations
 
+from itertools import pairwise
+
 import pytest
 
 from trusted_transcription.prevention.context_window import (
@@ -146,7 +148,7 @@ class TestKeepWords:
         # Irregular cuts, all short: each padded window overlaps its
         # neighbours heavily, yet every word must land in one segment only.
         cuts = [0.0, 1.5, 3.0, 7.2, 8.0, 12.5, 13.0, 20.0, 25.5, 26.0, 40.0]
-        boundaries = list(zip(cuts, cuts[1:]))
+        boundaries = list(pairwise(cuts))
         windows = ContextWindowPolicy().plan(boundaries, 40.0)
         seen: list[str] = []
         for w in windows:
@@ -208,7 +210,7 @@ class TestTranscribeWithContext:
         # Every segment here contains at least one word centre; a segment
         # with none takes the empty fallback, tested separately below.
         cuts = [0.0, 1.5, 3.0, 7.2, 8.0, 12.2, 13.0, 20.0, 25.1, 26.0, 40.0, 75.0, 120.0]
-        boundaries = list(zip(cuts, cuts[1:]))
+        boundaries = list(pairwise(cuts))
         calls: list[tuple[float, float]] = []
         segments, report = transcribe_with_context(boundaries, fake_engine(calls), TIMELINE_S)
 
@@ -238,7 +240,7 @@ class TestTranscribeWithContext:
 
     def test_no_window_ever_leaves_the_file(self):
         cuts = [0.0, 0.5, 1.0, 60.0, 119.0, 119.5, 120.0]
-        boundaries = list(zip(cuts, cuts[1:]))
+        boundaries = list(pairwise(cuts))
         calls: list[tuple[float, float]] = []
         transcribe_with_context(boundaries, fake_engine(calls), TIMELINE_S)
         assert all(0.0 <= t0 <= t1 <= TIMELINE_S for t0, t1 in calls)

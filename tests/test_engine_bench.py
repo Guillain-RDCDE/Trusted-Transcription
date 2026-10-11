@@ -162,7 +162,7 @@ class TestSummary:
         assert not disqualified(summaries["paid"])
 
     def test_only_files_measured_for_every_engine_enter_the_paired_counts(self):
-        extra = rows() + [BenchRow("local", "f9", 0.99, 1.0, reference_origin="local")]
+        extra = [*rows(), BenchRow("local", "f9", 0.99, 1.0, reference_origin="local")]
         summaries = {s.engine: s for s in summarize(extra, control="paid")}
         assert summaries["local"].files == 5
         assert summaries["local"].wins_vs_control + summaries["local"].losses_vs_control == 4

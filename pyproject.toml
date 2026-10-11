@@ -35,7 +35,7 @@ api = ["openai>=1.0", "anthropic>=0.30"]
 local = ["faster-whisper>=1.0"]
 mcp = ["mcp>=1.0"]
 eval = ["pandas>=2.0", "tabulate>=0.9"]
-dev = ["pytest>=8.0", "ruff==0.16.8", "mypy>=1.10", "build>=1.0"]
+dev = ["pytest>=8.0", "ruff==0.16.10", "mypy==2.4.0", "build>=1.0"]
 all = ["trusted-transcription[api,local,mcp,eval,dev]"]
 
 [project.scripts]
@@ -58,10 +58,23 @@ target-version = "py310"
 line-length = 100
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "N", "W", "UP"]
+select = ["E", "W", "F", "I", "N", "UP", "B", "SIM", "RUF", "S", "C90"]
+ignore = [
+    # Transcripts are French and multi-script on purpose: typographic
+    # apostrophes in the phantom phrases, Cyrillic letters in the
+    # script-drift examples. They are data, not confusable identifiers.
+    "RUF001", "RUF002", "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 12
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-ra --strict-markers --strict-config"
 
 [tool.mypy]
 python_version = "3.10"

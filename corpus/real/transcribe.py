@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import time
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -31,9 +32,11 @@ COMPUTE = "int8"
 def fetch(url: str, dest: Path) -> None:
     if dest.exists() and dest.stat().st_size > 0:
         return
+    if urllib.parse.urlsplit(url).scheme != "https":
+        raise ValueError(f"refusing to download from a non-https URL: {url}")
     dest.parent.mkdir(parents=True, exist_ok=True)
     print("download", url, flush=True)
-    urllib.request.urlretrieve(url, dest)
+    urllib.request.urlretrieve(url, dest)  # noqa: S310 - scheme checked just above
 
 
 def main() -> None:

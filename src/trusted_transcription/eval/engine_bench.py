@@ -183,7 +183,7 @@ def run_bench(
             t0 = clock() if clock else 0.0
             try:
                 hypothesis = engine(file)
-            except Exception as exc:  # noqa: BLE001 - every failure must stay visible
+            except Exception as exc:  # broad on purpose: every failure must stay visible
                 report.failed.append((name, file, f"{type(exc).__name__}: {exc}"))
                 continue
             elapsed = (clock() - t0) if clock else 0.0

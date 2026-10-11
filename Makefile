@@ -15,6 +15,7 @@ bench:
 
 lint:
 	ruff check src/ tests/ corpus/
+	ruff format --check src/ tests/ corpus/
 
 test:
 	python -m pytest tests/ -v --tb=long

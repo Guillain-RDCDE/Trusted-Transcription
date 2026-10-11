@@ -1,0 +1,5 @@
+# Formatting-only commits: git blame skips them with
+#   git config blame.ignoreRevsFile .git-blame-ignore-revs
+
+# ruff format, whole tree
+101de9f1c65a10121db5633ededb79dc8dff7317

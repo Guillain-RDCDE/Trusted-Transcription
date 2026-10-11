@@ -14,6 +14,7 @@ jobs:
       - run: pip install -e . pytest ruff==0.16.10
       # Pinned on purpose: an unpinned linter is a weather report, not a gate.
       - run: ruff check src/ tests/ corpus/
+      - run: ruff format --check src/ tests/ corpus/
       - run: python -m pytest tests/ -v
       - run: tt detect corpus/sample/silence_hallucination.json --format table
       - run: tt detect corpus/sample/clean_transcript.json --format table

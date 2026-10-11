@@ -16,10 +16,11 @@ A release is a tag. Everything else follows from it.
    git push origin main v0.9.0
    ```
 
-4. The `tests` workflow runs the suite on two Python versions and
-   builds the wheel in a clean environment. The `publish` workflow
-   builds again, checks that the tag and the package version agree,
-   and uploads to PyPI.
+4. The `publish` workflow runs the whole `tests` workflow on the
+   tagged commit (lint, types, the suite on two Python versions, the
+   wheel installed in a clean environment, the Docker image), checks
+   that the tag and `__version__` agree, and only then uploads to
+   PyPI the wheel and sdist the tests built.
 5. Create the GitHub release from the tag with the changelog section
    as notes.
 

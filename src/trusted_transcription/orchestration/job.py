@@ -82,9 +82,9 @@ class JobQueue:
     def update(self, job: Job) -> None:
         self._save(job)
 
-    def stats(self) -> dict:
+    def stats(self) -> dict[str, object]:
         jobs = [Job.model_validate_json(p.read_text()) for p in self.state_dir.glob("*.json")]
-        by_status = {}
+        by_status: dict[str, int] = {}
         total_cost = 0.0
         for j in jobs:
             by_status[j.status.value] = by_status.get(j.status.value, 0) + 1

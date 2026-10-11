@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import json
 import sys
+from typing import Any
 
 import click
 
@@ -132,7 +133,7 @@ TOOLS = [
 ]
 
 
-def handle_tool_call(name: str, arguments: dict) -> dict:
+def handle_tool_call(name: str, arguments: dict[str, Any]) -> dict[str, Any]:
     if name == "transcribe":
         pipeline = Pipeline(language=arguments.get("language", "fr"))
         transcript = pipeline.transcribe(arguments["audio_path"])
@@ -174,7 +175,7 @@ def handle_tool_call(name: str, arguments: dict) -> dict:
         return {"error": f"Unknown tool: {name}"}
 
 
-def run_stdio_server():
+def run_stdio_server() -> None:
     """MCP stdio transport — reads JSON-RPC from stdin, writes to stdout."""
     sys.stderr.write("Trusted-Transcription MCP server ready\n")
 
@@ -191,6 +192,7 @@ def run_stdio_server():
         method = request.get("method", "")
         req_id = request.get("id")
 
+        response: dict[str, Any]
         if method == "initialize":
             response = {
                 "jsonrpc": "2.0",
@@ -246,7 +248,7 @@ def run_stdio_server():
 
 
 @click.command()
-def main():
+def main() -> None:
     """Run the Trusted-Transcription MCP server (stdio transport)."""
     run_stdio_server()
 

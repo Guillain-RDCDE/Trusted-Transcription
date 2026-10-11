@@ -10,14 +10,16 @@ transcription, the questions that matter are:
 
 from __future__ import annotations
 
+from typing import Any
+
 from trusted_transcription.models import Severity, TranscriptResult
 
 
 def compute_scores(
     transcript: TranscriptResult,
     reference_text: str | None = None,
-) -> dict:
-    scores: dict = {}
+) -> dict[str, Any]:
+    scores: dict[str, Any] = {}
 
     total_segments = len(transcript.segments)
     critical_flags = [f for f in transcript.flags if f.severity == Severity.CRITICAL]

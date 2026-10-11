@@ -79,3 +79,10 @@ addopts = "-ra --strict-markers --strict-config"
 [tool.mypy]
 python_version = "3.10"
 strict = true
+files = ["src"]
+
+[[tool.mypy.overrides]]
+# The engine SDKs belong to the optional "api" extra: imported lazily, and
+# not installed where the core package is type-checked.
+module = ["openai", "openai.*", "anthropic", "anthropic.*"]
+ignore_missing_imports = true

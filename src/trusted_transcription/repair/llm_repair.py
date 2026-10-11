@@ -14,7 +14,7 @@ Design principles:
 from __future__ import annotations
 
 import json
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:  # the SDK is only needed when a real client is built
     from anthropic import Anthropic
@@ -175,8 +175,9 @@ class LLMRepairer:
     INPUT_USD_PER_MTOK = 5.0
     OUTPUT_USD_PER_MTOK = 25.0
 
-    def _estimate_cost(self, response) -> float:
-        usage = response.usage
-        input_cost = usage.input_tokens * self.INPUT_USD_PER_MTOK / 1_000_000
-        output_cost = usage.output_tokens * self.OUTPUT_USD_PER_MTOK / 1_000_000
+    def _estimate_cost(self, response: Any) -> float:
+        input_tokens: int = response.usage.input_tokens
+        output_tokens: int = response.usage.output_tokens
+        input_cost = input_tokens * self.INPUT_USD_PER_MTOK / 1_000_000
+        output_cost = output_tokens * self.OUTPUT_USD_PER_MTOK / 1_000_000
         return round(input_cost + output_cost, 6)

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from enum import Enum
+from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -26,13 +27,13 @@ class HallucinationFlag(BaseModel):
     severity: Severity
     segment_index: int
     reason: str
-    evidence: dict = Field(default_factory=dict)
+    evidence: dict[str, Any] = Field(default_factory=dict)
 
 
 class TranscriptResult(BaseModel):
     segments: list[Segment]
     flags: list[HallucinationFlag] = Field(default_factory=list)
-    metadata: dict = Field(default_factory=dict)
+    metadata: dict[str, Any] = Field(default_factory=dict)
 
 
 class RepairAction(BaseModel):
@@ -57,6 +58,6 @@ class RepairResult(BaseModel):
 class PipelineReport(BaseModel):
     transcript: TranscriptResult
     repairs: RepairResult | None = None
-    scores: dict = Field(default_factory=dict)
+    scores: dict[str, Any] = Field(default_factory=dict)
     cost_usd: float = 0.0
     duration_sec: float = 0.0

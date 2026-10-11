@@ -13,7 +13,7 @@ from trusted_transcription.models import TranscriptResult
 
 
 @click.group()
-def main():
+def main() -> None:
     """Trusted-Transcription: catch confident lies in automatic transcription."""
 
 
@@ -23,7 +23,13 @@ def main():
 @click.option("--no-repair", is_flag=True, help="Skip the LLM repair pass")
 @click.option("--reference", "-r", type=click.Path(exists=True), help="Reference transcript")
 @click.option("--output", "-o", type=click.Path(), help="Write report JSON to file")
-def run(audio_path, language, no_repair, reference, output):
+def run(
+    audio_path: str,
+    language: str,
+    no_repair: bool,
+    reference: str | None,
+    output: str | None,
+) -> None:
     """Run the full pipeline on an audio file."""
     from trusted_transcription.pipeline import Pipeline
 
@@ -56,7 +62,7 @@ def run(audio_path, language, no_repair, reference, output):
 @main.command()
 @click.argument("transcript_json", type=click.Path(exists=True))
 @click.option("--format", "fmt", type=click.Choice(["json", "table"]), default="table")
-def detect(transcript_json, fmt):
+def detect(transcript_json: str, fmt: str) -> None:
     """Run hallucination detectors on a transcript JSON file."""
     raw = Path(transcript_json).read_text(encoding="utf-8")
     transcript = TranscriptResult.model_validate_json(raw)
@@ -100,7 +106,7 @@ def detect(transcript_json, fmt):
     help="Seconds of audio added on each side",
 )
 @click.option("--format", "fmt", type=click.Choice(["json", "table"]), default="table")
-def windows(boundaries_json, threshold, context_s, fmt):
+def windows(boundaries_json: str, threshold: float, context_s: float, fmt: str) -> None:
     """Show what the model will hear for each segment (ADR 0005).
 
     BOUNDARIES_JSON holds {"audio_duration_sec": N, "boundaries": [[start, end], ...]}.
@@ -138,7 +144,7 @@ def windows(boundaries_json, threshold, context_s, fmt):
     default=None,
     help="Expected detectors per file (default: <corpus_dir>/labels.json)",
 )
-def eval_detectors(corpus_dir, labels_path):
+def eval_detectors(corpus_dir: str, labels_path: str | None) -> None:
     """Precision and recall per detector against a labels file; exit 1 on any broken expectation."""
     from trusted_transcription.eval.detector_bench import (
         load_labels,
@@ -163,7 +169,7 @@ def eval_detectors(corpus_dir, labels_path):
     show_default=True,
     help="Below this share of the reference's words, an engine is out",
 )
-def bench_report(results_jsonl, control, min_production):
+def bench_report(results_jsonl: str, control: str | None, min_production: float) -> None:
     """Read an engine bench: two measures, paired wins, the biased-judge split (ADR 0011)."""
     from trusted_transcription.eval.engine_bench import ResultStore, disqualified, summarize
 
@@ -204,7 +210,7 @@ def bench_report(results_jsonl, control, min_production):
 
 @main.command()
 @click.argument("transcript_json", type=click.Path(exists=True))
-def spell(transcript_json):
+def spell(transcript_json: str) -> None:
     """Apply the spelled-out pass (ADR 0009) and show what changed."""
     from trusted_transcription.repair.spellings import apply_spellings
 
@@ -231,7 +237,7 @@ def spell(transcript_json):
 @click.option("--bitrate", default=320, show_default=True, help="Source bitrate in kb/s")
 @click.option("--chunk", "chunk_s", default=540.0, show_default=True, help="Chunk length (s)")
 @click.option("--limit-mb", default=24.0, show_default=True, help="Upload limit per chunk")
-def chunks(duration_s, bitrate, chunk_s, limit_mb):
+def chunks(duration_s: float, bitrate: int, chunk_s: float, limit_mb: float) -> None:
     """Plan the upload chunks for a long file and prove nothing is lost (ADR 0008)."""
     from trusted_transcription.prevention.chunking import (
         ChunkPolicy,
@@ -270,7 +276,7 @@ def chunks(duration_s, bitrate, chunk_s, limit_mb):
 @main.command()
 @click.argument("audio_duration_min", type=float)
 @click.option("--hall-rate", default=0.05, help="Expected hallucination rate (0-1)")
-def cost(audio_duration_min, hall_rate):
+def cost(audio_duration_min: float, hall_rate: float) -> None:
     """Estimate processing cost for a given audio duration."""
     minutes = audio_duration_min
     whisper_cost = minutes * 0.006

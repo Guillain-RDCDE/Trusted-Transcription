@@ -13,6 +13,7 @@ from trusted_transcription.detectors import ALL_DETECTORS, Detector
 from trusted_transcription.models import (
     HallucinationFlag,
     PipelineReport,
+    RepairResult,
     Segment,
     TranscriptResult,
 )
@@ -118,7 +119,7 @@ class Pipeline:
     @staticmethod
     def _apply_repairs(
         transcript: TranscriptResult,
-        repair_result,
+        repair_result: RepairResult,
     ) -> TranscriptResult:
         segments = list(transcript.segments)
 

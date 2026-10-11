@@ -119,7 +119,7 @@ class ScriptDriftDetector:
             if not native:
                 continue  # a whole segment in another script: language_switch's job
             first = not flags
-            evidence = {
+            evidence: dict[str, object] = {
                 "foreign_letters": "".join(foreign)[:40],
                 "scripts": sorted({script_of(c) or "" for c in foreign}),
                 "text": seg.text[:200],

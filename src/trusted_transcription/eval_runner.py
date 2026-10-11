@@ -12,7 +12,7 @@ import click
 @click.command()
 @click.option("--corpus-dir", type=click.Path(exists=True), required=True)
 @click.option("--out", type=click.Path(), default="eval/results/")
-def main(corpus_dir, out):
+def main(corpus_dir: str, out: str) -> None:
     """Run evaluation benchmarks against a reference corpus."""
     corpus_path = Path(corpus_dir)
     out_path = Path(out)
@@ -31,7 +31,7 @@ def main(corpus_dir, out):
     from trusted_transcription.pipeline import Pipeline
 
     pipeline = Pipeline(repair_enabled=True)
-    results = []
+    results: list[dict[str, object]] = []
 
     for audio_file, ref_file in pairs:
         click.echo(f"Processing {audio_file.name}...", err=True)
@@ -39,7 +39,7 @@ def main(corpus_dir, out):
 
         try:
             report = pipeline.run(str(audio_file), reference_text=ref_text)
-            row = {
+            row: dict[str, object] = {
                 "file": audio_file.name,
                 "segments": report.scores.get("total_segments", 0),
                 "critical_flags": report.scores.get("critical_flags", 0),

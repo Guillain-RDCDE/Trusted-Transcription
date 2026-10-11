@@ -170,9 +170,7 @@ def plan_upload(
 # --- ffmpeg command lines ---------------------------------------------------
 
 
-def ffmpeg_segment_command(
-    source: str, out_pattern: str, chunk_s: float = CHUNK_S
-) -> list[str]:
+def ffmpeg_segment_command(source: str, out_pattern: str, chunk_s: float = CHUNK_S) -> list[str]:
     """Stream-copy split: no re-encode, sub-second on an hour of audio.
 
     ``out_pattern`` takes a printf-style index, e.g. ``chunk_%03d.mp3``.
@@ -180,11 +178,20 @@ def ffmpeg_segment_command(
     what the word-timestamp arithmetic downstream expects.
     """
     return [
-        "ffmpeg", "-hide_banner", "-nostdin", "-y",
-        "-i", source,
-        "-f", "segment", "-segment_time", _fmt(chunk_s),
-        "-reset_timestamps", "1",
-        "-c", "copy",
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-i",
+        source,
+        "-f",
+        "segment",
+        "-segment_time",
+        _fmt(chunk_s),
+        "-reset_timestamps",
+        "1",
+        "-c",
+        "copy",
         out_pattern,
     ]
 
@@ -194,10 +201,19 @@ def ffmpeg_reencode_command(
 ) -> list[str]:
     """Re-cut one span and re-encode it at ``bitrate_bps``."""
     return [
-        "ffmpeg", "-hide_banner", "-nostdin", "-y",
-        "-ss", _fmt(start_s), "-to", _fmt(end_s),
-        "-i", source,
-        "-vn", "-b:a", f"{bitrate_bps // 1000}k",
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-ss",
+        _fmt(start_s),
+        "-to",
+        _fmt(end_s),
+        "-i",
+        source,
+        "-vn",
+        "-b:a",
+        f"{bitrate_bps // 1000}k",
         out_path,
     ]
 
@@ -205,9 +221,13 @@ def ffmpeg_reencode_command(
 def ffprobe_duration_command(path: str) -> list[str]:
     """Print the container duration in seconds, nothing else."""
     return [
-        "ffprobe", "-v", "error",
-        "-show_entries", "format=duration",
-        "-of", "default=noprint_wrappers=1:nokey=1",
+        "ffprobe",
+        "-v",
+        "error",
+        "-show_entries",
+        "format=duration",
+        "-of",
+        "default=noprint_wrappers=1:nokey=1",
         path,
     ]
 

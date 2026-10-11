@@ -5,7 +5,6 @@ failure mode, runs the corresponding detector, and asserts it fires.
 No audio files, no API calls, no network — pure unit tests.
 """
 
-
 from trusted_transcription.models import Segment, Severity, TranscriptResult
 
 
@@ -18,9 +17,11 @@ def make_transcript(segments, **metadata):
 
 # --- Repetition Loop ---
 
+
 class TestRepetitionLoop:
     def test_repetition_loop_detected(self):
         from trusted_transcription.detectors.repetition_loop import RepetitionLoopDetector
+
         detector = RepetitionLoopDetector(ngram_size=3, max_repeats=3, window_segments=10)
 
         segments = [
@@ -35,6 +36,7 @@ class TestRepetitionLoop:
 
     def test_no_false_positive_on_varied_text(self):
         from trusted_transcription.detectors.repetition_loop import RepetitionLoopDetector
+
         detector = RepetitionLoopDetector()
 
         texts = [
@@ -49,10 +51,7 @@ class TestRepetitionLoop:
             "Le chauffage central est en ordre de marche",
             "Nous procedons maintenant a la verification du toit",
         ]
-        segments = [
-            {"start": i * 2.0, "end": i * 2.0 + 2.0, "text": texts[i]}
-            for i in range(10)
-        ]
+        segments = [{"start": i * 2.0, "end": i * 2.0 + 2.0, "text": texts[i]} for i in range(10)]
         transcript = make_transcript(segments)
         flags = detector.detect(transcript)
         assert len(flags) == 0
@@ -60,11 +59,13 @@ class TestRepetitionLoop:
 
 # --- Silence Hallucination ---
 
+
 class TestSilenceHallucination:
     def test_silence_hallucination_phantom_phrase(self):
         from trusted_transcription.detectors.silence_hallucination import (
             SilenceHallucinationDetector,
         )
+
         detector = SilenceHallucinationDetector()
 
         segments = [
@@ -82,6 +83,7 @@ class TestSilenceHallucination:
         from trusted_transcription.detectors.silence_hallucination import (
             SilenceHallucinationDetector,
         )
+
         detector = SilenceHallucinationDetector()
 
         segments = [
@@ -94,9 +96,11 @@ class TestSilenceHallucination:
 
 # --- Prompt Echo ---
 
+
 class TestPromptEcho:
     def test_prompt_echo_detected(self):
         from trusted_transcription.detectors.prompt_echo import PromptEchoDetector
+
         detector = PromptEchoDetector()
 
         segments = [
@@ -116,6 +120,7 @@ class TestPromptEcho:
 
     def test_reasoning_leak_detected(self):
         from trusted_transcription.detectors.prompt_echo import PromptEchoDetector
+
         detector = PromptEchoDetector()
 
         segments = [
@@ -132,9 +137,11 @@ class TestPromptEcho:
 
 # --- Temporal Drift ---
 
+
 class TestTemporalDrift:
     def test_temporal_drift_backwards(self):
         from trusted_transcription.detectors.temporal_drift import TemporalDriftDetector
+
         detector = TemporalDriftDetector()
 
         segments = [
@@ -149,6 +156,7 @@ class TestTemporalDrift:
 
     def test_temporal_drift_stall(self):
         from trusted_transcription.detectors.temporal_drift import TemporalDriftDetector
+
         detector = TemporalDriftDetector()
 
         segments = [
@@ -163,6 +171,7 @@ class TestTemporalDrift:
 
     def test_normal_timestamps_no_flag(self):
         from trusted_transcription.detectors.temporal_drift import TemporalDriftDetector
+
         detector = TemporalDriftDetector()
 
         segments = [
@@ -177,9 +186,11 @@ class TestTemporalDrift:
 
 # --- Phantom Subtitle ---
 
+
 class TestPhantomSubtitle:
     def test_phantom_subtitle_isolated(self):
         from trusted_transcription.detectors.phantom_subtitle import PhantomSubtitleDetector
+
         detector = PhantomSubtitleDetector(context_window=2, similarity_threshold=0.02)
 
         legal_text = "le constat a ete dresse en presence des parties concernees"
@@ -187,10 +198,14 @@ class TestPhantomSubtitle:
             {"start": i * 5.0, "end": i * 5.0 + 5.0, "text": f"{legal_text} segment {i}"}
             for i in range(5)
         ]
-        segments.insert(3, {
-            "start": 15.0, "end": 20.0,
-            "text": "the spaceship launched into orbit carrying supplies for the station"
-        })
+        segments.insert(
+            3,
+            {
+                "start": 15.0,
+                "end": 20.0,
+                "text": "the spaceship launched into orbit carrying supplies for the station",
+            },
+        )
         for i, s in enumerate(segments):
             s["start"] = i * 5.0
             s["end"] = i * 5.0 + 5.0
@@ -202,18 +217,32 @@ class TestPhantomSubtitle:
 
 # --- Language Switch ---
 
+
 class TestLanguageSwitch:
     def test_language_switch_detected(self):
         from trusted_transcription.detectors.language_switch import LanguageSwitchDetector
+
         detector = LanguageSwitchDetector(expected_language="fr")
 
         segments = [
-            {"start": 0.0, "end": 5.0, "language": "fr",
-             "text": "Nous constatons que la porte est fermee."},
-            {"start": 5.0, "end": 10.0, "language": "en",
-             "text": "The door was found to be closed and locked."},
-            {"start": 10.0, "end": 15.0, "language": "fr",
-             "text": "Les cles etaient sur la table."},
+            {
+                "start": 0.0,
+                "end": 5.0,
+                "language": "fr",
+                "text": "Nous constatons que la porte est fermee.",
+            },
+            {
+                "start": 5.0,
+                "end": 10.0,
+                "language": "en",
+                "text": "The door was found to be closed and locked.",
+            },
+            {
+                "start": 10.0,
+                "end": 15.0,
+                "language": "fr",
+                "text": "Les cles etaient sur la table.",
+            },
         ]
         transcript = make_transcript(segments)
         flags = detector.detect(transcript)
@@ -223,14 +252,19 @@ class TestLanguageSwitch:
 
 # --- Completeness ---
 
+
 class TestCompleteness:
     def test_completeness_low_coverage(self):
         from trusted_transcription.detectors.completeness import CompletenessDetector
+
         detector = CompletenessDetector(min_coverage_ratio=0.7)
 
         segments = [
-            {"start": 0.0, "end": 30.0,
-             "text": "Premier paragraphe du constat avec beaucoup de details."},
+            {
+                "start": 0.0,
+                "end": 30.0,
+                "text": "Premier paragraphe du constat avec beaucoup de details.",
+            },
         ]
         transcript = make_transcript(segments, audio_duration_sec=300.0)
         flags = detector.detect(transcript)
@@ -242,11 +276,15 @@ class TestCompleteness:
 
     def test_full_coverage_no_flag(self):
         from trusted_transcription.detectors.completeness import CompletenessDetector
+
         detector = CompletenessDetector()
 
         segments = [
-            {"start": i * 10.0, "end": i * 10.0 + 10.0,
-             "text": f"Segment numero {i} avec du contenu normal."}
+            {
+                "start": i * 10.0,
+                "end": i * 10.0 + 10.0,
+                "text": f"Segment numero {i} avec du contenu normal.",
+            }
             for i in range(6)
         ]
         transcript = make_transcript(segments, audio_duration_sec=60.0)

@@ -34,15 +34,38 @@ from trusted_transcription.models import (
 )
 
 SCRIPT_PREFIXES = (
-    "LATIN", "CYRILLIC", "GREEK", "ARABIC", "HEBREW", "DEVANAGARI", "THAI",
-    "HANGUL", "HIRAGANA", "KATAKANA", "CJK",
+    "LATIN",
+    "CYRILLIC",
+    "GREEK",
+    "ARABIC",
+    "HEBREW",
+    "DEVANAGARI",
+    "THAI",
+    "HANGUL",
+    "HIRAGANA",
+    "KATAKANA",
+    "CJK",
 )
 
 EXPECTED_SCRIPT = {
-    "fr": "LATIN", "en": "LATIN", "de": "LATIN", "es": "LATIN", "it": "LATIN",
-    "pt": "LATIN", "nl": "LATIN", "pl": "LATIN", "sv": "LATIN", "da": "LATIN",
-    "ru": "CYRILLIC", "uk": "CYRILLIC", "bg": "CYRILLIC",
-    "el": "GREEK", "ar": "ARABIC", "he": "HEBREW", "hi": "DEVANAGARI", "th": "THAI",
+    "fr": "LATIN",
+    "en": "LATIN",
+    "de": "LATIN",
+    "es": "LATIN",
+    "it": "LATIN",
+    "pt": "LATIN",
+    "nl": "LATIN",
+    "pl": "LATIN",
+    "sv": "LATIN",
+    "da": "LATIN",
+    "ru": "CYRILLIC",
+    "uk": "CYRILLIC",
+    "bg": "CYRILLIC",
+    "el": "GREEK",
+    "ar": "ARABIC",
+    "he": "HEBREW",
+    "hi": "DEVANAGARI",
+    "th": "THAI",
     "ko": "HANGUL",
 }
 
@@ -113,11 +136,7 @@ class ScriptDriftDetector:
                     segment_index=i,
                     reason=(
                         f"Letters from another script mixed into {expected.title()} text"
-                        + (
-                            f" — re-transcribe from {seg.start:.0f}s to the end"
-                            if first
-                            else ""
-                        )
+                        + (f" — re-transcribe from {seg.start:.0f}s to the end" if first else "")
                     ),
                     evidence=evidence,
                 )

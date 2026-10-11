@@ -112,7 +112,7 @@ class TemporalDriftDetector:
                         severity=Severity.CRITICAL,
                         segment_index=i,
                         reason=(
-                            f"Timestamp stall: segments {i-1} and {i} share "
+                            f"Timestamp stall: segments {i - 1} and {i} share "
                             f"the same time range [{curr.start:.2f}-{curr.end:.2f}]"
                         ),
                         evidence={

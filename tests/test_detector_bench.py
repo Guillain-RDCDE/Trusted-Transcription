@@ -29,8 +29,11 @@ class Fires:
     def detect(self, transcript: TranscriptResult) -> list[HallucinationFlag]:
         text = " ".join(s.text for s in transcript.segments)
         if self.name in text:
-            return [HallucinationFlag(detector=self.name, severity=Severity.CRITICAL,
-                                      segment_index=0, reason="fake")]
+            return [
+                HallucinationFlag(
+                    detector=self.name, severity=Severity.CRITICAL, segment_index=0, reason="fake"
+                )
+            ]
         return []
 
 

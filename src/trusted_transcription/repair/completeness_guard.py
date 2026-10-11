@@ -251,8 +251,17 @@ def _repair_level(
         left, right = halves
         repaired = " ".join(
             _repair_level(
-                part, repair_fn, result, depth + 1, max_retries, max_depth, min_units,
-                min_net_loss_words, min_ratio, ratio, slack,
+                part,
+                repair_fn,
+                result,
+                depth + 1,
+                max_retries,
+                max_depth,
+                min_units,
+                min_net_loss_words,
+                min_ratio,
+                ratio,
+                slack,
             )
             for part in (left, right)
         )

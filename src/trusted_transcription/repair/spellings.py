@@ -73,9 +73,7 @@ _DOTTED = re.compile(r"(?<![\w.])(?:[^\W\d_]\.){3,}(?!\w)", re.UNICODE)
 # Capitals with spaces: N O R E V I E (three or more, capitals only)
 _SPACED = re.compile(r"(?<![\w])(?:[A-ZÀ-Ý] ){2,}[A-ZÀ-Ý](?![\w])")
 # A sequence that carries a digit (C.A.R.A.2.D.) — recognised to abstain on.
-_WITH_DIGIT = re.compile(
-    r"(?<![\w.-])(?:[^\W_][.-]){2,}[^\W_]\.?(?![\w-])", re.UNICODE
-)
+_WITH_DIGIT = re.compile(r"(?<![\w.-])(?:[^\W_][.-]){2,}[^\W_]\.?(?![\w-])", re.UNICODE)
 
 _WORD_BEFORE = re.compile(r"([^\W\d_]+(?:'[^\W\d_]+)?(?:-[^\W\d_]+)*)\s*$", re.UNICODE)
 _TAG = re.compile(r"<[^<>]{1,40}>")
@@ -256,19 +254,43 @@ def resolve(text: str) -> list[SpellingFix]:
         if _fold(last_element) == _fold(sp.word):
             # Already right — including "promo Bayard" spelled as one word:
             # the words stay as dictated, only the letters go.
-            fixes.append(SpellingFix(sp, "erase", dictated, dictated, round(ratio, 3),
-                                     "dictated word already matches"))
+            fixes.append(
+                SpellingFix(
+                    sp,
+                    "erase",
+                    dictated,
+                    dictated,
+                    round(ratio, 3),
+                    "dictated word already matches",
+                )
+            )
         elif ratio >= MIN_SIMILARITY:
             if n == 1 and "-" in dictated:
                 head, _, tail = dictated.rpartition("-")
                 replacement = f"{head}-{_match_case(tail, sp.word)}"
             else:
                 replacement = _match_case(dictated.split()[-1], sp.word)
-            fixes.append(SpellingFix(sp, "correct", dictated, replacement, round(ratio, 3),
-                                     "spelling overrides the dictated word"))
+            fixes.append(
+                SpellingFix(
+                    sp,
+                    "correct",
+                    dictated,
+                    replacement,
+                    round(ratio, 3),
+                    "spelling overrides the dictated word",
+                )
+            )
         else:
-            fixes.append(SpellingFix(sp, "abstain", dictated, "", round(ratio, 3),
-                                     "spelling unrelated to the words before"))
+            fixes.append(
+                SpellingFix(
+                    sp,
+                    "abstain",
+                    dictated,
+                    "",
+                    round(ratio, 3),
+                    "spelling unrelated to the words before",
+                )
+            )
     return fixes
 
 

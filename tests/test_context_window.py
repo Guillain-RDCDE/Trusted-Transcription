@@ -254,9 +254,7 @@ class TestTranscribeWithContext:
                 return []
             return [Word(0.0, 0.5, " ok")]
 
-        segments, report = transcribe_with_context(
-            [(30.0, 32.0)], silent_then_normal, TIMELINE_S
-        )
+        segments, report = transcribe_with_context([(30.0, 32.0)], silent_then_normal, TIMELINE_S)
         assert calls == [(20.0, 42.0), (30.0, 32.0)]
         assert segments[0].text == "ok"
         assert report.fallbacks_empty == 1

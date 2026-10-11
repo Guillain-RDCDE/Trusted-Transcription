@@ -42,10 +42,21 @@ def ffmpeg_reencode_for_upload(
 ) -> list[str]:
     """Mono speech MP3: what recognition engines are most at ease with."""
     return [
-        "ffmpeg", "-hide_banner", "-nostdin", "-y",
-        "-i", source,
-        "-vn", "-ar", str(sample_rate), "-ac", "1",
-        "-c:a", "libmp3lame", "-b:a", f"{bitrate_bps // 1000}k",
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-i",
+        source,
+        "-vn",
+        "-ar",
+        str(sample_rate),
+        "-ac",
+        "1",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        f"{bitrate_bps // 1000}k",
         out_path,
     ]
 
@@ -60,8 +71,15 @@ def ffmpeg_tail_command(source: str, out_path: str, start_s: float) -> list[str]
         raise ValueError("start_s must be >= 0")
     start = f"{start_s:.3f}".rstrip("0").rstrip(".")
     return [
-        "ffmpeg", "-hide_banner", "-nostdin", "-y",
-        "-ss", start, "-i", source,
-        "-c", "copy",
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-ss",
+        start,
+        "-i",
+        source,
+        "-c",
+        "copy",
         out_path,
     ]

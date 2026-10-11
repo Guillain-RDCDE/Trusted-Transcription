@@ -25,8 +25,11 @@ OBSERVED = {
         "Sous-titrage ST' 501",
         "Abonnez-vous à la chaîne",
     ],
-    "de": ["Untertitel der Amara.org-Community", "Untertitel im Auftrag des ZDF, 2017",
-           "Vielen Dank fürs Zuschauen"],
+    "de": [
+        "Untertitel der Amara.org-Community",
+        "Untertitel im Auftrag des ZDF, 2017",
+        "Vielen Dank fürs Zuschauen",
+    ],
     "es": ["Subtítulos realizados por la comunidad de Amara.org", "Gracias por ver el vídeo"],
     "it": ["Sottotitoli creati dalla comunità Amara.org", "Sottotitoli e revisione a cura di QTSS"],
     "pt": ["Legendas pela comunidade Amara.org", "Obrigado por assistir"],

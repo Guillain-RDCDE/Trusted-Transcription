@@ -134,9 +134,7 @@ class Pipeline:
                 # never has more words than the source can justify.
                 if overproduces(segments[idx].text, action.repaired_text):
                     continue
-                segments[idx] = segments[idx].model_copy(
-                    update={"text": action.repaired_text}
-                )
+                segments[idx] = segments[idx].model_copy(update={"text": action.repaired_text})
 
         if delete_indices:
             segments = [s for i, s in enumerate(segments) if i not in delete_indices]

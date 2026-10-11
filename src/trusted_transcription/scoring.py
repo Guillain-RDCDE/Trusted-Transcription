@@ -28,9 +28,7 @@ def compute_scores(
     scores["warning_flags"] = len(warning_flags)
 
     if total_segments > 0:
-        scores["hallucination_rate"] = round(
-            len(critical_flags) / total_segments, 4
-        )
+        scores["hallucination_rate"] = round(len(critical_flags) / total_segments, 4)
     else:
         scores["hallucination_rate"] = 0.0
 

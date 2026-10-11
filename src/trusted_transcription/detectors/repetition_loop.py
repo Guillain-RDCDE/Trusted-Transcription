@@ -69,8 +69,7 @@ class RepetitionLoopDetector:
                 if count >= self.max_repeats and not self._ignored(gram):
                     first_seg_idx = ngram_first_seg[gram]
                     if not any(
-                        f.detector == self.name and f.segment_index == first_seg_idx
-                        for f in flags
+                        f.detector == self.name and f.segment_index == first_seg_idx for f in flags
                     ):
                         flags.append(
                             HallucinationFlag(

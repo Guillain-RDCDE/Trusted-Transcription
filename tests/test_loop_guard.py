@@ -83,8 +83,9 @@ class TestIsDegenerate:
 class TestDetector:
     def test_flags_degenerate_transcript(self):
         transcript = TranscriptResult(
-            segments=[Segment(start=i * 5.0, end=i * 5.0 + 5.0, text="placard " * 20)
-                      for i in range(10)]
+            segments=[
+                Segment(start=i * 5.0, end=i * 5.0 + 5.0, text="placard " * 20) for i in range(10)
+            ]
         )
         (flag,) = DegenerateOutputDetector().detect(transcript)
         assert flag.detector == "degenerate_output"

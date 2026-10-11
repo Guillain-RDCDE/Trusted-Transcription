@@ -46,9 +46,7 @@ class CompletenessDetector:
 
         audio_duration = transcript.metadata.get("audio_duration_sec")
         if audio_duration and audio_duration > 0:
-            transcribed_duration = sum(
-                max(0, seg.end - seg.start) for seg in segments
-            )
+            transcribed_duration = sum(max(0, seg.end - seg.start) for seg in segments)
             coverage = transcribed_duration / audio_duration
 
             if coverage < self.min_coverage_ratio:

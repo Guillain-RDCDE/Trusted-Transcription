@@ -86,10 +86,19 @@ def detect(transcript_json, fmt):
 
 @main.command()
 @click.argument("boundaries_json", type=click.Path(exists=True))
-@click.option("--threshold", default=10.0, show_default=True,
-              help="Segments shorter than this (seconds) get context")
-@click.option("--context", "context_s", default=10.0, show_default=True,
-              help="Seconds of audio added on each side")
+@click.option(
+    "--threshold",
+    default=10.0,
+    show_default=True,
+    help="Segments shorter than this (seconds) get context",
+)
+@click.option(
+    "--context",
+    "context_s",
+    default=10.0,
+    show_default=True,
+    help="Seconds of audio added on each side",
+)
 @click.option("--format", "fmt", type=click.Choice(["json", "table"]), default="table")
 def windows(boundaries_json, threshold, context_s, fmt):
     """Show what the model will hear for each segment (ADR 0005).
@@ -122,8 +131,13 @@ def windows(boundaries_json, threshold, context_s, fmt):
 
 @main.command("eval")
 @click.argument("corpus_dir", type=click.Path(exists=True, file_okay=False))
-@click.option("--labels", "labels_path", type=click.Path(exists=True), default=None,
-              help="Expected detectors per file (default: <corpus_dir>/labels.json)")
+@click.option(
+    "--labels",
+    "labels_path",
+    type=click.Path(exists=True),
+    default=None,
+    help="Expected detectors per file (default: <corpus_dir>/labels.json)",
+)
 def eval_detectors(corpus_dir, labels_path):
     """Precision and recall per detector against a labels file; exit 1 on any broken expectation."""
     from trusted_transcription.eval.detector_bench import (
@@ -143,8 +157,12 @@ def eval_detectors(corpus_dir, labels_path):
 @main.command("bench-report")
 @click.argument("results_jsonl", type=click.Path(exists=True))
 @click.option("--control", default=None, help="Engine the others are paired against")
-@click.option("--min-production", default=0.9, show_default=True,
-              help="Below this share of the reference's words, an engine is out")
+@click.option(
+    "--min-production",
+    default=0.9,
+    show_default=True,
+    help="Below this share of the reference's words, an engine is out",
+)
 def bench_report(results_jsonl, control, min_production):
     """Read an engine bench: two measures, paired wins, the biased-judge split (ADR 0011)."""
     from trusted_transcription.eval.engine_bench import ResultStore, disqualified, summarize
@@ -239,8 +257,11 @@ def chunks(duration_s, bitrate, chunk_s, limit_mb):
 
     total = sum(b - a for a, b in plan.chunks)
     problem = coverage_error(plan.chunks, duration_s)
-    click.echo(f"\nSource {duration_s:.3f}s, chunks sum to {total:.3f}s: "
-               f"{'identical' if problem is None else problem}", err=True)
+    click.echo(
+        f"\nSource {duration_s:.3f}s, chunks sum to {total:.3f}s: "
+        f"{'identical' if problem is None else problem}",
+        err=True,
+    )
     if not plan.ok:
         click.echo("Some chunks cannot fit under the limit — fail visibly, never skip.", err=True)
         sys.exit(1)

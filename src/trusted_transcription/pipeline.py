@@ -7,7 +7,9 @@ The pipeline itself is a thin orchestrator that chains them.
 from __future__ import annotations
 
 import time
+from collections.abc import Mapping
 from pathlib import Path
+from typing import Any
 
 from trusted_transcription.detectors import ALL_DETECTORS, Detector
 from trusted_transcription.models import (
@@ -20,6 +22,18 @@ from trusted_transcription.models import (
 from trusted_transcription.repair.completeness_guard import overproduces
 from trusted_transcription.repair.llm_repair import LLMRepairer
 from trusted_transcription.scoring import compute_scores
+
+
+def _field(obj: Any, name: str, default: Any = None) -> Any:
+    """Read ``name`` from an API response item, whether it is a dict or an object.
+
+    The openai SDK returns pydantic models (``TranscriptionVerbose`` whose
+    ``segments`` are ``TranscriptionSegment`` objects, not subscriptable);
+    older clients and raw JSON give plain dicts. Both are accepted.
+    """
+    if isinstance(obj, Mapping):
+        return obj.get(name, default)
+    return getattr(obj, name, default)
 
 
 class Pipeline:
@@ -89,13 +103,13 @@ class Pipeline:
             )
 
         segments = []
-        for seg in response.segments or []:
+        for seg in _field(response, "segments") or []:
             segments.append(
                 Segment(
-                    start=seg["start"],
-                    end=seg["end"],
-                    text=seg["text"],
-                    confidence=1.0 - seg.get("no_speech_prob", 0.0),
+                    start=_field(seg, "start"),
+                    end=_field(seg, "end"),
+                    text=_field(seg, "text"),
+                    confidence=1.0 - (_field(seg, "no_speech_prob") or 0.0),
                 )
             )
 
@@ -103,7 +117,7 @@ class Pipeline:
             segments=segments,
             metadata={
                 "audio_path": str(audio_path),
-                "audio_duration_sec": response.duration,
+                "audio_duration_sec": _field(response, "duration"),
                 "model": self.whisper_model,
                 "language": self.language,
             },

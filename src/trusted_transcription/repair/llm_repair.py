@@ -87,7 +87,11 @@ class LLMRepairer:
                     messages=[{"role": "user", "content": context}],
                 )
 
-                text = response.content[0].text
+                # The reply is the first text block; a thinking or tool block
+                # may come before it. No text block at all is an IndexError,
+                # retried like any malformed reply.
+                texts = [block.text for block in response.content if block.type == "text"]
+                text = texts[0]
                 actions = self._parse_response(text, critical_flags)
 
                 cost = self._estimate_cost(response)

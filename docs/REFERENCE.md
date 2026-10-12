@@ -162,6 +162,9 @@ Every figure behind those decisions was read against a control run. [Measurement
 ```bash
 pip install -e ".[dev]"
 python -m pytest tests/ -v
+ruff check src/ tests/ corpus/ && ruff format --check src/ tests/ corpus/
+mypy src
+pre-commit install   # the same ruff pin, plus whitespace and secret checks, on every commit
 ```
 
 No API calls, no audio files. Pure logic on synthetic transcripts and a ground-truth word timeline.
@@ -171,4 +174,3 @@ No API calls, no audio files. Pure logic on synthetic transcripts and a ground-t
 This is the generic quality layer extracted from a production legal-grade transcription platform. The platform processes formal dictations where a wrong word is a legal liability — Whisper + Claude pipeline running ~70% unattended across a nine-server fleet, billing daily.
 
 The platform code is under NDA. The techniques, detectors, and architectural decisions are published here. The dead ends too — they are in the ADRs, and they are the reason the production claims are credible.
-
